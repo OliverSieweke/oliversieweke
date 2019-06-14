@@ -1,9 +1,28 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "oliversieweke",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Oli's Personal Website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": {
+    "name": "Oliver Sieweke",
+    "email": "oliver@sieweke.com",
+    "url": "https://www.oliversieweke.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OliverSieweke/oliversieweke.git"
+  },
+  "engines": {
+    "node": ">=10.16.0",
+    "npm": ">=6.9.0"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
   "dependencies": {
     "gatsby": "^2.9.4",
     "gatsby-image": "^2.1.4",
@@ -18,19 +37,5 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1"
   },
-  "devDependencies": {},
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  "devDependencies": {}
 }
