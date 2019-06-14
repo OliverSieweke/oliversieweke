@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 /**
  * Implement Gatsby's Node APIs in this file.
  *
