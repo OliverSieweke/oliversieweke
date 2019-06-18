@@ -27,16 +27,23 @@ module.exports = {
                 link: "/contact",
             },
         ],
+        footerLinks: [
+            {
+                name: "github",
+                link: "https://github.com/OliverSieweke/",
+            },
+            {
+                name: "stackoverflow",
+                link: "https://stackoverflow.com/users/10367549/oliver-sieweke?tab=profile",
+            },
+            {
+                name: "linkedin",
+                link: "https://www.linkedin.com/in/oliver-sieweke",
+            },
+        ],
     },
     plugins: [
         "gatsby-plugin-react-helmet",
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-                name: "images",
-                path: `${__dirname}/src/images`,
-            },
-        },
         "gatsby-transformer-sharp",
         "gatsby-plugin-sharp",
         {
@@ -48,7 +55,6 @@ module.exports = {
                 background_color: "#663399",        /* eslint-disable-line camelcase */
                 theme_color: "#663399",             /* eslint-disable-line camelcase */
                 display: "minimal-ui",
-                icon: "src/images/gatsby-icon.png", // This path is relative to the root of the site.
             },
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -58,6 +64,14 @@ module.exports = {
         {
             resolve: "gatsby-plugin-typography",
             options: { pathToConfigModule: "src/utils/typography" },
+        },
+        // Footer Links:
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "footerLinkImages",
+                path: `${__dirname}/src/images/footer-links`,
+            },
         },
     ],
 };

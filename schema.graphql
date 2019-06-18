@@ -625,7 +625,6 @@ type SitePluginPackageJsonPeerDependencies {
 type SitePluginPluginOptions {
     background_color: String
     display: String
-    icon: String
     name: String
     path: String
     pathCheck: Boolean
@@ -638,8 +637,14 @@ type SitePluginPluginOptions {
 type SiteSiteMetadata {
     author: String
     description: String
+    footerLinks: [SiteSiteMetadataFooterLinks]
     navigationItems: [SiteSiteMetadataNavigationItems]
     title: String
+}
+
+type SiteSiteMetadataFooterLinks {
+    link: String
+    name: String
 }
 
 type SiteSiteMetadataNavigationItems {
@@ -1164,6 +1169,9 @@ enum SiteFieldsEnum {
     port
     siteMetadata___author
     siteMetadata___description
+    siteMetadata___footerLinks
+    siteMetadata___footerLinks___link
+    siteMetadata___footerLinks___name
     siteMetadata___navigationItems
     siteMetadata___navigationItems___link
     siteMetadata___navigationItems___name
@@ -1323,7 +1331,6 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginFilepath
     pluginCreator___pluginOptions___background_color
     pluginCreator___pluginOptions___display
-    pluginCreator___pluginOptions___icon
     pluginCreator___pluginOptions___name
     pluginCreator___pluginOptions___path
     pluginCreator___pluginOptions___pathCheck
@@ -1444,7 +1451,6 @@ enum SitePluginFieldsEnum {
     pluginFilepath
     pluginOptions___background_color
     pluginOptions___display
-    pluginOptions___icon
     pluginOptions___name
     pluginOptions___path
     pluginOptions___pathCheck
@@ -1813,7 +1819,6 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
 input SitePluginPluginOptionsFilterInput {
     background_color: StringQueryOperatorInput
     display: StringQueryOperatorInput
-    icon: StringQueryOperatorInput
     name: StringQueryOperatorInput
     path: StringQueryOperatorInput
     pathCheck: BooleanQueryOperatorInput
@@ -1831,8 +1836,18 @@ input SitePluginSortInput {
 input SiteSiteMetadataFilterInput {
     author: StringQueryOperatorInput
     description: StringQueryOperatorInput
+    footerLinks: SiteSiteMetadataFooterLinksFilterListInput
     navigationItems: SiteSiteMetadataNavigationItemsFilterListInput
     title: StringQueryOperatorInput
+}
+
+input SiteSiteMetadataFooterLinksFilterInput {
+    link: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+}
+
+input SiteSiteMetadataFooterLinksFilterListInput {
+    elemMatch: SiteSiteMetadataFooterLinksFilterInput
 }
 
 input SiteSiteMetadataNavigationItemsFilterInput {

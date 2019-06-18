@@ -301,7 +301,7 @@ module.exports = {
             "warn",
             "always",
             {
-                objectsInObjects: false,
+                objectsInObjects: true,
                 arraysInObjects: false,
             },
         ],
