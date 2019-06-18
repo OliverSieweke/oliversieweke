@@ -858,7 +858,8 @@ module.exports = {
                 hoist: "all",
                 allow: [
                     "err",
-                    "Image", // Browser global equivalent to document.createElement('img')
+                    "name",     // Browser global sometimes used as target for hyperlinks.
+                    "Image",    // Browser global equivalent to document.createElement('img')
                 ],
             },
         ],

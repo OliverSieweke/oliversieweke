@@ -638,7 +638,13 @@ type SitePluginPluginOptions {
 type SiteSiteMetadata {
     author: String
     description: String
+    navigationItems: [SiteSiteMetadataNavigationItems]
     title: String
+}
+
+type SiteSiteMetadataNavigationItems {
+    link: String
+    name: String
 }
 
 enum DirectoryFieldsEnum {
@@ -1158,6 +1164,9 @@ enum SiteFieldsEnum {
     port
     siteMetadata___author
     siteMetadata___description
+    siteMetadata___navigationItems
+    siteMetadata___navigationItems___link
+    siteMetadata___navigationItems___name
     siteMetadata___title
 }
 
@@ -1822,7 +1831,17 @@ input SitePluginSortInput {
 input SiteSiteMetadataFilterInput {
     author: StringQueryOperatorInput
     description: StringQueryOperatorInput
+    navigationItems: SiteSiteMetadataNavigationItemsFilterListInput
     title: StringQueryOperatorInput
+}
+
+input SiteSiteMetadataNavigationItemsFilterInput {
+    link: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+}
+
+input SiteSiteMetadataNavigationItemsFilterListInput {
+    elemMatch: SiteSiteMetadataNavigationItemsFilterInput
 }
 
 input SiteSortInput {
