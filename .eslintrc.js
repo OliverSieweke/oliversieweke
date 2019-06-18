@@ -1,18 +1,24 @@
 module.exports = {
     root: true,
     env: {
-        es6: true
+        es6: true,
+        browser: true,
     },
     parserOptions: {
         ecmaVersion: 2018,
+        sourceType: "module",
         ecmaFeatures: {
+            impliedStrict: true,
+            jsx: true,
             globalReturn: false,
         },
     },
-    globals: { /* Intentionally left empty - is being specified in nested .eslintrc.js files */ },
+    globals: {},
     plugins: [
         "jsdoc",
+        "react"
     ],
+    extends: ["plugin:react/recommended"],
     rules: {
 // ============================================================================================== \\
 // ======================================== --fix Rules ========================================= \\
@@ -1064,6 +1070,16 @@ module.exports = {
         "prefer-rest-params": "warn",
         "prefer-spread": "warn",
         "symbol-description": "warn",
+// ============================================================================================== \\
+// ========================================== Frontend =========================================== \\
+// Strict Mode -------------------------------------------------------------------------------------
+    "strict": [
+        "error",
+        "global",
+    ],
+
+// Possible Errors ---------------------------------------------------------------------------------
+        "no-console": "error",
 
 // ============================================================================================== \\
 // ======================================== JSDoc Rules ========================================= \\
@@ -1098,6 +1114,9 @@ module.exports = {
         "jsdoc/require-returns-type": "off",                                    // Already handled by Webstorm
         "jsdoc/require-returns": "off",                                         // Does not work
         "jsdoc/valid-types": "off",
+// ============================================================================================== \\
+// ======================================== React Rules ========================================= \\
+        "react/prop-types": "off",
     },
     settings: {
         jsdoc:
@@ -1153,21 +1172,6 @@ module.exports = {
                         allowAtRootLevel: false,
                     },
                 ],
-            },
-        },
-// ============================================================================================== \\
-// ========================================== Frontend =========================================== \\
-        {
-            files: ["gatsby-browser.js"],
-            rules: {
-// Strict Mode -------------------------------------------------------------------------------------
-                "strict": [
-                    "error",
-                    "global",
-                ],
-
-// Possible Errors ---------------------------------------------------------------------------------
-                "no-console": "error",
             },
         },
     ],
