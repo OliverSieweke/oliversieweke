@@ -73,5 +73,15 @@ module.exports = {
                 path: `${__dirname}/src/images/footer-links`,
             },
         },
+        // JavaScript Notes
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "javascript",
+                path: `${__dirname}/content/javascript`,
+            },
+        },
+        // Markdown Files:
+        "gatsby-transformer-remark",
     ],
 };
