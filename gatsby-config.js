@@ -2,9 +2,12 @@
 
 module.exports = {
     siteMetadata: {
-        title: "Oliver Sieweke",
-        description: "Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.",
-        author: "@gatsbyjs",
+        title: "Oliver Sieweke - Personal Website",
+        description: "The personal website of Oliver Sieweke. Includes programming notes and projects.",
+        siteUrl: "https://www.oliversieweke.com",
+        author: "Oliver Sieweke",
+        lang: "en",
+        keywords: ["Oliver Sieweke", "JavaScript", "Programming", "Developer", "Web", "Projects"],
         navigationItems: [
             {
                 name: "About",
@@ -43,18 +46,23 @@ module.exports = {
         ],
     },
     plugins: [
-        "gatsby-plugin-react-helmet",
         "gatsby-transformer-sharp",
         "gatsby-plugin-sharp",
+        // PWA Manifest:
         {
             resolve: "gatsby-plugin-manifest",
             options: {
-                name: "gatsby-starter-default",
-                short_name: "starter",              /* eslint-disable-line camelcase */
+                name: "Oliver Sieweke",
+                short_name: "OS",                   /* eslint-disable-line camelcase */
+                description: "Personal website including programming notes and projects.",
+                categories: ["books", "education", "programming"],
                 start_url: "/",                     /* eslint-disable-line camelcase */
-                background_color: "#663399",        /* eslint-disable-line camelcase */
-                theme_color: "#663399",             /* eslint-disable-line camelcase */
+                lang: "en",
+                background_color: "#FFFFFF",        /* eslint-disable-line camelcase */
+                theme_color: "#EC7C3F",             /* eslint-disable-line camelcase */
+                icon: "src/images/favicon.png",
                 display: "minimal-ui",
+                orientation: "any",
             },
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -83,5 +91,12 @@ module.exports = {
         },
         // Markdown Files:
         "gatsby-transformer-remark",
+        // Offline Support (needs to come after the web-manifest plugin):
+        "gatsby-plugin-offline",
+        // SEO:
+        "gatsby-plugin-react-helmet",
+        "gatsby-plugin-sitemap",
+        "gatsby-plugin-robots-txt",
+        "gatsby-plugin-netlify",
     ],
 };

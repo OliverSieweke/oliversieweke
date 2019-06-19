@@ -302,7 +302,7 @@ module.exports = {
             "always",
             {
                 objectsInObjects: true,
-                arraysInObjects: false,
+                arraysInObjects: true,
             },
         ],
         "object-property-newline": "off",                                       // Cannot be fine-tuned for allowing shorthand properties on the same line
@@ -785,7 +785,7 @@ module.exports = {
         "no-new-wrappers": "error",                                             // airbnb
         "no-octal-escape": "error",
         "no-param-reassign": [                                                  // airbnb
-            "error",
+            "warn",
             {
                 ignorePropertyModificationsFor: [],
             },

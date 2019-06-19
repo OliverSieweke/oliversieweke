@@ -1,54 +1,65 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React                       from "react";
+import Helmet                      from "react-helmet";
+import { graphql, useStaticQuery } from "gatsby";
 
-import React     from "react";
-import PropTypes from "prop-types";
-import Helmet    from "react-helmet";
-import {
-    graphql,
-    useStaticQuery,
-}                from "gatsby";
-
-function SEO({ description, lang, meta, title }) {
-    const { site } = useStaticQuery(graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+function SEO({ title="", type = "website", description, url, meta = [], keywords = [] }) {
+    const { site: { siteMetadata } } = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    title
+                    description
+                    author
+                    lang
+                    siteUrl
+                    keywords
+                }
+            }
         }
-      }
     `);
 
-    const metaDescription = description || site.siteMetadata.description;
+    // Get default values from configs:
+    description = description || siteMetadata.description;  /* eslint-disable-line no-param-reassign */
+    url = url || siteMetadata.siteUrl;                      /* eslint-disable-line no-param-reassign */
+    keywords = [...siteMetadata.keywords, ...keywords];     /* eslint-disable-line no-param-reassign */
 
     return (
         <Helmet
-            htmlAttributes={{ lang }}
             title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            titleTemplate={title ? `${title} | ${siteMetadata.title}` : siteMetadata.title}
+            htmlAttributes={{ lang: siteMetadata.lang }}
             meta={[
-                {
-                    name: "description",
-                    content: metaDescription,
-                },
                 {
                     property: "og:title",
                     content: title,
                 },
                 {
+                    name: "description",
+                    content: description,
+                },
+                {
                     property: "og:description",
-                    content: metaDescription,
+                    content: description,
                 },
                 {
                     property: "og:type",
-                    content: "website",
+                    content: type,
+                },
+                {
+                    property: "og:url",
+                    content: url,
+                },
+                {
+                    property: "og:site_name",
+                    content: title,
+                },
+                {
+                    property: "og:locale",
+                    content: siteMetadata.lang,
+                },
+                {
+                    name: "twitter:title",
+                    content: title,
                 },
                 {
                     name: "twitter:card",
@@ -56,32 +67,23 @@ function SEO({ description, lang, meta, title }) {
                 },
                 {
                     name: "twitter:creator",
-                    content: site.siteMetadata.author,
-                },
-                {
-                    name: "twitter:title",
-                    content: title,
+                    content: siteMetadata.author,
                 },
                 {
                     name: "twitter:description",
-                    content: metaDescription,
+                    content: description,
                 },
-            ].concat(meta)}
-        />
+                {
+                    name: "keywords",
+                    content: keywords.join(", "),
+                },
+                ...meta,
+            ]}
+        >
+            <link rel="preconnect" href="https://i.creativecommons.org" />
+            <link rel="preconnect" href="https://licensebuttons.net" />
+        </Helmet>
     );
 }
-
-SEO.defaultProps = {
-    lang: "en",
-    meta: [],
-    description: "",
-};
-
-SEO.propTypes = {
-    description: PropTypes.string,
-    lang: PropTypes.string,
-    meta: PropTypes.arrayOf(PropTypes.object),
-    title: PropTypes.string.isRequired,
-};
 
 export default SEO;

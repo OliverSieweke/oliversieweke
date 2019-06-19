@@ -525,7 +525,7 @@ type Query {
     imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput, resolutions: ImageSharpResolutionsFilterInput, sizes: ImageSharpSizesFilterInput): ImageSharp
     markdownRemark(children: NodeFilterListInput, excerpt: StringQueryOperatorInput, excerptAst: JSONQueryOperatorInput, fields: MarkdownRemarkFieldsFilterInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MarkdownRemarkFrontmatterFilterInput, headings: MarkdownHeadingFilterListInput, html: StringQueryOperatorInput, htmlAst: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, rawMarkdownBody: StringQueryOperatorInput, tableOfContents: StringQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: wordCountFilterInput): MarkdownRemark
     site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
-    sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
+    sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, context: SitePageContextFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
     sitePlugin(browserAPIs: StringQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeAPIs: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput, parent: NodeFilterInput, pluginFilepath: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, resolve: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, version: StringQueryOperatorInput): SitePlugin
 }
 
@@ -580,6 +580,7 @@ type SitePage implements Node {
     component: String
     componentChunkName: String
     componentPath: String
+    context: SitePageContext
     id: ID!
     internal: Internal!
     internalComponentName: String
@@ -597,6 +598,10 @@ type SitePageConnection {
     nodes: [SitePage!]!
     pageInfo: PageInfo!
     totalCount: Int!
+}
+
+type SitePageContext {
+    slug: String
 }
 
 type SitePageEdge {
@@ -683,8 +688,13 @@ type SitePluginPackageJsonPeerDependencies {
 
 type SitePluginPluginOptions {
     background_color: String
+    categories: [String]
+    description: String
     display: String
+    icon: String
+    lang: String
     name: String
+    orientation: String
     path: String
     pathCheck: Boolean
     pathToConfigModule: String
@@ -697,7 +707,10 @@ type SiteSiteMetadata {
     author: String
     description: String
     footerLinks: [SiteSiteMetadataFooterLinks]
+    keywords: [String]
+    lang: String
     navigationItems: [SiteSiteMetadataNavigationItems]
+    siteUrl: String
     title: String
 }
 
@@ -1357,9 +1370,12 @@ enum SiteFieldsEnum {
     siteMetadata___footerLinks
     siteMetadata___footerLinks___link
     siteMetadata___footerLinks___name
+    siteMetadata___keywords
+    siteMetadata___lang
     siteMetadata___navigationItems
     siteMetadata___navigationItems___link
     siteMetadata___navigationItems___name
+    siteMetadata___siteUrl
     siteMetadata___title
 }
 
@@ -1406,6 +1422,7 @@ enum SitePageFieldsEnum {
     component
     componentChunkName
     componentPath
+    context___slug
     id
     internalComponentName
     internal___content
@@ -1515,8 +1532,13 @@ enum SitePageFieldsEnum {
     pluginCreator___parent___parent___id
     pluginCreator___pluginFilepath
     pluginCreator___pluginOptions___background_color
+    pluginCreator___pluginOptions___categories
+    pluginCreator___pluginOptions___description
     pluginCreator___pluginOptions___display
+    pluginCreator___pluginOptions___icon
+    pluginCreator___pluginOptions___lang
     pluginCreator___pluginOptions___name
+    pluginCreator___pluginOptions___orientation
     pluginCreator___pluginOptions___path
     pluginCreator___pluginOptions___pathCheck
     pluginCreator___pluginOptions___pathToConfigModule
@@ -1635,8 +1657,13 @@ enum SitePluginFieldsEnum {
     parent___parent___parent___id
     pluginFilepath
     pluginOptions___background_color
+    pluginOptions___categories
+    pluginOptions___description
     pluginOptions___display
+    pluginOptions___icon
+    pluginOptions___lang
     pluginOptions___name
+    pluginOptions___orientation
     pluginOptions___path
     pluginOptions___pathCheck
     pluginOptions___pathToConfigModule
@@ -1976,11 +2003,16 @@ input SiteFilterInput {
     siteMetadata: SiteSiteMetadataFilterInput
 }
 
+input SitePageContextFilterInput {
+    slug: StringQueryOperatorInput
+}
+
 input SitePageFilterInput {
     children: NodeFilterListInput
     component: StringQueryOperatorInput
     componentChunkName: StringQueryOperatorInput
     componentPath: StringQueryOperatorInput
+    context: SitePageContextFilterInput
     id: StringQueryOperatorInput
     internal: InternalFilterInput
     internalComponentName: StringQueryOperatorInput
@@ -2053,8 +2085,13 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
 
 input SitePluginPluginOptionsFilterInput {
     background_color: StringQueryOperatorInput
+    categories: StringQueryOperatorInput
+    description: StringQueryOperatorInput
     display: StringQueryOperatorInput
+    icon: StringQueryOperatorInput
+    lang: StringQueryOperatorInput
     name: StringQueryOperatorInput
+    orientation: StringQueryOperatorInput
     path: StringQueryOperatorInput
     pathCheck: BooleanQueryOperatorInput
     pathToConfigModule: StringQueryOperatorInput
@@ -2072,7 +2109,10 @@ input SiteSiteMetadataFilterInput {
     author: StringQueryOperatorInput
     description: StringQueryOperatorInput
     footerLinks: SiteSiteMetadataFooterLinksFilterListInput
+    keywords: StringQueryOperatorInput
+    lang: StringQueryOperatorInput
     navigationItems: SiteSiteMetadataNavigationItemsFilterListInput
+    siteUrl: StringQueryOperatorInput
     title: StringQueryOperatorInput
 }
 
