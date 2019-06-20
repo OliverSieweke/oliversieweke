@@ -7,6 +7,8 @@ module.exports = {
         siteUrl: "https://www.oliversieweke.com",
         author: "Oliver Sieweke",
         lang: "en",
+        year: 2019,
+        license: "https://creativecommons.org/licenses/by-nc/4.0/",
         keywords: ["Oliver Sieweke", "JavaScript", "Programming", "Developer", "Web", "Projects"],
         navigationItems: [
             {

@@ -4,7 +4,7 @@ import SEO    from "../components/seo";
 
 const IndexPage = () => (
     <React.Fragment>
-        <SEO title="About" />
+        <SEO />
         <h1>About</h1>
         <p>Under construction...</p>
     </React.Fragment>

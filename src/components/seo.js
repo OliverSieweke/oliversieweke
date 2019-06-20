@@ -2,7 +2,8 @@ import React                       from "react";
 import Helmet                      from "react-helmet";
 import { graphql, useStaticQuery } from "gatsby";
 
-function SEO({ title="", type = "website", description, url, meta = [], keywords = [] }) {
+
+function SEO({ title = "", type = "WebSite", description, url, meta = [], keywords = [] }) {
     const { site: { siteMetadata } } = useStaticQuery(graphql`
         query {
             site {
@@ -13,6 +14,8 @@ function SEO({ title="", type = "website", description, url, meta = [], keywords
                     lang
                     siteUrl
                     keywords
+                    year
+                    license
                 }
             }
         }
@@ -23,7 +26,58 @@ function SEO({ title="", type = "website", description, url, meta = [], keywords
     url = url || siteMetadata.siteUrl;                      /* eslint-disable-line no-param-reassign */
     keywords = [...siteMetadata.keywords, ...keywords];     /* eslint-disable-line no-param-reassign */
 
+    const OliverSieweke = {
+        "@type": "Person",
+        name: siteMetadata.author,
+        url: siteMetadata.siteUrl,
+        alumniOf: [
+            "University of Oxford",
+            "Sciences Po",
+            "Ecole Polytechnique",
+            "ENSAE",
+        ],
+        familyName: "Sieweke",
+        givenName: "Oliver",
+        birthDate: 1992,
+        email: "oliver@sieweke.eu",
+        jobTitle: "Web Developer",
+        knowsLanguage: ["en", "fr", "de"],
+        address: {
+            "@type": "PostalAddress",
+            addressCountry: "Germany",
+            addressLocality: "Berlin",
+        },
+        sameAs: [
+            "https://www.linkedin.com/in/oliver-sieweke/",
+            "https://github.com/OliverSieweke/",
+            "https://stackoverflow.com/users/10367549/oliver-sieweke",
+        ],
+        // image?
+    };
+
+    const schema = [
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            url,
+            name: siteMetadata.title,
+            description: siteMetadata.description,
+            author: OliverSieweke,
+            publisher: OliverSieweke,
+            dateCreated: siteMetadata.year,
+            datePublished: siteMetadata.year,
+            mainEntity: OliverSieweke,
+            copyrightHolder: OliverSieweke,
+            copyrightYear: siteMetadata.year,
+            keywords: siteMetadata.keywords,
+            license: siteMetadata.license,
+            // image?
+        },
+    ];
+
+
     return (
+
         <Helmet
             title={title}
             titleTemplate={title ? `${title} | ${siteMetadata.title}` : siteMetadata.title}
@@ -80,8 +134,8 @@ function SEO({ title="", type = "website", description, url, meta = [], keywords
                 ...meta,
             ]}
         >
+            <script type="application/ld+json">{JSON.stringify(schema)}</script>
             <link rel="preconnect" href="https://i.creativecommons.org" />
-            <link rel="preconnect" href="https://licensebuttons.net" />
         </Helmet>
     );
 }
