@@ -326,6 +326,8 @@ module.exports = {
             "before",
             {
                 overrides: {
+                    "&&": "after",
+                    "||": "after",
                     "?": "none",
                     ":": "after",
                 },
