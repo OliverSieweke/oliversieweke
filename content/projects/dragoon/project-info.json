@@ -1,0 +1,24 @@
+{
+    "name": "Dragoon",
+    "title": "Subtitle Builder",
+    "shortDescription": "A program I wrote for my theater friends to automatise their subtitle powerpoint creation.",
+    "url": "https://www.dragoon.eu/",
+    "github": "https://www.github.com/OliverSieweke/dragoon",
+    "technologies": {
+        "server": [
+            "Node.js"
+        ],
+        "hosting": [
+            "Heroku"
+        ],
+        "data": [
+            "Heroku"
+        ],
+        "frontEnd": [
+            "Heroku"
+        ],
+        "other": [
+            "PptxGenJS"
+        ]
+    }
+}
