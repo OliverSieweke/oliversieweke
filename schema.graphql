@@ -85,6 +85,7 @@ type Directory implements Node {
     dir: String
     ext: String
     extension: String
+    fields: DirectoryFields
     gid: Int
     id: ID!
     ino: Float
@@ -137,6 +138,10 @@ type DirectoryEdge {
     next: Directory
     node: Directory!
     previous: Directory
+}
+
+type DirectoryFields {
+    slug: String
 }
 
 type DirectoryGroupConnection {
@@ -206,6 +211,7 @@ type File implements Node {
         locale: String
     ): Date
     childImageSharp: ImageSharp
+    childJsonData: JsonData
     childMarkdownRemark: MarkdownRemark
     children: [Node!]!
     ctime(
@@ -223,6 +229,7 @@ type File implements Node {
     dir: String
     ext: String
     extension: String
+    fields: FileFields
     gid: Int
     id: ID!
     ino: Float
@@ -277,6 +284,10 @@ type FileEdge {
     next: File
     node: File!
     previous: File
+}
+
+type FileFields {
+    slug: String
 }
 
 type FileGroupConnection {
@@ -447,6 +458,57 @@ type Internal {
     type: String!
 }
 
+type JsonData implements Node {
+    children: [Node!]!
+    github: String
+    id: ID!
+    identifier: String
+    internal: Internal!
+    logo: String
+    mainDescription: String
+    mainImage: String
+    name: String
+    parent: Node
+    shortDescription: String
+    technicalDescription: String
+    technologies: JsonDataTechnologies
+    title: String
+    url: String
+}
+
+type JsonDataConnection {
+    distinct(field: JsonDataFieldsEnum!): [String!]!
+    edges: [JsonDataEdge!]!
+    group(field: JsonDataFieldsEnum!, limit: Int, skip: Int): [JsonDataGroupConnection!]!
+    nodes: [JsonData!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type JsonDataEdge {
+    next: JsonData
+    node: JsonData!
+    previous: JsonData
+}
+
+type JsonDataGroupConnection {
+    edges: [JsonDataEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [JsonData!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type JsonDataTechnologies {
+    data: [String]
+    frontEnd: [String]
+    hosting: [String]
+    other: [String]
+    otherLibraries: [String]
+    server: [String]
+}
+
 type MarkdownHeading {
     depth: Int
     value: String
@@ -456,7 +518,6 @@ type MarkdownRemark implements Node {
     children: [Node!]!
     excerpt(format: ExcerptFormats = PLAIN, pruneLength: Int = 140, truncate: Boolean = false): String
     excerptAst(pruneLength: Int = 140, truncate: Boolean = false): JSON
-    fields: MarkdownRemarkFields
     fileAbsolutePath: String
     frontmatter: MarkdownRemarkFrontmatter
     headings(depth: HeadingLevels): [MarkdownHeading]
@@ -486,12 +547,9 @@ type MarkdownRemarkEdge {
     previous: MarkdownRemark
 }
 
-type MarkdownRemarkFields {
-    slug: String
-}
-
 type MarkdownRemarkFrontmatter {
     title: String
+    type: String
 }
 
 type MarkdownRemarkGroupConnection {
@@ -516,14 +574,16 @@ type Query {
     allDirectory(filter: DirectoryFilterInput, limit: Int, skip: Int, sort: DirectorySortInput): DirectoryConnection
     allFile(filter: FileFilterInput, limit: Int, skip: Int, sort: FileSortInput): FileConnection
     allImageSharp(filter: ImageSharpFilterInput, limit: Int, skip: Int, sort: ImageSharpSortInput): ImageSharpConnection
+    allJsonData(filter: JsonDataFilterInput, limit: Int, skip: Int, sort: JsonDataSortInput): JsonDataConnection
     allMarkdownRemark(filter: MarkdownRemarkFilterInput, limit: Int, skip: Int, sort: MarkdownRemarkSortInput): MarkdownRemarkConnection
     allSite(filter: SiteFilterInput, limit: Int, skip: Int, sort: SiteSortInput): SiteConnection
     allSitePage(filter: SitePageFilterInput, limit: Int, skip: Int, sort: SitePageSortInput): SitePageConnection
     allSitePlugin(filter: SitePluginFilterInput, limit: Int, skip: Int, sort: SitePluginSortInput): SitePluginConnection
-    directory(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): Directory
-    file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
+    directory(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, fields: DirectoryFieldsFilterInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): Directory
+    file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, fields: FileFieldsFilterInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
     imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput, resolutions: ImageSharpResolutionsFilterInput, sizes: ImageSharpSizesFilterInput): ImageSharp
-    markdownRemark(children: NodeFilterListInput, excerpt: StringQueryOperatorInput, excerptAst: JSONQueryOperatorInput, fields: MarkdownRemarkFieldsFilterInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MarkdownRemarkFrontmatterFilterInput, headings: MarkdownHeadingFilterListInput, html: StringQueryOperatorInput, htmlAst: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, rawMarkdownBody: StringQueryOperatorInput, tableOfContents: StringQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: wordCountFilterInput): MarkdownRemark
+    jsonData(children: NodeFilterListInput, github: StringQueryOperatorInput, id: StringQueryOperatorInput, identifier: StringQueryOperatorInput, internal: InternalFilterInput, logo: StringQueryOperatorInput, mainDescription: StringQueryOperatorInput, mainImage: StringQueryOperatorInput, name: StringQueryOperatorInput, parent: NodeFilterInput, shortDescription: StringQueryOperatorInput, technicalDescription: StringQueryOperatorInput, technologies: JsonDataTechnologiesFilterInput, title: StringQueryOperatorInput, url: StringQueryOperatorInput): JsonData
+    markdownRemark(children: NodeFilterListInput, excerpt: StringQueryOperatorInput, excerptAst: JSONQueryOperatorInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MarkdownRemarkFrontmatterFilterInput, headings: MarkdownHeadingFilterListInput, html: StringQueryOperatorInput, htmlAst: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, rawMarkdownBody: StringQueryOperatorInput, tableOfContents: StringQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: wordCountFilterInput): MarkdownRemark
     site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
     sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, context: SitePageContextFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
     sitePlugin(browserAPIs: StringQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeAPIs: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput, parent: NodeFilterInput, pluginFilepath: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, resolve: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, version: StringQueryOperatorInput): SitePlugin
@@ -601,7 +661,8 @@ type SitePageConnection {
 }
 
 type SitePageContext {
-    slug: String
+    dirRegex: String
+    name: String
 }
 
 type SitePageEdge {
@@ -701,6 +762,7 @@ type SitePluginPluginOptions {
     short_name: String
     start_url: String
     theme_color: String
+    typeName: String
 }
 
 type SiteSiteMetadata {
@@ -709,9 +771,11 @@ type SiteSiteMetadata {
     footerLinks: [SiteSiteMetadataFooterLinks]
     keywords: [String]
     lang: String
+    license: String
     navigationItems: [SiteSiteMetadataNavigationItems]
     siteUrl: String
     title: String
+    year: Int
 }
 
 type SiteSiteMetadataFooterLinks {
@@ -787,6 +851,7 @@ enum DirectoryFieldsEnum {
     dir
     ext
     extension
+    fields___slug
     gid
     id
     ino
@@ -915,6 +980,7 @@ enum FileFieldsEnum {
     dir
     ext
     extension
+    fields___slug
     gid
     id
     ino
@@ -1159,6 +1225,111 @@ enum ImageSharpFieldsEnum {
     sizes___tracedSVG
 }
 
+enum JsonDataFieldsEnum {
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    github
+    id
+    identifier
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    logo
+    mainDescription
+    mainImage
+    name
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    shortDescription
+    technicalDescription
+    technologies___data
+    technologies___frontEnd
+    technologies___hosting
+    technologies___other
+    technologies___otherLibraries
+    technologies___server
+    title
+    url
+}
+
 enum MarkdownRemarkFieldsEnum {
     children
     children___children
@@ -1201,9 +1372,9 @@ enum MarkdownRemarkFieldsEnum {
     children___parent___parent___id
     excerpt
     excerptAst
-    fields___slug
     fileAbsolutePath
     frontmatter___title
+    frontmatter___type
     headings
     headings___depth
     headings___value
@@ -1372,11 +1543,13 @@ enum SiteFieldsEnum {
     siteMetadata___footerLinks___name
     siteMetadata___keywords
     siteMetadata___lang
+    siteMetadata___license
     siteMetadata___navigationItems
     siteMetadata___navigationItems___link
     siteMetadata___navigationItems___name
     siteMetadata___siteUrl
     siteMetadata___title
+    siteMetadata___year
 }
 
 enum SitePageFieldsEnum {
@@ -1422,7 +1595,8 @@ enum SitePageFieldsEnum {
     component
     componentChunkName
     componentPath
-    context___slug
+    context___dirRegex
+    context___name
     id
     internalComponentName
     internal___content
@@ -1545,6 +1719,7 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___short_name
     pluginCreator___pluginOptions___start_url
     pluginCreator___pluginOptions___theme_color
+    pluginCreator___pluginOptions___typeName
     pluginCreator___resolve
     pluginCreator___ssrAPIs
     pluginCreator___version
@@ -1670,6 +1845,7 @@ enum SitePluginFieldsEnum {
     pluginOptions___short_name
     pluginOptions___start_url
     pluginOptions___theme_color
+    pluginOptions___typeName
     resolve
     ssrAPIs
     version
@@ -1698,6 +1874,10 @@ input DateQueryOperatorInput {
     nin: [Date]
 }
 
+input DirectoryFieldsFilterInput {
+    slug: StringQueryOperatorInput
+}
+
 input DirectoryFilterInput {
     absolutePath: StringQueryOperatorInput
     accessTime: DateQueryOperatorInput
@@ -1717,6 +1897,7 @@ input DirectoryFilterInput {
     dir: StringQueryOperatorInput
     ext: StringQueryOperatorInput
     extension: StringQueryOperatorInput
+    fields: DirectoryFieldsFilterInput
     gid: IntQueryOperatorInput
     id: StringQueryOperatorInput
     ino: FloatQueryOperatorInput
@@ -1749,6 +1930,10 @@ input DuotoneGradient {
     shadow: String
 }
 
+input FileFieldsFilterInput {
+    slug: StringQueryOperatorInput
+}
+
 input FileFilterInput {
     absolutePath: StringQueryOperatorInput
     accessTime: DateQueryOperatorInput
@@ -1768,6 +1953,7 @@ input FileFilterInput {
     dir: StringQueryOperatorInput
     ext: StringQueryOperatorInput
     extension: StringQueryOperatorInput
+    fields: FileFieldsFilterInput
     gid: IntQueryOperatorInput
     id: StringQueryOperatorInput
     ino: FloatQueryOperatorInput
@@ -1926,6 +2112,38 @@ input JSONQueryOperatorInput {
     regex: JSON
 }
 
+input JsonDataFilterInput {
+    children: NodeFilterListInput
+    github: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    identifier: StringQueryOperatorInput
+    internal: InternalFilterInput
+    logo: StringQueryOperatorInput
+    mainDescription: StringQueryOperatorInput
+    mainImage: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    parent: NodeFilterInput
+    shortDescription: StringQueryOperatorInput
+    technicalDescription: StringQueryOperatorInput
+    technologies: JsonDataTechnologiesFilterInput
+    title: StringQueryOperatorInput
+    url: StringQueryOperatorInput
+}
+
+input JsonDataSortInput {
+    fields: [JsonDataFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
+}
+
+input JsonDataTechnologiesFilterInput {
+    data: StringQueryOperatorInput
+    frontEnd: StringQueryOperatorInput
+    hosting: StringQueryOperatorInput
+    other: StringQueryOperatorInput
+    otherLibraries: StringQueryOperatorInput
+    server: StringQueryOperatorInput
+}
+
 input MarkdownHeadingFilterInput {
     depth: IntQueryOperatorInput
     value: StringQueryOperatorInput
@@ -1935,15 +2153,10 @@ input MarkdownHeadingFilterListInput {
     elemMatch: MarkdownHeadingFilterInput
 }
 
-input MarkdownRemarkFieldsFilterInput {
-    slug: StringQueryOperatorInput
-}
-
 input MarkdownRemarkFilterInput {
     children: NodeFilterListInput
     excerpt: StringQueryOperatorInput
     excerptAst: JSONQueryOperatorInput
-    fields: MarkdownRemarkFieldsFilterInput
     fileAbsolutePath: StringQueryOperatorInput
     frontmatter: MarkdownRemarkFrontmatterFilterInput
     headings: MarkdownHeadingFilterListInput
@@ -1960,6 +2173,7 @@ input MarkdownRemarkFilterInput {
 
 input MarkdownRemarkFrontmatterFilterInput {
     title: StringQueryOperatorInput
+    type: StringQueryOperatorInput
 }
 
 input MarkdownRemarkSortInput {
@@ -2004,7 +2218,8 @@ input SiteFilterInput {
 }
 
 input SitePageContextFilterInput {
-    slug: StringQueryOperatorInput
+    dirRegex: StringQueryOperatorInput
+    name: StringQueryOperatorInput
 }
 
 input SitePageFilterInput {
@@ -2098,6 +2313,7 @@ input SitePluginPluginOptionsFilterInput {
     short_name: StringQueryOperatorInput
     start_url: StringQueryOperatorInput
     theme_color: StringQueryOperatorInput
+    typeName: StringQueryOperatorInput
 }
 
 input SitePluginSortInput {
@@ -2111,9 +2327,11 @@ input SiteSiteMetadataFilterInput {
     footerLinks: SiteSiteMetadataFooterLinksFilterListInput
     keywords: StringQueryOperatorInput
     lang: StringQueryOperatorInput
+    license: StringQueryOperatorInput
     navigationItems: SiteSiteMetadataNavigationItemsFilterListInput
     siteUrl: StringQueryOperatorInput
     title: StringQueryOperatorInput
+    year: IntQueryOperatorInput
 }
 
 input SiteSiteMetadataFooterLinksFilterInput {

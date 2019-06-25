@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Project",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the project."
+        },
+        "title": {
+            "type": "string",
+            "description": "Title of the project."
+        },
+        "shortDescription": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Short description of the project."
+        },
+        "github": {
+            "type": "string",
+            "format": "uri",
+            "description": "Address of the GitHub repo."
+        },
+        "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Address of the web page."
+        },
+        "technologies": {
+            "type": "object",
+            "properties": {
+                "server": {
+                    "type": "array",
+                    "contains": {
+                        "enum": ["Node.js", "Express"]
+                    },
+                    "minItems": 1,
+                    "description": "List of server technologies used for the project."
+                },
+                "data": {
+                    "type": "array",
+                    "contains": {
+                        "enum": ["AWS S3"]
+                    },
+                    "minItems": 1,
+                    "description": "List of data related technologies used for the project."
+                },
+                "hosting": {
+                    "type": "array",
+                    "contains": {
+                        "enum": ["Heroku"]
+                    },
+                    "minItems": 1,
+                    "description": "List of hosting technologies used for the project."
+                },
+                "frontEnd": {
+                    "type": "array",
+                    "contains": {
+                        "enum": ["Vanilla JS"]
+                    },
+                    "minItems": 1,
+                    "description": "List of front-end technologies used for the project."
+                },
+                "other": {
+                    "type": "array",
+                    "contains": {
+                        "enum": ["PptxGenJS"]
+                    },
+                    "minItems": 1,
+                    "description": "List of other important technologies used for the project."
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "name",
+        "title",
+        "shortDescription",
+        "technologies"
+    ],
+    "additionalProperties": false
+}

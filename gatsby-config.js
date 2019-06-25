@@ -57,7 +57,7 @@ module.exports = {
                 name: "Oliver Sieweke",
                 short_name: "OS",                   /* eslint-disable-line camelcase */
                 description: "Personal website including programming notes and projects.",
-                categories: ["books", "education", "programming"],
+                categories: ["programming", "education", "books"],
                 start_url: "/",                     /* eslint-disable-line camelcase */
                 lang: "en",
                 background_color: "#FFFFFF",        /* eslint-disable-line camelcase */
@@ -83,13 +83,49 @@ module.exports = {
                 path: `${__dirname}/src/images/footer-links`,
             },
         },
+        // Common Project Icons
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "commonProjectIcons",
+                path: `${__dirname}/src/images/projects/common-icons`,
+            },
+        },
+        // Technology Icons
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "projectTechnologyIcons",
+                path: `${__dirname}/src/images/projects/technology-icons`,
+            },
+        },
+        // Project Images
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "projectImages",
+                path: `${__dirname}/src/images/projects`,
+            },
+        },
         // JavaScript Notes
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                name: "javascript",
-                path: `${__dirname}/content/javascript`,
+                name: "JavaScriptNote",
+                path: `${__dirname}/content/javascript/`,
             },
+        },
+        // Projects:
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "Project",
+                path: `${__dirname}/content/projects`,
+            },
+        },
+        {
+            resolve: "gatsby-transformer-json",
+            options: { typeName: "JsonData" },
         },
         // Markdown Files:
         "gatsby-transformer-remark",
