@@ -1,5 +1,7 @@
 import React                       from "react";
 import { graphql, useStaticQuery } from "gatsby";
+
+import { GlobalSEO }               from "./global-seo.js";
 import Header                      from "./header.js";
 import Footer                      from "./footer.js";
 
@@ -32,6 +34,7 @@ const Layout = ({ children }) => {
     // noinspection JSUnresolvedVariable
     return (
         <React.Fragment>
+            <GlobalSEO />
             <Header {...{ navigationItems }} />
             <main>{children}</main>
             <Footer {...{ footerLinks, footerLinkImages: footerLinkImages.edges.map(({ node }) => node) }} />
