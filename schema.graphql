@@ -459,21 +459,22 @@ type Internal {
 }
 
 type JsonData implements Node {
+    applicationCategory: String
     children: [Node!]!
     github: String
     id: ID!
-    identifier: String
     internal: Internal!
-    logo: String
-    mainDescription: String
-    mainImage: String
+    keywords: [String]
+    lang: String
+    license: String
     name: String
     parent: Node
+    schemaType: String
     shortDescription: String
-    technicalDescription: String
     technologies: JsonDataTechnologies
     title: String
     url: String
+    year: Int
 }
 
 type JsonDataConnection {
@@ -505,7 +506,6 @@ type JsonDataTechnologies {
     frontEnd: [String]
     hosting: [String]
     other: [String]
-    otherLibraries: [String]
     server: [String]
 }
 
@@ -549,7 +549,6 @@ type MarkdownRemarkEdge {
 
 type MarkdownRemarkFrontmatter {
     title: String
-    type: String
 }
 
 type MarkdownRemarkGroupConnection {
@@ -582,7 +581,7 @@ type Query {
     directory(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, fields: DirectoryFieldsFilterInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): Directory
     file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, fields: FileFieldsFilterInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
     imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput, resolutions: ImageSharpResolutionsFilterInput, sizes: ImageSharpSizesFilterInput): ImageSharp
-    jsonData(children: NodeFilterListInput, github: StringQueryOperatorInput, id: StringQueryOperatorInput, identifier: StringQueryOperatorInput, internal: InternalFilterInput, logo: StringQueryOperatorInput, mainDescription: StringQueryOperatorInput, mainImage: StringQueryOperatorInput, name: StringQueryOperatorInput, parent: NodeFilterInput, shortDescription: StringQueryOperatorInput, technicalDescription: StringQueryOperatorInput, technologies: JsonDataTechnologiesFilterInput, title: StringQueryOperatorInput, url: StringQueryOperatorInput): JsonData
+    jsonData(applicationCategory: StringQueryOperatorInput, children: NodeFilterListInput, github: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, keywords: StringQueryOperatorInput, lang: StringQueryOperatorInput, license: StringQueryOperatorInput, name: StringQueryOperatorInput, parent: NodeFilterInput, schemaType: StringQueryOperatorInput, shortDescription: StringQueryOperatorInput, technologies: JsonDataTechnologiesFilterInput, title: StringQueryOperatorInput, url: StringQueryOperatorInput, year: IntQueryOperatorInput): JsonData
     markdownRemark(children: NodeFilterListInput, excerpt: StringQueryOperatorInput, excerptAst: JSONQueryOperatorInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MarkdownRemarkFrontmatterFilterInput, headings: MarkdownHeadingFilterListInput, html: StringQueryOperatorInput, htmlAst: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, rawMarkdownBody: StringQueryOperatorInput, tableOfContents: StringQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: wordCountFilterInput): MarkdownRemark
     site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
     sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, context: SitePageContextFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
@@ -767,6 +766,26 @@ type SitePluginPluginOptions {
 
 type SiteSiteMetadata {
     author: String
+    copyrightYear(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    creationYear(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
     description: String
     footerLinks: [SiteSiteMetadataFooterLinks]
     keywords: [String]
@@ -775,7 +794,6 @@ type SiteSiteMetadata {
     navigationItems: [SiteSiteMetadataNavigationItems]
     siteUrl: String
     title: String
-    year: Int
 }
 
 type SiteSiteMetadataFooterLinks {
@@ -1226,6 +1244,7 @@ enum ImageSharpFieldsEnum {
 }
 
 enum JsonDataFieldsEnum {
+    applicationCategory
     children
     children___children
     children___children___children
@@ -1267,7 +1286,6 @@ enum JsonDataFieldsEnum {
     children___parent___parent___id
     github
     id
-    identifier
     internal___content
     internal___contentDigest
     internal___description
@@ -1276,9 +1294,9 @@ enum JsonDataFieldsEnum {
     internal___mediaType
     internal___owner
     internal___type
-    logo
-    mainDescription
-    mainImage
+    keywords
+    lang
+    license
     name
     parent___children
     parent___children___children
@@ -1318,16 +1336,16 @@ enum JsonDataFieldsEnum {
     parent___parent___internal___type
     parent___parent___parent___children
     parent___parent___parent___id
+    schemaType
     shortDescription
-    technicalDescription
     technologies___data
     technologies___frontEnd
     technologies___hosting
     technologies___other
-    technologies___otherLibraries
     technologies___server
     title
     url
+    year
 }
 
 enum MarkdownRemarkFieldsEnum {
@@ -1374,7 +1392,6 @@ enum MarkdownRemarkFieldsEnum {
     excerptAst
     fileAbsolutePath
     frontmatter___title
-    frontmatter___type
     headings
     headings___depth
     headings___value
@@ -1537,6 +1554,8 @@ enum SiteFieldsEnum {
     polyfill
     port
     siteMetadata___author
+    siteMetadata___copyrightYear
+    siteMetadata___creationYear
     siteMetadata___description
     siteMetadata___footerLinks
     siteMetadata___footerLinks___link
@@ -1549,7 +1568,6 @@ enum SiteFieldsEnum {
     siteMetadata___navigationItems___name
     siteMetadata___siteUrl
     siteMetadata___title
-    siteMetadata___year
 }
 
 enum SitePageFieldsEnum {
@@ -2113,21 +2131,22 @@ input JSONQueryOperatorInput {
 }
 
 input JsonDataFilterInput {
+    applicationCategory: StringQueryOperatorInput
     children: NodeFilterListInput
     github: StringQueryOperatorInput
     id: StringQueryOperatorInput
-    identifier: StringQueryOperatorInput
     internal: InternalFilterInput
-    logo: StringQueryOperatorInput
-    mainDescription: StringQueryOperatorInput
-    mainImage: StringQueryOperatorInput
+    keywords: StringQueryOperatorInput
+    lang: StringQueryOperatorInput
+    license: StringQueryOperatorInput
     name: StringQueryOperatorInput
     parent: NodeFilterInput
+    schemaType: StringQueryOperatorInput
     shortDescription: StringQueryOperatorInput
-    technicalDescription: StringQueryOperatorInput
     technologies: JsonDataTechnologiesFilterInput
     title: StringQueryOperatorInput
     url: StringQueryOperatorInput
+    year: IntQueryOperatorInput
 }
 
 input JsonDataSortInput {
@@ -2140,7 +2159,6 @@ input JsonDataTechnologiesFilterInput {
     frontEnd: StringQueryOperatorInput
     hosting: StringQueryOperatorInput
     other: StringQueryOperatorInput
-    otherLibraries: StringQueryOperatorInput
     server: StringQueryOperatorInput
 }
 
@@ -2173,7 +2191,6 @@ input MarkdownRemarkFilterInput {
 
 input MarkdownRemarkFrontmatterFilterInput {
     title: StringQueryOperatorInput
-    type: StringQueryOperatorInput
 }
 
 input MarkdownRemarkSortInput {
@@ -2323,6 +2340,8 @@ input SitePluginSortInput {
 
 input SiteSiteMetadataFilterInput {
     author: StringQueryOperatorInput
+    copyrightYear: DateQueryOperatorInput
+    creationYear: DateQueryOperatorInput
     description: StringQueryOperatorInput
     footerLinks: SiteSiteMetadataFooterLinksFilterListInput
     keywords: StringQueryOperatorInput
@@ -2331,7 +2350,6 @@ input SiteSiteMetadataFilterInput {
     navigationItems: SiteSiteMetadataNavigationItemsFilterListInput
     siteUrl: StringQueryOperatorInput
     title: StringQueryOperatorInput
-    year: IntQueryOperatorInput
 }
 
 input SiteSiteMetadataFooterLinksFilterInput {

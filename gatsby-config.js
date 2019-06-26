@@ -3,13 +3,14 @@
 module.exports = {
     siteMetadata: {
         title: "Oliver Sieweke - Personal Website",
-        description: "The personal website of Oliver Sieweke. Includes programming notes and projects.",
-        siteUrl: "https://www.oliversieweke.com",
         author: "Oliver Sieweke",
+        siteUrl: "https://www.oliversieweke.com",
+        description: "The personal website of Oliver Sieweke. Includes programming notes and projects.",
         lang: "en",
-        year: 2019,
-        license: "https://creativecommons.org/licenses/by-nc/4.0/",
+        creationYear: "2019",
         keywords: ["Oliver Sieweke", "JavaScript", "Programming", "Developer", "Web", "Projects"],
+        license: "https://creativecommons.org/licenses/by-nc/4.0/",
+        copyrightYear: new Date().getFullYear() === 2019 ? "2019" : `2019 - ${new Date().getFullYear()}`,
         navigationItems: [
             {
                 name: "About",

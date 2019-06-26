@@ -14,7 +14,6 @@ function SEO({ title = "", type = "WebSite", description, url, meta = [], keywor
                     lang
                     siteUrl
                     keywords
-                    year
                     license
                 }
             }

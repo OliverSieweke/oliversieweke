@@ -11,6 +11,20 @@
             "type": "string",
             "description": "Title of the project."
         },
+        "schemaType": {
+            "type": "string",
+            "enum": ["SoftwareApplication", "WebSite"],
+            "description": "Schema.org type."
+        },
+        "year": {
+            "type": "number",
+            "minimum": 2018,
+            "description": "Creation year."
+        },
+        "lang": {
+            "type": "string",
+            "description": "Language of the project."
+        },
         "shortDescription": {
             "type": "string",
             "maxLength": 100,
@@ -71,13 +85,36 @@
                 }
             },
             "additionalProperties": false
+        },
+        "license": {
+            "type": "string",
+            "format": "uri",
+            "description": "Link to the license."
+        },
+        "applicationCategory": {
+            "type": "string",
+            "description": "Schema.org application category."
+        },
+        "keywords": {
+            "type": "array",
+            "contains": {
+                "type": "string"
+            },
+            "minItems": 2,
+            "description": "Keywords for SEO."
         }
     },
     "required": [
         "name",
         "title",
+        "schemaType",
+        "year",
+        "lang",
         "shortDescription",
-        "technologies"
+        "technologies",
+        "license",
+        "applicationCategory",
+        "keywords"
     ],
     "additionalProperties": false
 }

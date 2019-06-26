@@ -1,6 +1,9 @@
 {
     "name": "Dragoon",
     "title": "Subtitle Builder",
+    "schemaType": "SoftwareApplication",
+    "year": 2019,
+    "lang": "en",
     "shortDescription": "A program I wrote for my theater friends to automatise their subtitle powerpoint creation.",
     "url": "https://www.dragoon.eu/",
     "github": "https://www.github.com/OliverSieweke/dragoon",
@@ -20,5 +23,8 @@
         "other": [
             "PptxGenJS"
         ]
-    }
+    },
+    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+    "applicationCategory": "Productivity",
+    "keywords": ["Subtitles", "PowerPoint"]
 }

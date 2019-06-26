@@ -1,6 +1,6 @@
 Dragoon is a program I wrote for my [theater friends](https://theaterimnu.de/) to automatise their subtitle creation. They are performing french plays in Berlin and were spending an incredible time tediously copy-pasting and formatting translations into a powerpoint files.
 
-Dragoon is a configurable subtitle builder that does it all in a matter of seconds. You can check it out and upload your files to be transformed [here](http://www.dragoon.eu/). 
+Dragoon is a configurable subtitle builder that does it all in a matter of seconds. You can check it out and upload your files to be transformed. 
 
 It can even take several translations and synchronize them.
 
