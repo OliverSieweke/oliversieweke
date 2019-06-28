@@ -1,11 +1,33 @@
 import React from "react";
 
-function Projects() {
+import { PageSEO }        from "../components/seo/page-seo.js";
+import { ProjectsSchema } from "../components/seo/schema-org/projects.js";
+import { ProjectTile }    from "../components/projects/project-tile.js";
+
+import { useProjectsData } from "../utils/static-queries/use-projects-data.js";
+import { projectsOrder }   from "../utils/projects/projects-order.js";
+
+// ================================================================================================================== \\
+
+function Projects({ location }) {
+// DATA ----------------------------------------------------------------------------------------------------------------
+    const projects = useProjectsData().map(project => ({
+        ...project,
+        path: `${location.pathname}/${project.identifier}`,
+    }));
+
+
+// RENDER --------------------------------------------------------------------------------------------------------------
     return (
         <React.Fragment>
+            <PageSEO pageMetadata={{ projects }} Schema={ProjectsSchema} location={location} />
             <h1>Projects</h1>
-            <p>Under construction...</p>
-        </React.Fragment>);
+            {projects.length ? projects
+                .sort(projectsOrder)
+                .map(project => <ProjectTile key={project.identifier} {...project} />)
+                             : <p>Sorry, I don&apos;t have any projects to share at the moment.</p>}
+        </React.Fragment>
+    );
 }
 
 export default Projects;

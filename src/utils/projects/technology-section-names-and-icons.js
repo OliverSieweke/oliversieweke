@@ -1,3 +1,11 @@
+export const TECHNOLOGY_SECTION_FIELD_TO_NAME_MAP = new Map([
+    ["server", "Server"],
+    ["data", "Data"],
+    ["hosting", "Hosting"],
+    ["frontEnd", "Front-End"],
+    ["other", "Other Libraries"],
+]);
+
 export const TECHNOLOGY_NAME_TO_URL_AND_ICON_MAP = new Map([
     [
         "Node.js",

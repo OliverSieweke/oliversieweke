@@ -3,42 +3,43 @@
     "title": "Project",
     "type": "object",
     "properties": {
+        "identifier": {
+            "type": "string",
+            "description": "Identifier of the project, corresponding to its directory name."
+        },
         "name": {
             "type": "string",
             "description": "Name of the project."
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "SoftwareApplication",
+                "WebSite",
+                "WebApplication"
+            ],
+            "description": "Schema.org type."
+        },
+        "applicationCategory": {
+            "type": "string",
+            "description": "Schema.org application category."
         },
         "title": {
             "type": "string",
             "description": "Title of the project."
         },
-        "schemaType": {
+        "subtitle": {
             "type": "string",
-            "enum": ["SoftwareApplication", "WebSite"],
-            "description": "Schema.org type."
+            "description": "Subtitle of the project."
         },
-        "year": {
-            "type": "number",
-            "minimum": 2018,
-            "description": "Creation year."
-        },
-        "lang": {
+        "headline": {
             "type": "string",
-            "description": "Language of the project."
+            "description": "Headline of the project."
         },
-        "shortDescription": {
+        "description": {
             "type": "string",
             "maxLength": 100,
-            "description": "Short description of the project."
-        },
-        "github": {
-            "type": "string",
-            "format": "uri",
-            "description": "Address of the GitHub repo."
-        },
-        "url": {
-            "type": "string",
-            "format": "uri",
-            "description": "Address of the web page."
+            "description": "Short description of the project (max 100 characters)."
         },
         "technologies": {
             "type": "object",
@@ -46,7 +47,10 @@
                 "server": {
                     "type": "array",
                     "contains": {
-                        "enum": ["Node.js", "Express"]
+                        "enum": [
+                            "Node.js",
+                            "Express"
+                        ]
                     },
                     "minItems": 1,
                     "description": "List of server technologies used for the project."
@@ -54,7 +58,9 @@
                 "data": {
                     "type": "array",
                     "contains": {
-                        "enum": ["AWS S3"]
+                        "enum": [
+                            "AWS S3"
+                        ]
                     },
                     "minItems": 1,
                     "description": "List of data related technologies used for the project."
@@ -62,7 +68,9 @@
                 "hosting": {
                     "type": "array",
                     "contains": {
-                        "enum": ["Heroku"]
+                        "enum": [
+                            "Heroku"
+                        ]
                     },
                     "minItems": 1,
                     "description": "List of hosting technologies used for the project."
@@ -70,7 +78,9 @@
                 "frontEnd": {
                     "type": "array",
                     "contains": {
-                        "enum": ["Vanilla JS"]
+                        "enum": [
+                            "Vanilla JS"
+                        ]
                     },
                     "minItems": 1,
                     "description": "List of front-end technologies used for the project."
@@ -78,7 +88,9 @@
                 "other": {
                     "type": "array",
                     "contains": {
-                        "enum": ["PptxGenJS"]
+                        "enum": [
+                            "PptxGenJS"
+                        ]
                     },
                     "minItems": 1,
                     "description": "List of other important technologies used for the project."
@@ -86,14 +98,19 @@
             },
             "additionalProperties": false
         },
-        "license": {
+        "inLanguage": {
+            "type": "string",
+            "description": "Language of the project."
+        },
+        "url": {
             "type": "string",
             "format": "uri",
-            "description": "Link to the license."
+            "description": "Address of the web page."
         },
-        "applicationCategory": {
+        "github": {
             "type": "string",
-            "description": "Schema.org application category."
+            "format": "uri",
+            "description": "Address of the GitHub repo."
         },
         "keywords": {
             "type": "array",
@@ -102,19 +119,32 @@
             },
             "minItems": 2,
             "description": "Keywords for SEO."
+        },
+        "dateCreated": {
+            "type": "number",
+            "minimum": 2018,
+            "description": "Creation year."
+        },
+        "license": {
+            "type": "string",
+            "format": "uri",
+            "description": "Link to the license."
         }
     },
     "required": [
+        "identifier",
         "name",
-        "title",
-        "schemaType",
-        "year",
-        "lang",
-        "shortDescription",
-        "technologies",
-        "license",
+        "type",
         "applicationCategory",
-        "keywords"
+        "title",
+        "subtitle",
+        "headline",
+        "description",
+        "technologies",
+        "inLanguage",
+        "keywords",
+        "dateCreated",
+        "license"
     ],
     "additionalProperties": false
 }

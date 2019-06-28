@@ -1,44 +1,43 @@
 import React       from "react";
 import { graphql } from "gatsby";
 
-import { ProjectSchema }       from "../components/schema-org/project.js";
-import { PageSEO }             from "../components/page-seo.js";
-import { ProjectHeader }       from "../components/project-header.js";
+import { PageSEO }             from "../components/seo/page-seo.js";
+import { ProjectSchema }       from "../components/seo/schema-org/project.js";
+import { ProjectHeader }       from "../components/projects/project-header.js";
 import { Markdown }            from "../components/markdown.js";
-import { ProjectTechnologies } from "../components/project-technologies.js";
+import { ProjectTechnologies } from "../components/projects/project-technologies.js";
 
 // ===================================================================================================================\\
 
-// RENDER --------------------------------------------------------------------------------------------------------------
-// noinspection JSUnresolvedVariable
-export const Project = ({ data, location }) => { /* eslint-disable-line no-shadow */
-    const { logo, projectHeader, projectTechnologies, mainDescription, technicalDescription, projectMetadata } = data;
-    const { edges: [{ node: { childJsonData: metadata } }] } = projectMetadata;
-    // noinspection JSUnresolvedVariable
-    const pageMetadata = {
-        title: `${metadata.name} | ${metadata.title}`,
-        url: location.href,
-        description: metadata.shortDescription,
-        keywords: metadata.keywords,
-    };
-    const pageSchema = new ProjectSchema(metadata);
+export const Project = ({ data, location }) => {
+// DATA ----------------------------------------------------------------------------------------------------------------
+    const { logo, projectInfo, mainDescription, technicalDescription } = data;
+    const { edges: [{ node: { publicURL: logoURL } }] } = logo;
+    const { edges: [{ node: { childJsonData: projectInfoJson } }] } = projectInfo;
+    const { technologies } = projectInfoJson;
+    const projectMetadata = { ...projectInfoJson, logoURL };
+    const { edges: [{ node: { childMarkdownRemark: mainDescriptionMarkdown } }] } = mainDescription;
+    const { edges: [{ node: { childMarkdownRemark: technicalDescriptionMarkdown } }] } = technicalDescription;
 
-    // noinspection JSUnresolvedVariable
+// RENDER --------------------------------------------------------------------------------------------------------------
     return (
         <React.Fragment>
-            <PageSEO {...{ pageMetadata, pageSchema }} />
-            <ProjectHeader {...{ logo, projectHeader }} />
+            <PageSEO pageMetadata={projectMetadata}
+                     Schema={ProjectSchema}
+                     location={location}
+            />
+            <ProjectHeader {...projectMetadata} />
 
             <section>
                 <h3>Main Description</h3>
-                <Markdown edges={mainDescription.edges} />
+                <Markdown markdown={mainDescriptionMarkdown} />
             </section>
             <section>
                 <h3>Technical Description</h3>
-                <Markdown edges={technicalDescription.edges} />
+                <Markdown markdown={technicalDescriptionMarkdown} />
             </section>
 
-            <ProjectTechnologies {...projectTechnologies} />
+            <ProjectTechnologies technologies={technologies} />
         </React.Fragment>
     );
 };
@@ -52,39 +51,14 @@ export const query = graphql`
         logo: allFile(filter: {name: {eq: "logo"}, sourceInstanceName: {eq: "Project"}, dir: {regex: $dirRegex}}) {
             ...projectLogoFragment
         }
-        projectHeader: allFile(filter: {name: {eq: "project-info"}, sourceInstanceName: {eq: "Project"}, dir: {regex: $dirRegex}}) {
-            ...projectHeaderFragment
-        }
-        projectTechnologies: allFile(filter: {name: {eq: "project-info"}, sourceInstanceName: {eq: "Project"}, dir: {regex: $dirRegex}}) {
-            ...projectTechnologiesFragment
+        projectInfo: allFile(filter: {name: {eq: "project-info"}, dir: {regex: $dirRegex}, sourceInstanceName: {eq: "Project"}}) {
+            ...projectDataFragment
         }
         mainDescription: allFile(filter: {name: {eq: "main-description"}, sourceInstanceName: {eq: "Project"}, dir: {regex: $dirRegex}}) {
             ...markdownHtmlFragment
         }
         technicalDescription: allFile(filter: {name: {eq: "technical-description"}, sourceInstanceName: {eq: "Project"}, dir: {regex: $dirRegex} }) {
             ...markdownHtmlFragment
-        }
-        projectMetadata: allFile(filter: {name: {eq: "project-info"}, sourceInstanceName: {eq: "Project"}, dir: {regex: $dirRegex}}) {
-            ...projectMetadataFragment
-        }
-    }
-
-    fragment projectMetadataFragment on FileConnection {
-        edges {
-            node {
-                childJsonData {
-                    name
-                    title
-                    schemaType
-                    year
-                    lang
-                    shortDescription
-                    url
-                    license
-                    applicationCategory
-                    keywords
-                }
-            }
         }
     }
 `;

@@ -2,12 +2,14 @@
 
 module.exports = {
     siteMetadata: {
-        title: "Oliver Sieweke - Personal Website",
+        name: "Oliver Sieweke's Personal Website",
+        title: "Oliver Sieweke | Personal Website",
         author: "Oliver Sieweke",
         siteUrl: "https://www.oliversieweke.com",
         description: "The personal website of Oliver Sieweke. Includes programming notes and projects.",
-        lang: "en",
-        creationYear: "2019",
+        inLanguage: "en",
+        dateCreated: "2019",
+        datePublished: "2019",
         keywords: ["Oliver Sieweke", "JavaScript", "Programming", "Developer", "Web", "Projects"],
         license: "https://creativecommons.org/licenses/by-nc/4.0/",
         copyrightYear: new Date().getFullYear() === 2019 ? "2019" : `2019 - ${new Date().getFullYear()}`,
@@ -18,19 +20,23 @@ module.exports = {
             },
             {
                 name: "JavaScript",
-                link: "/javascript",
+                link: "/javascript/",
             },
             {
-                name: "Projects",
-                link: "/projects",
+                name: "Oliver Sieweke's Projects",
+                title: "Projects | Oliver Sieweke",
+                link: "/projects/",
+                linkText: "Projects",
+                description: "This page lists all of Oliver Sieweke's personal projects.",
+                keywords: ["Projects", "Applications"],
             },
             {
                 name: "Reading",
-                link: "/reading",
+                link: "/reading/",
             },
             {
                 name: "Contact",
-                link: "/contact",
+                link: "/contact/",
             },
         ],
         footerLinks: [
@@ -80,7 +86,7 @@ module.exports = {
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                name: "footerLinkImages",
+                name: "footerLinkIcons",
                 path: `${__dirname}/src/images/footer-links`,
             },
         },
@@ -96,7 +102,7 @@ module.exports = {
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                name: "projectTechnologyIcons",
+                name: "technologyIcons",
                 path: `${__dirname}/src/images/projects/technology-icons`,
             },
         },
