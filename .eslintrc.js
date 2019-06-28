@@ -208,7 +208,7 @@ module.exports = {
                 ObjectExpression: "first",
                 ImportDeclaration: "first",
                 flatTernaryExpressions: true,                                   // Better handled by Webstorm
-                ignoredNodes: ["ConditionalExpression"],                        // Better handled by Webstorm
+                ignoredNodes: ["ConditionalExpression", "JSXElement *"],        // ConditionalExpression better handled by Webstorm, JSXElement better handled by react plugin
                 ignoreComments: true,
             },
         ],
@@ -328,8 +328,8 @@ module.exports = {
                 overrides: {
                     "&&": "after",
                     "||": "after",
-                    "?": "none",
-                    ":": "after",
+                    "?": "off",
+                    ":": "off",
                 },
             },
         ],
@@ -861,8 +861,9 @@ module.exports = {
                 hoist: "all",
                 allow: [
                     "err",
+                    "location", // Using the react router shadow.
                     "name",     // Browser global sometimes used as target for hyperlinks.
-                    "Image",    // Browser global equivalent to document.createElement('img')
+                    "Image",    // Browser global equivalent to document.createElement('img').
                 ],
             },
         ],
@@ -1120,6 +1121,10 @@ module.exports = {
         "jsdoc/valid-types": "off",
 // ============================================================================================== \\
 // ======================================== React Rules ========================================= \\
+        "react/jsx-indent-props": [
+            "warn",
+            "first"
+        ],
         "react/prop-types": "off",
     },
     settings: {
