@@ -1,0 +1,26 @@
+{
+    "identifier": "octopus",
+    "name": "Octopus",
+    "type": "SoftwareApplication",
+    "applicationCategory": "Finance",
+    "title": "Octopus | Crypto-trading Bot",
+    "subtitle": "Crypto-trading Bot",
+    "headline": "Octopus | Crypto-trading Bot",
+    "description": "My own trading bot.",
+    "technologies": {
+        "server": [
+            "Node.js"
+        ],
+        "hosting": [
+            "Heroku"
+        ]
+    },
+    "inLanguage": "en",
+    "keywords": [
+        "Cryptocurrency",
+        "Trading",
+        "Bot"
+    ],
+    "dateCreated": 2019,
+    "license": "https://opensource.org/licenses/MIT"
+}
