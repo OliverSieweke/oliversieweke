@@ -30,5 +30,4 @@ export const useFooterLinks = () => {
             iconURL: icon.node.publicURL,
         };
     });
-
 };

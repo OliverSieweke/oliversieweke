@@ -16,7 +16,6 @@ function Projects({ location }) {
         path: `${location.pathname}/${project.identifier}`,
     }));
 
-
 // RENDER --------------------------------------------------------------------------------------------------------------
     return (
         <React.Fragment>

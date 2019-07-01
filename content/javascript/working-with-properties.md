@@ -1,5 +1,11 @@
 ---
-title: "Working With Properties"
+name: "Working With Properties"
+title: "JavaScript | Working"
+description: "Working desctiption"
+dateCreated: "2019"
+datePublished: "2019"
+dateModified: "2019"
+keywords: ["test","JS"]
 ---
 
 An object is a collection of properties. Properties are identified by their distinct keys, which can be strings (including the empty string) or symbols. 

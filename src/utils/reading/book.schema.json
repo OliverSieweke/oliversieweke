@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Book",
+    "type": "object",
+    "properties": {
+        "identifier": {
+            "type": "string",
+            "description": "Identifier of the book, corresponding to its file-name."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the book."
+        },
+        "subtitle": {
+            "type": "string",
+            "description": "Subtitle of the book."
+        },
+        "author": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the author."
+                },
+                "sameAs": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to the author's page."
+                }
+            },
+            "required": [
+                "name",
+                "sameAs"
+            ],
+            "additionalProperties": false
+        },
+        "datePublished": {
+            "type": "string",
+            "pattern": "\\d{4}",
+            "description": "Publication date of the book."
+        },
+        "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the book (probably an amazon link)."
+        },
+        "isbn": {
+            "type": "string",
+            "description": "ISBN-13 of the book."
+        },
+        "yearRead": {
+            "type": "string",
+            "pattern": "\\d{4}",
+            "description": "Year the book was read."
+        },
+        "review": {
+            "type": "string",
+            "maxLength": 300,
+            "description": "Review of the book."
+        },
+        "reviewDateCreated": {
+            "type": "string",
+            "pattern": "\\d{4}",
+            "description": "Year the book was read."
+        },
+        "reviewDatePublished": {
+            "type": "string",
+            "pattern": "\\d{4}",
+            "description": "Year the review was published."
+        }
+    },
+    "required": [
+        "identifier",
+        "name",
+        "author",
+        "datePublished",
+        "url",
+        "isbn",
+        "yearRead",
+        "review",
+        "reviewDateCreated",
+        "reviewDatePublished"
+    ],
+    "additionalProperties": false
+}

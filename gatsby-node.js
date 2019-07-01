@@ -18,7 +18,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
                              node.internal.mediaType === "text/markdown";
 
     if (isProject || isJavaScriptNote) {
-        const relativeFilePath = createFilePath({ node, getNode });
+        const relativeFilePath = createFilePath({ node, getNode }).replace(/index\/?$/u, "");
         const basePath = isJavaScriptNote ? "javascript" :
                          isProject ? "projects" :
                          "";
@@ -33,7 +33,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 
 exports.createPages = ({ graphql, actions }) => Promise.all([
-    // createProgrammingNotesPages({ graphql, actions }),
+    createProgrammingNotesPages({ graphql, actions }),
     createProjectPages({ graphql, actions }),
 ]);
 
@@ -43,8 +43,8 @@ function createProgrammingNotesPages({ graphql, actions }) {
     const { createPage } = actions;
 
     return graphql(`
-        query MarkdownSlugs {
-            allMarkdownRemark {
+        query JavaScriptSlugs {
+            allFile(filter: {sourceInstanceName: {eq: "JavaScriptNote"}, dir: {regex: "/content/javascript/?/"}}) {
                 edges {
                     node {
                         fields {
@@ -54,13 +54,11 @@ function createProgrammingNotesPages({ graphql, actions }) {
                 }
             }
         }
-  `).then(({ data: { allMarkdownRemark: { edges } } }) => {
-        // noinspection JSUnresolvedVariable
+  `).then(({ data: { allFile: { edges } } }) => {
         edges.forEach(({ node: { fields: { slug } } }) => {
-            // noinspection JSUnresolvedVariable
             createPage({
                 path: slug,
-                component: path.resolve("./src/templates/programming-notes.js"),
+                component: path.resolve("./src/templates/programming-note.js"),
                 context: { slug },
             });
         });

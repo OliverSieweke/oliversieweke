@@ -121,8 +121,8 @@
             "description": "Keywords for SEO."
         },
         "dateCreated": {
-            "type": "number",
-            "minimum": 2018,
+            "type": "string",
+            "pattern": "\\d{4}",
             "description": "Creation year."
         },
         "license": {

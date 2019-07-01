@@ -19,6 +19,7 @@ export const useSiteMetaData = () => {
                         name
                         title
                         link
+                        linkText
                         description
                         keywords
                     }

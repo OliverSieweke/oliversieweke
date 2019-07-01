@@ -14,9 +14,9 @@ export const Header = () => {
             <h1>Oliver Sieweke</h1>
             <nav>
                 <ul>
-                    {navigationItems.map(({ link, name }) => (
-                        <li key={name}>
-                            <Link to={link}>{name}</Link>
+                    {navigationItems.map(({ link, linkText }) => (
+                        <li key={link}>
+                            <Link to={link}>{linkText}</Link>
                         </li>
                     ))}
                 </ul>

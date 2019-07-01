@@ -8,12 +8,49 @@ export const Markdown = ({ markdown: { html } }) => < div dangerouslySetInnerHTM
 
 // QUERY ---------------------------------------------------------------------------------------------------------------
 export const query = graphql`
-    fragment markdownHtmlFragment on FileConnection {
+    fragment allMarkdownHtmlFragment on FileConnection {
         edges {
             node {
+                identifier: name
+                articleSection: relativeDirectory
+                relativePath
                 childMarkdownRemark {
                     html
+                    frontmatter {
+                        name
+                        title
+                        description
+                        keywords
+                    }
+                    wordCount {
+                        wordCount: words
+                    }
+                    internal {
+                        articleBody: content
+                    }
                 }
+                fields {
+                    slug
+                }
+            }
+        }
+    }
+    
+    fragment markdownHtmlFragment on File {
+        articleSection: relativeDirectory
+        childMarkdownRemark {
+            html
+            frontmatter {
+                name
+                title
+                description
+                keywords
+            }
+            wordCount {
+                wordCount: words
+            }
+            internal {
+                articleBody: content
             }
         }
     }

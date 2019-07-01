@@ -460,8 +460,28 @@ type Internal {
 
 type JsonData implements Node {
     applicationCategory: String
+    author: JsonDataAuthor
     children: [Node!]!
-    dateCreated: Int
+    dateCreated(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    datePublished(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
     description: String
     github: String
     headline: String
@@ -469,15 +489,52 @@ type JsonData implements Node {
     identifier: String
     inLanguage: String
     internal: Internal!
+    isbn: String
     keywords: [String]
     license: String
     name: String
     parent: Node
+    review: String
+    reviewDateCreated(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    reviewDatePublished(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
     subtitle: String
     technologies: JsonDataTechnologies
     title: String
     type: String
     url: String
+    yearRead(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+}
+
+type JsonDataAuthor {
+    name: String
+    sameAs: String
 }
 
 type JsonDataConnection {
@@ -551,6 +608,39 @@ type MarkdownRemarkEdge {
 }
 
 type MarkdownRemarkFrontmatter {
+    dateCreated(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    dateModified(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    datePublished(
+        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
+        difference: String,
+        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
+        formatString: String,
+        #Returns a string generated with Moment.js' `fromNow` function
+        fromNow: Boolean,
+        #Configures the locale Moment.js will use to format the date.
+        locale: String
+    ): Date
+    description: String
+    keywords: [String]
+    name: String
     title: String
 }
 
@@ -584,7 +674,7 @@ type Query {
     directory(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, fields: DirectoryFieldsFilterInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): Directory
     file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, fields: FileFieldsFilterInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
     imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput, resolutions: ImageSharpResolutionsFilterInput, sizes: ImageSharpSizesFilterInput): ImageSharp
-    jsonData(applicationCategory: StringQueryOperatorInput, children: NodeFilterListInput, dateCreated: IntQueryOperatorInput, description: StringQueryOperatorInput, github: StringQueryOperatorInput, headline: StringQueryOperatorInput, id: StringQueryOperatorInput, identifier: StringQueryOperatorInput, inLanguage: StringQueryOperatorInput, internal: InternalFilterInput, keywords: StringQueryOperatorInput, license: StringQueryOperatorInput, name: StringQueryOperatorInput, parent: NodeFilterInput, subtitle: StringQueryOperatorInput, technologies: JsonDataTechnologiesFilterInput, title: StringQueryOperatorInput, type: StringQueryOperatorInput, url: StringQueryOperatorInput): JsonData
+    jsonData(applicationCategory: StringQueryOperatorInput, author: JsonDataAuthorFilterInput, children: NodeFilterListInput, dateCreated: DateQueryOperatorInput, datePublished: DateQueryOperatorInput, description: StringQueryOperatorInput, github: StringQueryOperatorInput, headline: StringQueryOperatorInput, id: StringQueryOperatorInput, identifier: StringQueryOperatorInput, inLanguage: StringQueryOperatorInput, internal: InternalFilterInput, isbn: StringQueryOperatorInput, keywords: StringQueryOperatorInput, license: StringQueryOperatorInput, name: StringQueryOperatorInput, parent: NodeFilterInput, review: StringQueryOperatorInput, reviewDateCreated: DateQueryOperatorInput, reviewDatePublished: DateQueryOperatorInput, subtitle: StringQueryOperatorInput, technologies: JsonDataTechnologiesFilterInput, title: StringQueryOperatorInput, type: StringQueryOperatorInput, url: StringQueryOperatorInput, yearRead: DateQueryOperatorInput): JsonData
     markdownRemark(children: NodeFilterListInput, excerpt: StringQueryOperatorInput, excerptAst: JSONQueryOperatorInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MarkdownRemarkFrontmatterFilterInput, headings: MarkdownHeadingFilterListInput, html: StringQueryOperatorInput, htmlAst: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, rawMarkdownBody: StringQueryOperatorInput, tableOfContents: StringQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: wordCountFilterInput): MarkdownRemark
     site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
     sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, context: SitePageContextFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
@@ -665,6 +755,7 @@ type SitePageConnection {
 type SitePageContext {
     dirRegex: String
     name: String
+    slug: String
 }
 
 type SitePageEdge {
@@ -756,15 +847,35 @@ type SitePluginPluginOptions {
     display: String
     icon: String
     lang: String
+    linkImagesToOriginal: Boolean
     name: String
     orientation: String
     path: String
     pathCheck: Boolean
     pathToConfigModule: String
+    plugins: [SitePluginPluginOptionsPlugins]
+    quality: Int
     short_name: String
     start_url: String
     theme_color: String
+    tracedSVG: Boolean
     typeName: String
+}
+
+type SitePluginPluginOptionsPlugins {
+    browserAPIs: [String]
+    id: String
+    name: String
+    pluginFilepath: String
+    pluginOptions: SitePluginPluginOptionsPluginsPluginOptions
+    resolve: String
+    version: String
+}
+
+type SitePluginPluginOptionsPluginsPluginOptions {
+    linkImagesToOriginal: Boolean
+    quality: Int
+    tracedSVG: Boolean
 }
 
 type SiteSiteMetadata {
@@ -1263,6 +1374,8 @@ enum ImageSharpFieldsEnum {
 
 enum JsonDataFieldsEnum {
     applicationCategory
+    author___name
+    author___sameAs
     children
     children___children
     children___children___children
@@ -1303,6 +1416,7 @@ enum JsonDataFieldsEnum {
     children___parent___parent___children
     children___parent___parent___id
     dateCreated
+    datePublished
     description
     github
     headline
@@ -1317,6 +1431,7 @@ enum JsonDataFieldsEnum {
     internal___mediaType
     internal___owner
     internal___type
+    isbn
     keywords
     license
     name
@@ -1358,6 +1473,9 @@ enum JsonDataFieldsEnum {
     parent___parent___internal___type
     parent___parent___parent___children
     parent___parent___parent___id
+    review
+    reviewDateCreated
+    reviewDatePublished
     subtitle
     technologies___data
     technologies___frontEnd
@@ -1367,6 +1485,7 @@ enum JsonDataFieldsEnum {
     title
     type
     url
+    yearRead
 }
 
 enum MarkdownRemarkFieldsEnum {
@@ -1412,6 +1531,12 @@ enum MarkdownRemarkFieldsEnum {
     excerpt
     excerptAst
     fileAbsolutePath
+    frontmatter___dateCreated
+    frontmatter___dateModified
+    frontmatter___datePublished
+    frontmatter___description
+    frontmatter___keywords
+    frontmatter___name
     frontmatter___title
     headings
     headings___depth
@@ -1642,6 +1767,7 @@ enum SitePageFieldsEnum {
     componentPath
     context___dirRegex
     context___name
+    context___slug
     id
     internalComponentName
     internal___content
@@ -1756,14 +1882,24 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___display
     pluginCreator___pluginOptions___icon
     pluginCreator___pluginOptions___lang
+    pluginCreator___pluginOptions___linkImagesToOriginal
     pluginCreator___pluginOptions___name
     pluginCreator___pluginOptions___orientation
     pluginCreator___pluginOptions___path
     pluginCreator___pluginOptions___pathCheck
     pluginCreator___pluginOptions___pathToConfigModule
+    pluginCreator___pluginOptions___plugins
+    pluginCreator___pluginOptions___plugins___browserAPIs
+    pluginCreator___pluginOptions___plugins___id
+    pluginCreator___pluginOptions___plugins___name
+    pluginCreator___pluginOptions___plugins___pluginFilepath
+    pluginCreator___pluginOptions___plugins___resolve
+    pluginCreator___pluginOptions___plugins___version
+    pluginCreator___pluginOptions___quality
     pluginCreator___pluginOptions___short_name
     pluginCreator___pluginOptions___start_url
     pluginCreator___pluginOptions___theme_color
+    pluginCreator___pluginOptions___tracedSVG
     pluginCreator___pluginOptions___typeName
     pluginCreator___resolve
     pluginCreator___ssrAPIs
@@ -1882,14 +2018,27 @@ enum SitePluginFieldsEnum {
     pluginOptions___display
     pluginOptions___icon
     pluginOptions___lang
+    pluginOptions___linkImagesToOriginal
     pluginOptions___name
     pluginOptions___orientation
     pluginOptions___path
     pluginOptions___pathCheck
     pluginOptions___pathToConfigModule
+    pluginOptions___plugins
+    pluginOptions___plugins___browserAPIs
+    pluginOptions___plugins___id
+    pluginOptions___plugins___name
+    pluginOptions___plugins___pluginFilepath
+    pluginOptions___plugins___pluginOptions___linkImagesToOriginal
+    pluginOptions___plugins___pluginOptions___quality
+    pluginOptions___plugins___pluginOptions___tracedSVG
+    pluginOptions___plugins___resolve
+    pluginOptions___plugins___version
+    pluginOptions___quality
     pluginOptions___short_name
     pluginOptions___start_url
     pluginOptions___theme_color
+    pluginOptions___tracedSVG
     pluginOptions___typeName
     resolve
     ssrAPIs
@@ -2157,10 +2306,17 @@ input JSONQueryOperatorInput {
     regex: JSON
 }
 
+input JsonDataAuthorFilterInput {
+    name: StringQueryOperatorInput
+    sameAs: StringQueryOperatorInput
+}
+
 input JsonDataFilterInput {
     applicationCategory: StringQueryOperatorInput
+    author: JsonDataAuthorFilterInput
     children: NodeFilterListInput
-    dateCreated: IntQueryOperatorInput
+    dateCreated: DateQueryOperatorInput
+    datePublished: DateQueryOperatorInput
     description: StringQueryOperatorInput
     github: StringQueryOperatorInput
     headline: StringQueryOperatorInput
@@ -2168,15 +2324,20 @@ input JsonDataFilterInput {
     identifier: StringQueryOperatorInput
     inLanguage: StringQueryOperatorInput
     internal: InternalFilterInput
+    isbn: StringQueryOperatorInput
     keywords: StringQueryOperatorInput
     license: StringQueryOperatorInput
     name: StringQueryOperatorInput
     parent: NodeFilterInput
+    review: StringQueryOperatorInput
+    reviewDateCreated: DateQueryOperatorInput
+    reviewDatePublished: DateQueryOperatorInput
     subtitle: StringQueryOperatorInput
     technologies: JsonDataTechnologiesFilterInput
     title: StringQueryOperatorInput
     type: StringQueryOperatorInput
     url: StringQueryOperatorInput
+    yearRead: DateQueryOperatorInput
 }
 
 input JsonDataSortInput {
@@ -2220,6 +2381,12 @@ input MarkdownRemarkFilterInput {
 }
 
 input MarkdownRemarkFrontmatterFilterInput {
+    dateCreated: DateQueryOperatorInput
+    dateModified: DateQueryOperatorInput
+    datePublished: DateQueryOperatorInput
+    description: StringQueryOperatorInput
+    keywords: StringQueryOperatorInput
+    name: StringQueryOperatorInput
     title: StringQueryOperatorInput
 }
 
@@ -2267,6 +2434,7 @@ input SiteFilterInput {
 input SitePageContextFilterInput {
     dirRegex: StringQueryOperatorInput
     name: StringQueryOperatorInput
+    slug: StringQueryOperatorInput
 }
 
 input SitePageFilterInput {
@@ -2352,15 +2520,39 @@ input SitePluginPluginOptionsFilterInput {
     display: StringQueryOperatorInput
     icon: StringQueryOperatorInput
     lang: StringQueryOperatorInput
+    linkImagesToOriginal: BooleanQueryOperatorInput
     name: StringQueryOperatorInput
     orientation: StringQueryOperatorInput
     path: StringQueryOperatorInput
     pathCheck: BooleanQueryOperatorInput
     pathToConfigModule: StringQueryOperatorInput
+    plugins: SitePluginPluginOptionsPluginsFilterListInput
+    quality: IntQueryOperatorInput
     short_name: StringQueryOperatorInput
     start_url: StringQueryOperatorInput
     theme_color: StringQueryOperatorInput
+    tracedSVG: BooleanQueryOperatorInput
     typeName: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsPluginsFilterInput {
+    browserAPIs: StringQueryOperatorInput
+    id: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    pluginFilepath: StringQueryOperatorInput
+    pluginOptions: SitePluginPluginOptionsPluginsPluginOptionsFilterInput
+    resolve: StringQueryOperatorInput
+    version: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsPluginsFilterListInput {
+    elemMatch: SitePluginPluginOptionsPluginsFilterInput
+}
+
+input SitePluginPluginOptionsPluginsPluginOptionsFilterInput {
+    linkImagesToOriginal: BooleanQueryOperatorInput
+    quality: IntQueryOperatorInput
+    tracedSVG: BooleanQueryOperatorInput
 }
 
 input SitePluginSortInput {

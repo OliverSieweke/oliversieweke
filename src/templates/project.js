@@ -55,10 +55,10 @@ export const query = graphql`
             ...projectDataFragment
         }
         mainDescription: allFile(filter: {name: {eq: "main-description"}, sourceInstanceName: {eq: "Project"}, dir: {regex: $dirRegex}}) {
-            ...markdownHtmlFragment
+            ...allMarkdownHtmlFragment
         }
         technicalDescription: allFile(filter: {name: {eq: "technical-description"}, sourceInstanceName: {eq: "Project"}, dir: {regex: $dirRegex} }) {
-            ...markdownHtmlFragment
+            ...allMarkdownHtmlFragment
         }
     }
 `;

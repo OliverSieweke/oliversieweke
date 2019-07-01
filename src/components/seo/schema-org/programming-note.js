@@ -1,7 +1,8 @@
 import { OliverSiewekeSchema } from "./oliver-sieweke.js";
 
-export const ProjectSchema = projectMetadata => {
-    const { name, type, applicationCategory, headline, description, inLanguage, url, dateCreated } = projectMetadata;
+export const ProgrammingNoteSchema = projectMetadata => {
+    const { articleSection, name, description, articleBody, wordCount, url, inLanguage } = projectMetadata;
+    const { dateCreated, datePublished, dateModified } = projectMetadata;
     const { keywords, license } = projectMetadata;
 
     const copyrightYear = new Date().getFullYear() === dateCreated ? `${dateCreated}`
@@ -11,19 +12,21 @@ export const ProjectSchema = projectMetadata => {
 
     return {
         "@context": "http://schema.org",
-        "@type": type,
-        applicationCategory,
+        "@type": "TechArticle",
+        ...articleSection ? { articleSection } : {},
         name,
-        headline,
         description,
         author: oliverSiewekeSchema,
-        ...url ? { url } : {},
+        articleBody,
+        wordCount,
+        url,
         inLanguage,
         keywords,
         dateCreated,
+        datePublished,
+        dateModified,
         license,
         copyrightYear,
         copyrightHolder: oliverSiewekeSchema,
-        operatingSystem: "Windows, OS X, Linux",
     };
 };

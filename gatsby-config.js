@@ -15,12 +15,20 @@ module.exports = {
         copyrightYear: new Date().getFullYear() === 2019 ? "2019" : `2019 - ${new Date().getFullYear()}`,
         navigationItems: [
             {
-                name: "About",
+                name: "Oliver Sieweke's Profile",
+                title: "About | Oliver Sieweke",
                 link: "/",
+                linkText: "About",
+                description: "This page gives information about Oliver Sieweke.",
+                keywords: ["Oliver Sieweke", "About", "Profile", "JavaScript", "Programming", "Developer", "Web", "Projects"],
             },
             {
-                name: "JavaScript",
+                name: "Oliver Sieweke's JavaScript Notes",
+                title: "JavaScript | Oliver Sieweke",
                 link: "/javascript/",
+                linkText: "JavaScript",
+                description: "This page contains Oliver Sieweke's JavaScript Notes.",
+                keywords: ["JavaScript", "Notes", "Programming"],
             },
             {
                 name: "Oliver Sieweke's Projects",
@@ -28,15 +36,23 @@ module.exports = {
                 link: "/projects/",
                 linkText: "Projects",
                 description: "This page lists all of Oliver Sieweke's personal projects.",
-                keywords: ["Projects", "Applications"],
+                keywords: ["Oliver Sieweke", "Projects", "Applications"],
             },
             {
-                name: "Reading",
+                name: "Oliver Sieweke's Book Reviews",
+                title: "Reading | Oliver Sieweke",
                 link: "/reading/",
+                linkText: "Reading",
+                description: "This page lists some short book reviews by Oliver Sieweke.",
+                keywords: ["Oliver Sieweke", "Reading", "Books", "Review"],
             },
             {
-                name: "Contact",
+                name: "Oliver Sieweke's Contact Details",
+                title: "Contact | Oliver Sieweke",
                 link: "/contact/",
+                linkText: "Contact",
+                description: "This page gives information for contacting Oliver Sieweke.",
+                keywords: ["Oliver Sieweke", "Contact"],
             },
         ],
         footerLinks: [
@@ -55,8 +71,6 @@ module.exports = {
         ],
     },
     plugins: [
-        "gatsby-transformer-sharp",
-        "gatsby-plugin-sharp",
         // PWA Manifest:
         {
             resolve: "gatsby-plugin-manifest",
@@ -106,6 +120,14 @@ module.exports = {
                 path: `${__dirname}/src/images/projects/technology-icons`,
             },
         },
+        // Book Covers:
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "BookCovers",
+                path: `${__dirname}/src/images/reading/book-covers`,
+            },
+        },
         // Project Images
         {
             resolve: "gatsby-source-filesystem",
@@ -130,12 +152,39 @@ module.exports = {
                 path: `${__dirname}/content/projects`,
             },
         },
+        // Reading:
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "Reading",
+                path: `${__dirname}/content/reading`,
+            },
+        },
         {
             resolve: "gatsby-transformer-json",
             options: { typeName: "JsonData" },
         },
+        // Images:
+
         // Markdown Files:
-        "gatsby-transformer-remark",
+        {
+            resolve: "gatsby-transformer-remark",
+            options: {
+                plugins: [
+                    {
+                        resolve: "gatsby-remark-images",
+                        options: {
+                            quality: 100,
+                            linkImagesToOriginal: false,
+                            tracedSVG: true,
+                        },
+                    },
+                ],
+            },
+        },
+        "gatsby-plugin-sharp",
+
+        "gatsby-plugin-catch-links",
         // Offline Support (needs to come after the web-manifest plugin):
         "gatsby-plugin-offline",
         // SEO:
@@ -143,5 +192,15 @@ module.exports = {
         "gatsby-plugin-sitemap",
         "gatsby-plugin-robots-txt",
         "gatsby-plugin-netlify",
+        // Images:
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "Images",
+                path: `${__dirname}/src/images`,
+            },
+        },
+        "gatsby-plugin-sharp",
+        "gatsby-transformer-sharp",
     ],
 };
