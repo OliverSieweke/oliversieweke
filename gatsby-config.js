@@ -20,7 +20,16 @@ module.exports = {
                 link: "/",
                 linkText: "About",
                 description: "This page gives information about Oliver Sieweke.",
-                keywords: ["Oliver Sieweke", "About", "Profile", "JavaScript", "Programming", "Developer", "Web", "Projects"],
+                keywords: [
+                    "Oliver Sieweke",
+                    "About",
+                    "Profile",
+                    "JavaScript",
+                    "Programming",
+                    "Developer",
+                    "Web",
+                    "Projects",
+                ],
             },
             {
                 name: "Oliver Sieweke's JavaScript Notes",
@@ -71,8 +80,7 @@ module.exports = {
         ],
     },
     plugins: [
-        // Netlify:
-        "gatsby-plugin-netlify",
+// Performance ---------------------------------------------------------------------------------------------------------
         // PWA Manifest:
         {
             resolve: "gatsby-plugin-manifest",
@@ -90,61 +98,45 @@ module.exports = {
                 orientation: "any",
             },
         },
-        // this (optional) plugin enables Progressive Web App + Offline functionality
-        // To learn more, visit: https://gatsby.dev/offline
-        // `gatsby-plugin-offline`,
-        // Typography:
-        {
-            resolve: "gatsby-plugin-typography",
-            options: { pathToConfigModule: "src/utils/typography" },
-        },
-        // Footer Links:
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-                name: "footerLinkIcons",
-                path: `${__dirname}/src/images/footer-links`,
-            },
-        },
-        // Common Project Icons
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-                name: "commonProjectIcons",
-                path: `${__dirname}/src/images/projects/common-icons`,
-            },
-        },
-        // Technology Icons
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-                name: "technologyIcons",
-                path: `${__dirname}/src/images/projects/technology-icons`,
-            },
-        },
-        // Book Covers:
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-                name: "BookCovers",
-                path: `${__dirname}/src/images/reading/book-covers`,
-            },
-        },
-        // Project Images
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-                name: "projectImages",
-                path: `${__dirname}/src/images/projects`,
-            },
-        },
-        // JavaScript Notes
+        // Offline Support:
+        "gatsby-plugin-offline", // NB: this should come after gatsby-plugin-manifest
+        // Netlify Headers:
+        "gatsby-plugin-netlify",
+        // Images:
+        "gatsby-plugin-sharp",
+        "gatsby-transformer-sharp",
+
+// Data ----------------------------------------------------------------------------------------------------------------
+        // JavaScript Notes:
         {
             resolve: "gatsby-source-filesystem",
             options: {
                 name: "JavaScriptNote",
                 path: `${__dirname}/content/javascript/`,
             },
+        },
+        // Markdown Files:
+        {
+            resolve: "gatsby-transformer-remark",
+            options: {
+                plugins: [
+                    {
+                        resolve: "gatsby-remark-images",
+                        options: {
+                            quality: 100,
+                            linkImagesToOriginal: false,
+                            tracedSVG: true,
+                        },
+                    },
+                ],
+            },
+        },
+        "gatsby-plugin-catch-links",
+
+        // JSON Files:
+        {
+            resolve: "gatsby-transformer-json",
+            options: { typeName: "JsonData" },
         },
         // Projects:
         {
@@ -162,39 +154,39 @@ module.exports = {
                 path: `${__dirname}/content/reading`,
             },
         },
+        // Footer Link Icons:
         {
-            resolve: "gatsby-transformer-json",
-            options: { typeName: "JsonData" },
-        },
-        // Images:
-
-        // Markdown Files:
-        {
-            resolve: "gatsby-transformer-remark",
+            resolve: "gatsby-source-filesystem",
             options: {
-                plugins: [
-                    {
-                        resolve: "gatsby-remark-images",
-                        options: {
-                            quality: 100,
-                            linkImagesToOriginal: false,
-                            tracedSVG: true,
-                        },
-                    },
-                ],
+                name: "FooterLinkIcons",
+                path: `${__dirname}/src/images/footer-links`,
             },
         },
-        "gatsby-plugin-sharp",
-
-        "gatsby-plugin-catch-links",
-        // Offline Support (needs to come after the web-manifest plugin):
-        "gatsby-plugin-offline",
-        // SEO:
-        "gatsby-plugin-react-helmet",
-        "gatsby-plugin-sitemap",
-        "gatsby-plugin-robots-txt",
-        "gatsby-plugin-netlify",
-        // Images:
+        // Common Project Icons:
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "CommonProjectIcons",
+                path: `${__dirname}/src/images/projects/common-icons`,
+            },
+        },
+        // Technology Icons:
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "TechnologyIcons",
+                path: `${__dirname}/src/images/projects/technology-icons`,
+            },
+        },
+        // Book Covers:
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "BookCovers",
+                path: `${__dirname}/src/images/reading/book-covers`,
+            },
+        },
+        // Other Images:
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -202,7 +194,17 @@ module.exports = {
                 path: `${__dirname}/src/images`,
             },
         },
-        "gatsby-plugin-sharp",
-        "gatsby-transformer-sharp",
+
+// Style ---------------------------------------------------------------------------------------------------------------
+        // Typography:
+        {
+            resolve: "gatsby-plugin-typography",
+            options: { pathToConfigModule: "src/utils/typography" },
+        },
+
+// SEO -----------------------------------------------------------------------------------------------------------------
+        "gatsby-plugin-sitemap",
+        "gatsby-plugin-robots-txt",
+        "gatsby-plugin-react-helmet",
     ],
 };

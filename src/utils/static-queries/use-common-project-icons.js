@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 export const useCommonProjectIcons = () => {
     const { allFile: { edges: iconEdges } } = useStaticQuery(graphql`
         query CommonProjectIconsQuery {
-            allFile(filter: { sourceInstanceName: { eq: "commonProjectIcons" } }) {
+            allFile(filter: { sourceInstanceName: { eq: "CommonProjectIcons" } }) {
                 edges {
                     node {
                         name

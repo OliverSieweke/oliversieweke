@@ -11,7 +11,7 @@ export const useFooterLinks = () => {
                     }
                 }
             }
-            footerLinkIcons: allFile(filter: { sourceInstanceName: { eq: "footerLinkIcons" } }) {
+            footerLinkIcons: allFile(filter: { sourceInstanceName: { eq: "FooterLinkIcons" } }) {
                 edges {
                     node {
                         name
