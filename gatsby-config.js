@@ -92,7 +92,7 @@ module.exports = {
                 start_url: "/",                     /* eslint-disable-line camelcase */
                 lang: "en",
                 background_color: "#FFFFFF",        /* eslint-disable-line camelcase */
-                theme_color: "#EC7C3F",             /* eslint-disable-line camelcase */
+                theme_color: "#FF6200",             /* eslint-disable-line camelcase */
                 icon: "src/images/favicon.png",
                 display: "minimal-ui",
                 orientation: "any",

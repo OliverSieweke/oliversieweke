@@ -1,5 +1,8 @@
-import React               from "react";
-import { Link }            from "gatsby";
+import React    from "react";
+import { Link } from "gatsby";
+
+import styles from "./header.module.css";
+
 import { useSiteMetaData } from "../../utils/static-queries/use-site-metadata.js";
 
 // ================================================================================================================== \\
@@ -10,13 +13,23 @@ export const Header = () => {
 
 // RENDER --------------------------------------------------------------------------------------------------------------
     return (
-        <header>
-            <h1>Oliver Sieweke</h1>
+        <header className={styles.header}>
+            <h1 className={styles.name}>
+                <Link to="/" className={styles.nameLink}>
+                    <span className={styles.firstName}>Oliver </span>
+                    <span>Sieweke</span>
+                </Link>
+            </h1>
             <nav>
-                <ul>
+                <ul className={styles.navigationList}>
                     {navigationItems.map(({ link, linkText }) => (
-                        <li key={link}>
-                            <Link to={link}>{linkText}</Link>
+                        <li key={link} className={styles.navigationItem}>
+                            <Link to={link}
+                                  className={styles.navigationLink}
+                                  activeClassName={styles.activeLink}
+                            >
+                                {linkText}
+                            </Link>
                         </li>
                     ))}
                 </ul>

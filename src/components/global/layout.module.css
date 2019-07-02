@@ -1,0 +1,24 @@
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.background {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 46rem;
+    background-color: white;
+}
+
+.main {
+    flex-grow: 1;
+}

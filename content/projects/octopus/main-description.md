@@ -1,5 +1,7 @@
 Octopus is a crypto trading bot I created for fun in 2018. It is managing my initial investment of 50€ on Coinbase.
 
+A bot that I created for fun. It is trading on Coinbase and managing my initial investment of 100€
+
 You can check how he is doing [here]().
 
 ## Backstory
