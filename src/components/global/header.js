@@ -27,6 +27,7 @@ export const Header = () => {
                             <Link to={link}
                                   className={styles.navigationLink}
                                   activeClassName={styles.activeLink}
+                                  partiallyActive={link !== "/"}
                             >
                                 {linkText}
                             </Link>

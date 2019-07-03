@@ -1,24 +1,31 @@
+/* HEADER | PAGE ---------------------------------------------------------------------------------------------------- */
 .layout {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    /*height: 100vh;*/
+    display: grid;
+    grid-template-rows: 4rem minmax(auto, calc(100vh - 4rem));
 }
 
-.background {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* TOC | CONTENT ---------------------------------------------------------------------------------------------------- */
 .page {
-    flex-grow: 1;
+    display: grid;
+    grid-template: "toc content" / auto 1fr;
+}
+
+.content-container {
+    grid-area: content;
+    justify-self: stretch;
     display: flex;
-    flex-direction: column;
-    max-width: 46rem;
-    background-color: white;
+    justify-content: center;
+    overflow: scroll;
+}
+.content {
+    width: 44rem;
+    max-width: 100vw;
+}
+.javascript-content {
+    max-width: calc(100vw - 15rem);
 }
 
 .main {
-    flex-grow: 1;
+    padding: 3rem;
 }

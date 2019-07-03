@@ -1,10 +1,11 @@
-import React       from "react";
+import React             from "react";
 import { graphql, Link } from "gatsby";
 
 import { PageSEO }             from "../components/seo/page-seo.js";
 import { OliverSiewekeSchema } from "../components/seo/schema-org/oliver-sieweke.js";
 import { Image }               from "../components/image.js";
 
+import styles from "./index.module.css";
 
 // ===================================================================================================================\\
 
@@ -17,28 +18,41 @@ const IndexPage = ({ data: { profileImage }, location }) => {
 // RENDER --------------------------------------------------------------------------------------------------------------
     return (
         <React.Fragment>
-            <PageSEO Schema={OliverSiewekeSchema} location={location} />
+            <PageSEO Schema={OliverSiewekeSchema} location={location}/>
             <h1>About</h1>
-            <div>
-                <div>
-                    <p>
-                        Hi there! I am a {age} year-old software engineer based in Berlin.
-                    </p>
-                    <p>
-
-                        I have spent most of my life around France and Germany with some important stops in the Anglo Saxon world (UK, New Zealand and Australia)
-                        I started out studying Mathematics and Philosophy. After a misguided turn into Economics I took some thinking time on a New Zealand vineyard and decided I would do a good programmer. Now I am having a great time coding, mostly in JavaScript. Ultimately I would like to end up at a place where I could think deeply about the ways digitalisation is affection our privacy and automation is affecting our and how both are affecting our democracies the ownership of data is affecting our democracies.
-
-                        The main motivation behind this website was to share my [projects](/projects/) and javascript notes. Now that it's there, things might get added.
-
-                        I started out studying Mathematics and Philosophy. After a misguided turn into Economics I took some thinking time on a New Zealand vineyard and decided I would do a good programmer. Now I am having a great time coding, mostly in JavaScript. Ultimately I would like to end up at a place where I could think deeply about the ways digitalisation is affection our privacy and automation is affecting our and how both are affecting our democracies the ownership of data is affecting our democracies.
-                    </p>
-                    <p>
-                        The main motivation behind this website was to share my <Link to="/projects/"/> and javascript notes. Now that it&apos;s there, things might get added. I&apos;ll probably use it to other effects.
-                    </p>
-                </div>
-                <Image image={profileImage} alt="Profile Photo - Oliver Sieweke" />
-            </div>
+            <Image className={styles.profileImage} alt="Profile Photo - Oliver Sieweke" image={profileImage}/>
+            <p>
+                Hi there! I am a {age} year-old Web Developer based in Berlin.
+                I have spent most of my life around France and Germany with some important stops in the Anglo-Saxon world (UK, Australia and New Zealand).
+            </p>
+            <p>
+                I started out studying&nbsp;
+                <a title="Oxford Mathematics and Philosophy"
+                   href="https://www.maths.ox.ac.uk/study-here/undergraduate-study/which-course/mathematics-and-philosophy"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                >Mathematics and Philosophy</a>, which I absolutely loved and which is still having a profound impact on my way of thinking and tackling problems.
+                After a misguided but instructive turn into&nbsp;
+                <a title="Sciences Po EPP"
+                   href="https://www.sciencespo.fr/public/en/content/economics-and-public-policy"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                >Economics</a>, I took some thinking time working on the world&apos;s most beautifully located&nbsp;
+                <a title="Obsidian Wines Vineyard"
+                   href="https://obsidian.co.nz/cellar-door/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                >vineyard</a> and decided I would do a great developer.
+                This was one of my better ideas and I am now having an amazing time coding full-time, mostly in JavaScript.
+            </p>
+            <p>
+                Ultimately, after some more years of programming experience, I would like to end up at a place where I could think deeply about our evolving democracies, in particular about the ways they are impacted by the digitalisation, automation and financialisation of the economy.
+            </p>
+            <p>
+                The main motivation behind this website was to share my <Link to="/projects/">projects</Link> and <Link
+                to="/javascript/">JavaScript notes</Link>. Now that it&apos;s there I might start putting it to other uses. Please roam about and feel free to <Link
+                to="/contact/">contact</Link> me!
+            </p>
         </React.Fragment>
     );
 };

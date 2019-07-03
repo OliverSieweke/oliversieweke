@@ -6,7 +6,7 @@ module.exports = {
         title: "Oliver Sieweke | Personal Website",
         author: "Oliver Sieweke",
         siteUrl: "https://www.oliversieweke.com",
-        description: "The personal website of Oliver Sieweke. Includes programming notes and projects.",
+        description: "Programming notes and projects by Oliver Sieweke.",
         inLanguage: "en",
         dateCreated: "2019",
         datePublished: "2019",

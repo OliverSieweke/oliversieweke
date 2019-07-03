@@ -20,7 +20,7 @@ function Contact({ location }) {
             <p>
                 If you came here for recruitment purposes you may want to have a look at my&nbsp;
                 <a title="CV"
-                   href="/cv-oliver-sieweke.pdf/"
+                   href="/cv-oliver-sieweke.pdf"
                    download
                 >CV</a>&nbsp;
                 or the&nbsp;

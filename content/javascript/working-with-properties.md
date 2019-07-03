@@ -1,5 +1,5 @@
 ---
-name: "Working With Properties"
+name: "Working with Properties and other things bla bla"
 title: "JavaScript | Working"
 description: "Working desctiption"
 dateCreated: "2019"

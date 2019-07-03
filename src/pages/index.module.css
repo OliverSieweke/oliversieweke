@@ -1,0 +1,9 @@
+.profile-image {
+    float: right;
+    width: 150px;
+    /*margin: 20px;*/
+    margin: 1rem;
+    /*border: 1px solid black;*/
+    border-radius: 50%;
+    shape-outside: ellipse();
+}

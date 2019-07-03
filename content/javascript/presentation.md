@@ -1,5 +1,5 @@
 ---
-name: "Oliver Sieweke's JavaScript Notes Presentation"
+name: "Welcome"
 title: "JavaScript Notes | Oliver Sieweke"
 description: "This page presents Oliver Sieweke's JavaScript notes."
 dateCreated: "2019"
@@ -14,7 +14,7 @@ I've been taking and improving my JavaScrip notes since I started learning the l
 
 The notes are not meant as tutorials or discussion pages and there is no linear progression - this is more akin to my personal <a href="https://developer.mozilla.org/" target="_blank">MDN</a>. They won't be to everyone's taste but if you're wired like me, or if you are looking for details on a specific topic, you might find them useful.
 
-`[Note: My notes are receiving a little clean-up and will get added gradually in the next couple of weeks]`
+<br/>
 
 ---
 

@@ -1,7 +1,7 @@
 main {
-    padding: 40px;
-    /*background: red;*/
+    /*flex-grow: 1;*/
 }
+
 footer {
     /*background: deeppink;*/
 }
@@ -12,4 +12,8 @@ header {
 
 .orange-background {
     /*background-color: #FF8336;*/
+}
+
+a {
+    color: #FF6200;
 }

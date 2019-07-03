@@ -864,6 +864,7 @@ module.exports = {
                     "location", // Using the react router shadow.
                     "name",     // Browser global sometimes used as target for hyperlinks.
                     "Image",    // Browser global equivalent to document.createElement('img').
+                    "open"      // Browser global to load resources.
                 ],
             },
         ],

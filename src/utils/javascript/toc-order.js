@@ -1,6 +1,13 @@
 const TOC_ORDER = [
     "working-with-properties",
     [
+        "nested-test",
+        [
+            "nested-test-2",
+            "nested-test-1",
+        ],
+    ],
+    [
         "test",
         [
             "test-1",

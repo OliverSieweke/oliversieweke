@@ -1,0 +1,58 @@
+.toc {
+    grid-area: toc;
+    justify-self: stretch;
+    width: 15.4rem;
+    padding: 1.5rem 0;
+    overflow: scroll;
+    border-right: 1px solid darkgray;
+    background-color: #51293A;
+}
+
+/* LISTS ------------------------------------------------------------------------------------------------------------ */
+.list {
+    margin: 0;
+    list-style-type: none;
+}
+.list-item {
+    margin: 0;
+}
+
+/* NESTED LINKS ----------------------------------------------------------------------------------------------------- */
+.link {
+    display: block;
+    font-weight: lighter;
+    border: 1px dotted transparent;
+    text-decoration: none;
+    color: white;
+}
+.link:hover, .active-link {
+    background-color: #623E4D;
+    border-top: 1px dotted silver;
+    border-bottom: 1px dotted silver;
+}
+.link-1 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    padding: 0.2rem 2rem;
+    line-height: 1.2rem;
+}
+.link-2 {
+    font-size: 1.1rem;
+    padding: 0.1rem 2rem 0.1rem 2.6rem;
+    line-height: 1.2rem;
+}
+.link-3 {
+    font-size: 1rem;
+    padding: 0 2rem 0.1rem 3.4rem;
+    line-height: 1.1rem;
+}
+
+/* ARROW ICON ------------------------------------------------------------------------------------------------------- */
+.link-icon {
+    position: absolute;
+    transform: translateX(-1.2rem);
+}
+.link-icon-active {
+    transform: translateX(-1.2rem) rotate(90deg);
+    color: #FF6200;
+}
