@@ -1,12 +1,12 @@
-import React     from "react";
-import { Image } from "../image.js";
+import React from "react";
+import Img   from "gatsby-image";
 
 // ================================================================================================================== \\
 
 export const Book = ({ name, subtitle, author, datePublished, cover, url, review }) => (
     <div>
         <a title={name} href={url}>
-            <Image image={cover} alt={`${name} Cover`} />
+            <Img fluid={cover.childImageSharp.fluid} alt={`${name} Cover`}/>
             <h1>{name}</h1>
         </a>
         {subtitle && <h2>{subtitle}</h2>}

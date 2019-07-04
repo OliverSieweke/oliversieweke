@@ -1,6 +1,5 @@
 /* HEADER | PAGE ---------------------------------------------------------------------------------------------------- */
 .layout {
-    /*height: 100vh;*/
     display: grid;
     grid-template-rows: 4rem minmax(auto, calc(100vh - 4rem));
 }
