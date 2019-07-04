@@ -14,7 +14,7 @@ const Layout = ({ children, location }) => {
     const [toc, setToc] = useState();
 
     return (
-        <body className={styles.layout}>
+        <section className={styles.layout}>
         <GlobalSEO/>
         <Header/>
         <div className={styles.page}>
@@ -28,7 +28,7 @@ const Layout = ({ children, location }) => {
                 </div>
             </div>
         </div>
-        </body>
+        </section>
     );
 };
 

@@ -25,7 +25,18 @@ export const useJavaScriptNotesToc = () => {
         }
 
         return accumulator;
-    }, new TocNode({ identifier: "javascript", name: "JavaScript", slug: "/javascript/" }));
+    }, new TocNode({
+        identifier: "javascript",
+        name: "JavaScript",
+        slug: "/javascript/",
+        subNodes: [
+            new TocNode({
+                identifier: "presentation",
+                name: "Presentation",
+                slug: "/javascript/",
+            }),
+        ],
+    }));
 
     return orderToc(toc);
 };

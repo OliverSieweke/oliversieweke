@@ -1,5 +1,5 @@
 const TOC_ORDER = [
-    "working-with-properties",
+    "presentation",
     [
         "nested-test",
         [
@@ -14,6 +14,7 @@ const TOC_ORDER = [
             "test-2",
         ],
     ],
+    "working-with-properties",
 ];
 
 export const orderToc = (toc, order = TOC_ORDER) => {

@@ -31,28 +31,29 @@
     border-bottom: 1px dotted silver;
 }
 .link-1 {
-    font-size: 1.1rem;
-    font-weight: normal;
-    padding: 0.2rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 0.5rem 2rem;
     line-height: 1.2rem;
 }
 .link-2 {
     font-size: 1.1rem;
-    padding: 0.1rem 2rem 0.1rem 2.6rem;
-    line-height: 1.2rem;
+    padding: 0.5rem 2rem 0.5rem 2.6rem;
+    line-height: 1.1rem;
 }
 .link-3 {
     font-size: 1rem;
-    padding: 0 2rem 0.1rem 3.4rem;
-    line-height: 1.1rem;
+    padding: 0.5rem 2rem 0.5rem 3.6rem;
+    line-height: 1rem;
 }
 
 /* ARROW ICON ------------------------------------------------------------------------------------------------------- */
 .link-icon {
-    position: absolute;
-    transform: translateX(-1.2rem);
+    display: inline-block;
+    margin-left: -1.2rem;
+    margin-right: 0.6rem;
 }
 .link-icon-active {
-    transform: translateX(-1.2rem) rotate(90deg);
+    transform: rotate(90deg);
     color: #FF6200;
 }

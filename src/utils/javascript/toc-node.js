@@ -1,8 +1,8 @@
 export class TocNode {
-    constructor({ identifier, name, slug }) {
+    constructor({ identifier, name, slug, subNodes }) {
         Object.assign(this, {
             identifier, name, slug,
-            subNodes: [],
+            subNodes: subNodes || [],
         });
     }
 

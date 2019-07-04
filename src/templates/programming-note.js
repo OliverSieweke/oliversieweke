@@ -16,6 +16,7 @@ const ProgrammingNote = ({ data, location, setToc }) => {
     const { frontmatter, wordCount: { wordCount }, internal: { articleBody } } = childMarkdownRemark;
 
     const toc = useJavaScriptNotesToc();
+
     useEffect(() => {
         setToc(toc);
         return setToc;
