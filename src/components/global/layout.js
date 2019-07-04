@@ -15,19 +15,19 @@ const Layout = ({ children, location }) => {
 
     return (
         <section className={styles.layout}>
-        <GlobalSEO/>
-        <Header/>
-        <div className={styles.page}>
-            {/*{toc && <Toc toc={toc} location={location}/>}*/}
-            <div className={styles.contentContainer}>
-                <div className={`${styles.content}${toc ? ` ${styles.javascriptContent}` : ""}`}>
-                    <main className={styles.main}>
-                        {React.cloneElement(children, { setToc })}
-                    </main>
-                    <Footer/>
+            <GlobalSEO/>
+            <Header/>
+            <div className={styles.page}>
+                {toc && <Toc toc={toc} location={location}/>}
+                <div className={styles.contentContainer}>
+                    <div className={`${styles.content}${toc ? ` ${styles.javascriptContent}` : ""}`}>
+                        <main className={styles.main}>
+                            {React.cloneElement(children, { setToc })}
+                        </main>
+                        <Footer/>
+                    </div>
                 </div>
             </div>
-        </div>
         </section>
     );
 };
