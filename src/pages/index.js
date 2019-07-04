@@ -45,7 +45,7 @@ const IndexPage = ({ data: { profileImage }, location }) => {
                        rel="noopener noreferrer"
                     >Economics</a>, I took some thinking time working on the world&apos;s most beautifully located&nbsp;
                     <a title="Obsidian Wines Vineyard"
-                       href="https://www.google.com/maps/place/Obsidian+Vineyard/@-36.779631,175.0552717,14z/data=!4m5!3m4!1s0x6d72c8e00003203b:0xc66945c0805877ea!8m2!3d-36.7882844!4d175.0634471"
+                       href="https://www.google.com/maps/place/Obsidian+Vineyard/@-36.7989396,175.0362607,11.97z/data=!4m5!3m4!1s0x6d72c8e00003203b:0xc66945c0805877ea!8m2!3d-36.7882844!4d175.0634471"
                        target="_blank"
                        rel="noopener noreferrer"
                     >vineyard</a> and decided I would do a great developer.
