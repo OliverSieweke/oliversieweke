@@ -34,7 +34,8 @@ export const GlobalSEO = () => {
             ]}
             >
             <script type="application/ld+json">{JSON.stringify([websiteSchema])}</script>
-            <link rel="preload" as="document" href="https://i.creativecommons.org" />
+            <link rel="preconnect" href="https://i.creativecommons.org" />
+            <link rel="preload" as="image" href="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />
         </Helmet>
     );
 };
