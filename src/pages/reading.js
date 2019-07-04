@@ -24,14 +24,20 @@ function Reading({ location }) {
         return accumulator;
     }, {});
 
+    let bookCount = 0;
+
     // RENDER --------------------------------------------------------------------------------------------------------------
     return (
         <React.Fragment>
-            <PageSEO pageMetadata={{ reading }} Schema={ReadingSchema} location={location} />
+            <PageSEO pageMetadata={{ reading }} Schema={ReadingSchema} location={location}/>
             <h1>Reading</h1>
             {reading.length ? Object.entries(readingByYear)
                                     .sort(([a], [b]) => Math.sign(Number(b) - Number(a)))
-                                    .map(([year, books]) => <ReadingYear key={year} {...{ year, books }} />)
+                                    .map(([year, books]) => {
+                                        const readingYear = <ReadingYear key={year} {...{ year, books, bookCount }} />;
+                                        bookCount += books.length;
+                                        return readingYear;
+                                    })
                             : <p>Sorry, I don&apos;t have any reading to share at the moment.</p>}
         </React.Fragment>
     );

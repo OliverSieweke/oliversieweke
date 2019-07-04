@@ -20,11 +20,13 @@
 .content {
     width: 44rem;
     max-width: 100vw;
+    display: grid;
+    grid-template-rows: 1fr 3rem;
 }
 .javascript-content {
     max-width: calc(100vw - 15rem);
 }
 
 .main {
-    padding: 3rem;
+    padding: 3rem 3rem 1.5rem 3rem;
 }

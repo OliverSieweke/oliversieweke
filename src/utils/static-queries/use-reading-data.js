@@ -12,8 +12,8 @@ export const useReadingData = () => {
                         name
                         publicURL
                         childImageSharp {
-                            fluid(maxWidth: 250) {
-                                ...GatsbyImageSharpFluid_tracedSVG
+                            fixed(height: 120) {
+                                ...GatsbyImageSharpFixed_tracedSVG
                             }
                         }
                     }

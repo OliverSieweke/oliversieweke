@@ -1,0 +1,42 @@
+/* BOOK SECTION ----------------------------------------------------------------------------------------------------- */
+.book {
+    margin: 1.4rem 0 1.6rem 0;
+    overflow: hidden; /* Insure the div wraps around the whole book section. */
+}
+
+/* IMAGE ------------------------------------------------------------------------------------------------------------ */
+.image-container-left {
+    float: left;
+    margin-right: 1.1rem;
+}
+.image-container-right {
+    float: right;
+    margin-left: 1.1rem;
+}
+.image {
+    border: 1px solid black;
+}
+
+/* CONTENT ---------------------------------------------------------------------------------------------------------- */
+.title {
+    display: inline; /* Prevent the link to spread the whole line. */
+    margin: 0;
+    font-size: 1.1rem;
+    color: hsla(0,0%,0%,0.8);
+    text-decoration: #FF6200 underline;
+}
+.subtitle {
+    margin: 0.1rem 0 0 0;
+    font-size: 0.9rem;
+}
+.author-date {
+    margin: 0.1rem 0 0 0 ;
+    font-size: 0.9rem;
+    font-weight: lighter;
+}
+.review {
+    margin: 0.9rem 0 0 0;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    text-align: justify;
+}

@@ -1,6 +1,6 @@
 ---
 name: "Oliver Sieweke's JavaScript Notes Presentation"
-title: "JavaScript Notes | Oliver Sieweke"
+title: "JavaScript | Oliver Sieweke"
 description: "This page presents Oliver Sieweke's JavaScript notes."
 dateCreated: "2019"
 datePublished: "2019"
