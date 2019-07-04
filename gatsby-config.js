@@ -102,8 +102,6 @@ module.exports = {
         "gatsby-plugin-offline", // NB: this should come after gatsby-plugin-manifest
         // Netlify Headers:
         "gatsby-plugin-netlify",
-        // Preload Links:
-        "gatsby-plugin-preload-link-crossorigin",
         // Images:
         {
             resolve: "gatsby-plugin-sharp",
