@@ -19,7 +19,7 @@ module.exports = {
                 title: "About | Oliver Sieweke",
                 link: "/",
                 linkText: "About",
-                description: "This page gives information about Oliver Sieweke.",
+                description: "Information about Oliver Sieweke.",
                 keywords: [
                     "Oliver Sieweke",
                     "About",
