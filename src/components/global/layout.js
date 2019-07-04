@@ -18,7 +18,7 @@ const Layout = ({ children, location }) => {
         <GlobalSEO/>
         <Header/>
         <div className={styles.page}>
-            {toc && <Toc toc={toc} location={location}/>}
+            {/*{toc && <Toc toc={toc} location={location}/>}*/}
             <div className={styles.contentContainer}>
                 <div className={`${styles.content}${toc ? ` ${styles.javascriptContent}` : ""}`}>
                     <main className={styles.main}>
