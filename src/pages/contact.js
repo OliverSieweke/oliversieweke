@@ -11,7 +11,7 @@ function Contact({ location }) {
             <PageSEO Schema={OliverSiewekeSchema} location={location}/>
             <h1>Contact</h1>
             <p>
-                The best way to contact me is at <a title="Email" href="mailto:oliver@sieweke.eu">oliver@sieweke.eu.</a>
+                The best way to contact me is at <a title="Email" href="mailto:oliver@sieweke.eu">oliver@sieweke.eu</a>.
             </p>
             <br/>
             <hr/>
