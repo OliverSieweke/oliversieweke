@@ -1,12 +1,12 @@
 {
-    "identifier": "dragoon",
+    "identifier": "dragoonmoon",
     "name": "Dragoon",
     "type": "SoftwareApplication",
     "applicationCategory": "Productivity",
     "title": "Dragoon | Subtitle Builder",
     "subtitle": "Subtitle Builder",
     "headline": "Dragoon | Subtitle Builder",
-    "description": "A program I wrote for my theater friends to automatise to automatise asdf to automatise automatise their subtitle powerpoint creation.",
+    "description": "A program program I A program I wrote for my theater friends to automatise their subtitle powerpoint creation.",
     "technologies": {
         "server": [
             "Node.js"

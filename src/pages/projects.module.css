@@ -1,0 +1,93 @@
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -0.7rem;
+}
+
+.project-container {
+    height: 12.75rem;
+    width: 11.7rem;
+    margin: 0.7rem;
+    box-shadow: 0 0 4px black;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* HEADER ----------------------------------------------------------------------------------------------------------- */
+.icon-bar {
+    padding: 0.3rem 0.3rem;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon-link {
+    margin: 0;
+}
+.icon-links {
+    display: flex;
+}
+.icon-image {
+    display: block;
+    height: 1.3rem;
+    margin: 0 0.2rem;
+}
+
+
+/* MIDDLE ----------------------------------------------------------------------------------------------------------- */
+.project-container:hover .description-link  {
+    display: block;
+}
+.project-container:hover .image  {
+    filter: brightness(30%);
+}
+.projectMiddle {
+    height: 100%;
+    overflow: hidden;
+}
+.description-link {
+    display: none;
+    position: relative;
+    height: 100%;
+    top: -100%;
+    margin: 0;
+    padding: 0.7rem;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+}
+.description-container {
+    height: 100%;
+    overflow: hidden;
+}
+.description {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.18745rem;
+}
+.image {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 0;
+    background-color: lightskyblue;
+}
+
+/* TITLE ------------------------------------------------------------------------------------------------------------ */
+.title {
+    padding: 0.5rem 0.6rem;
+    border-top: 1px solid black;
+    color: hsla(0, 0%, 0%, 0.8);
+    text-decoration: none;
+}
+.name {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.2rem;
+    text-decoration: #FF6200 underline;
+}
+.subtitle {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: lighter;
+}

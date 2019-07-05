@@ -38,7 +38,7 @@
         },
         "description": {
             "type": "string",
-            "maxLength": 100,
+            "maxLength": 120,
             "description": "Short description of the project (max 100 characters)."
         },
         "technologies": {
