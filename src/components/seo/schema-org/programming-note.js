@@ -1,6 +1,6 @@
 import { OliverSiewekeSchema } from "./oliver-sieweke.js";
 
-export const ProgrammingNoteSchema = projectMetadata => {
+export function ProgrammingNoteSchema(projectMetadata) {
     const { articleSection, name, description, articleBody, wordCount, url, inLanguage } = projectMetadata;
     const { dateCreated, datePublished, dateModified } = projectMetadata;
     const { keywords, license } = projectMetadata;
@@ -29,4 +29,4 @@ export const ProgrammingNoteSchema = projectMetadata => {
         copyrightYear,
         copyrightHolder: oliverSiewekeSchema,
     };
-};
+}

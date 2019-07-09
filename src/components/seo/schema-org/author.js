@@ -1,4 +1,4 @@
-export const AuthorSchema = authorMetadata => {
+export function AuthorSchema(authorMetadata) {
     const { name, sameAs } = authorMetadata;
 
     return {
@@ -7,4 +7,4 @@ export const AuthorSchema = authorMetadata => {
         name,
         sameAs,
     };
-};
+}

@@ -1,7 +1,7 @@
 import { OliverSiewekeSchema } from "./oliver-sieweke.js";
 import { ProjectSchema }       from "./project.js";
 
-export const ProjectsSchema = projectsMetadata => {
+export function ProjectsSchema(projectsMetadata) {
     const { name, description, url, inLanguage, dateCreated, datePublished, dateModified } = projectsMetadata;
     const { keywords } = projectsMetadata;
     const { license, copyrightYear } = projectsMetadata;
@@ -27,4 +27,4 @@ export const ProjectsSchema = projectsMetadata => {
         copyrightHolder: oliverSiewekeSchema,
         hasPart,
     };
-};
+}

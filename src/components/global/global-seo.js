@@ -10,7 +10,7 @@ export const GlobalSEO = () => {
 // DATA ----------------------------------------------------------------------------------------------------------------
     const siteMetadata = useSiteMetaData();
 
-    const { title, inLanguage: lang, keywords } = siteMetadata;
+    const { title, name, inLanguage: lang, keywords } = siteMetadata;
     const websiteSchema = new WebsiteSchema({ ...siteMetadata });
 
 // RENDER --------------------------------------------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 import { AuthorSchema } from "./author.js";
 
-export const BookSchema = bookMetadata => {
+export function BookSchema(bookMetadata) {
     const { name, author, datePublished, url, isbn, cover } = bookMetadata;
 
     return {
@@ -13,4 +13,4 @@ export const BookSchema = bookMetadata => {
         isbn,
         image: cover.publicURL,
     };
-};
+}

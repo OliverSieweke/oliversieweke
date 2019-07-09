@@ -1,7 +1,7 @@
 import { OliverSiewekeSchema } from "./oliver-sieweke.js";
 import { BookReviewSchema }    from "./book-review.js";
 
-export const ReadingSchema = readingMetadata => {
+export function ReadingSchema(readingMetadata) {
     const { name, description, url, inLanguage, dateCreated, datePublished, dateModified } = readingMetadata;
     const { keywords } = readingMetadata;
     const { license, copyrightYear } = readingMetadata;
@@ -27,4 +27,4 @@ export const ReadingSchema = readingMetadata => {
         copyrightHolder: oliverSiewekeSchema,
         hasPart,
     };
-};
+}

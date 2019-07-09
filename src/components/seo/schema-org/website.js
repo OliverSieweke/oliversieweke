@@ -1,6 +1,6 @@
 import { OliverSiewekeSchema } from "./oliver-sieweke.js";
 
-export const WebsiteSchema = siteMetadata => {
+export function WebsiteSchema(siteMetadata) {
     const { name, description, url, inLanguage, dateCreated, datePublished, dateModified } = siteMetadata;
     const { keywords } = siteMetadata;
     const { license, copyrightYear } = siteMetadata;
@@ -25,4 +25,4 @@ export const WebsiteSchema = siteMetadata => {
         copyrightHolder: oliverSiewekeSchema,
         keywords,
     };
-};
+}

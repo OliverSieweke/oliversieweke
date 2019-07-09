@@ -1,7 +1,7 @@
 import { OliverSiewekeSchema } from "./oliver-sieweke.js";
 import { BookSchema }          from "./book.js";
 
-export const BookReviewSchema = bookMetadata => {
+export function BookReviewSchema(bookMetadata) {
     const { name, author, review, reviewURL, reviewDateCreated, reviewDatePublished } = bookMetadata;
     const { reviewLicense } = bookMetadata;
 
@@ -25,4 +25,4 @@ export const BookReviewSchema = bookMetadata => {
         datePublished: reviewDatePublished,
         publisher: oliverSiewekeSchema,
     };
-};
+}
