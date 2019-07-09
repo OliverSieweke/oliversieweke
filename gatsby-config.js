@@ -36,7 +36,7 @@ module.exports = {
                 title: "JavaScript | Oliver Sieweke",
                 link: "/javascript/",
                 linkText: "JavaScript",
-                description: "This page contains Oliver Sieweke's JavaScript Notes.",
+                description: "Oliver Sieweke's JavaScript Notes.",
                 keywords: ["JavaScript", "Notes", "Programming"],
             },
             {
@@ -44,7 +44,7 @@ module.exports = {
                 title: "Projects | Oliver Sieweke",
                 link: "/projects/",
                 linkText: "Projects",
-                description: "This page lists all of Oliver Sieweke's personal projects.",
+                description: "Oliver Sieweke's personal projects.",
                 keywords: ["Oliver Sieweke", "Projects", "Applications"],
             },
             {
@@ -52,7 +52,7 @@ module.exports = {
                 title: "Reading | Oliver Sieweke",
                 link: "/reading/",
                 linkText: "Reading",
-                description: "This page lists some short book reviews by Oliver Sieweke.",
+                description: "Short book reviews by Oliver Sieweke.",
                 keywords: ["Oliver Sieweke", "Reading", "Books", "Review"],
             },
             {
@@ -60,7 +60,7 @@ module.exports = {
                 title: "Contact | Oliver Sieweke",
                 link: "/contact/",
                 linkText: "Contact",
-                description: "This page gives information for contacting Oliver Sieweke.",
+                description: "Information for contacting Oliver Sieweke.",
                 keywords: ["Oliver Sieweke", "Contact"],
             },
         ],
