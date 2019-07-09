@@ -9,10 +9,13 @@
     "description": "A program program I A program I wrote for my theater friends to automatise their subtitle powerpoint creation.",
     "technologies": {
         "server": [
-            "Node.js"
+            "Node.js",
+            "Heroku",
+            "PptxGenJS"
         ],
         "hosting": [
-            "Heroku"
+            "Heroku",
+            "Node.js"
         ],
         "data": [
             "Heroku"

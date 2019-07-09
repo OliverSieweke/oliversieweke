@@ -7,6 +7,8 @@ import { ProjectHeader }       from "../components/projects/project-header.js";
 import { Markdown }            from "../components/markdown.js";
 import { ProjectTechnologies } from "../components/projects/project-technologies.js";
 
+import styles from "./project.module.css";
+
 // ===================================================================================================================\\
 
 export const Project = ({ data, location }) => {
@@ -27,17 +29,18 @@ export const Project = ({ data, location }) => {
                      location={location}
             />
             <ProjectHeader {...projectMetadata} />
+            <hr/>
 
             <section>
-                <h3>Main Description</h3>
-                <Markdown markdown={mainDescriptionMarkdown} />
+                <Markdown markdown={mainDescriptionMarkdown}/>
             </section>
-            <section>
+
+            <section className={styles.technicalDescription}>
                 <h3>Technical Description</h3>
-                <Markdown markdown={technicalDescriptionMarkdown} />
+                <Markdown markdown={technicalDescriptionMarkdown}/>
+                <ProjectTechnologies technologies={technologies}/>
             </section>
 
-            <ProjectTechnologies technologies={technologies} />
         </React.Fragment>
     );
 };

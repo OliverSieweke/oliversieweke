@@ -6,6 +6,8 @@ import { useTechnologyIcons }             from "../../utils/static-queries/use-t
 import { projectTechnologySectionsOrder } from "../../utils/projects/project-technology-sections-order.js";
 import { TECHNOLOGY_NAME_TO_URL_AND_ICON_MAP, TECHNOLOGY_SECTION_FIELD_TO_NAME_MAP }                                         from "../../utils/projects/technology-section-names-and-icons.js";
 
+import styles from "./project.module.css";
+
 // ===================================================================================================================\\
 
 export const ProjectTechnologies = ({ technologies }) => {
@@ -32,7 +34,7 @@ export const ProjectTechnologies = ({ technologies }) => {
 
 // RENDER --------------------------------------------------------------------------------------------------------------
     return (
-        <section>
+        <section className={styles.technologies}>
             {Object.entries(technologySections)
                    .sort(projectTechnologySectionsOrder)
                    .map(([, section]) => <ProjectTechnologySection key={section.sectionName} {...section} />)
