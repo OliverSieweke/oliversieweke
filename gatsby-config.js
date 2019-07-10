@@ -88,7 +88,7 @@ module.exports = {
                 name: "Oliver Sieweke",
                 short_name: "OS",                   /* eslint-disable-line camelcase */
                 description: "Personal website including programming notes and projects.",
-                categories: ["programming", "education", "books"],
+                categories: ["education", "books"],
                 start_url: "/",                     /* eslint-disable-line camelcase */
                 lang: "en",
                 background_color: "#FFFFFF",        /* eslint-disable-line camelcase */
