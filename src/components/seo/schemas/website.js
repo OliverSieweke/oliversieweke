@@ -5,7 +5,7 @@ export function WebsiteSchema(siteMetadata) {
     const { keywords } = siteMetadata;
     const { license, copyrightYear } = siteMetadata;
 
-    const oliverSiewekeSchema = new OliverSiewekeSchema();
+    const oliverSiewekeSchema = new OliverSiewekeSchema({});
 
     return {
         "@context": "http://schema.org",

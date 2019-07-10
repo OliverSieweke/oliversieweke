@@ -16,7 +16,7 @@ module.exports = {
     globals: {},
     plugins: [
         "jsdoc",
-        "react"
+        "react",
     ],
     extends: ["plugin:react/recommended"],
     rules: {
@@ -208,7 +208,10 @@ module.exports = {
                 ObjectExpression: "first",
                 ImportDeclaration: "first",
                 flatTernaryExpressions: true,                                   // Better handled by Webstorm
-                ignoredNodes: ["ConditionalExpression", "JSXElement *"],        // ConditionalExpression better handled by Webstorm, JSXElement better handled by react plugin
+                ignoredNodes: [
+                    "ConditionalExpression",                                    // ConditionalExpression better handled by Webstorm, JSXElement better handled by react plugin
+                    "JSXElement", "JSXElement *",
+                ],
                 ignoreComments: true,
             },
         ],
@@ -775,7 +778,7 @@ module.exports = {
                     -1, 0, 1, 2, 3,
                     180,                                                        // Degrees
                     201, 400, 404, 409, 415, 422, 500,                          // HTTP Codes
-                    2019,                                                       // Year
+                    1970, 2019,                                                 // Years
                 ],
                 ignoreArrayIndexes: true,
                 enforceConst: true,
@@ -864,7 +867,7 @@ module.exports = {
                     "location", // Using the react router shadow.
                     "name",     // Browser global sometimes used as target for hyperlinks.
                     "Image",    // Browser global equivalent to document.createElement('img').
-                    "open"      // Browser global to load resources.
+                    "open",      // Browser global to load resources.
                 ],
             },
         ],
@@ -1079,10 +1082,10 @@ module.exports = {
 // ============================================================================================== \\
 // ========================================== Frontend =========================================== \\
 // Strict Mode -------------------------------------------------------------------------------------
-    "strict": [
-        "error",
-        "global",
-    ],
+        "strict": [
+            "error",
+            "global",
+        ],
 
 // Possible Errors ---------------------------------------------------------------------------------
         "no-console": "error",
@@ -1124,7 +1127,7 @@ module.exports = {
 // ======================================== React Rules ========================================= \\
         "react/jsx-indent-props": [
             "warn",
-            "first"
+            "first",
         ],
         "react/prop-types": "off",
     },

@@ -6,7 +6,7 @@ export function ProjectsSchema(projectsMetadata) {
     const { keywords } = projectsMetadata;
     const { license, copyrightYear } = projectsMetadata;
 
-    const oliverSiewekeSchema = new OliverSiewekeSchema();
+    const oliverSiewekeSchema = new OliverSiewekeSchema({});
     const { projects = [] } = projectsMetadata;
     const hasPart = projects.map(project => new ProjectSchema(project));
 

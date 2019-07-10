@@ -1,20 +1,23 @@
-import React  from "react";
-import Helmet from "react-helmet";
-
+import React               from "react";
+import Helmet              from "react-helmet";
+// Queries •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { useSiteMetaData } from "../../utils/static-queries/use-site-metadata.js";
 
-// ================================================================================================================== \\
 
-export const PageSEO = ({ pageMetadata = {}, Schema, location }) => {
+// ================================================================================================================== \\
+// ========================================== PAGE SEO COMPONENT ==================================================== \\
+
+export const PageSEO = ({ location, Schema, metadata: pageMetadata = {} }) => {
 // DATA ----------------------------------------------------------------------------------------------------------------
-    const siteMetadata = useSiteMetaData();
-    // Config Metadata:
-    const configPageMetadata = siteMetadata.navigationItems.find(({ link }) => link === location.pathname) || {};
     // Default Metadata:
     const defaultPageMetadata = {
         type: "website",
         url: location.href,
     };
+    // Site Metadata:
+    const siteMetadata = useSiteMetaData();
+    // Config Metadata:
+    const configPageMetadata = siteMetadata.navigationItems.find(({ link }) => link === location.pathname) || {};
     // Page Metadata:
     const metadata = Object.assign(
         siteMetadata,
@@ -34,8 +37,9 @@ export const PageSEO = ({ pageMetadata = {}, Schema, location }) => {
             ])),
         },
     );
-    const { title, url, type, description, keywords, meta } = metadata;
-    // Page Schema
+    const { title, url, type, description, keywords, meta, siteUrl, image } = metadata;
+
+    // Page Schema:
     const pageSchema = Schema && new Schema(metadata);
 
 // RENDER --------------------------------------------------------------------------------------------------------------
@@ -43,6 +47,7 @@ export const PageSEO = ({ pageMetadata = {}, Schema, location }) => {
         <Helmet
             title={title}
             meta={[
+                // General •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
                 {
                     name: "description",
                     content: description,
@@ -68,6 +73,10 @@ export const PageSEO = ({ pageMetadata = {}, Schema, location }) => {
                     property: "og:description",
                     content: description,
                 },
+                {
+                    property: "og:image",
+                    content: image && `${siteUrl}${image}`,
+                },
                 // Twitter •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
                 {
                     name: "twitter:card",
@@ -84,7 +93,7 @@ export const PageSEO = ({ pageMetadata = {}, Schema, location }) => {
                 // Additional ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
                 ...meta,
             ]}
-            >
+        >
             {pageSchema && <script type="application/ld+json">{JSON.stringify([pageSchema])}</script>}
         </Helmet>
     );

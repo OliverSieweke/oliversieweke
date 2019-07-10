@@ -93,7 +93,7 @@ module.exports = {
                 lang: "en",
                 background_color: "#FFFFFF",        /* eslint-disable-line camelcase */
                 theme_color: "#FF6200",             /* eslint-disable-line camelcase */
-                icon: "src/images/favicon.png",
+                icon: `${__dirname}/content/images/favicon.png`,
                 display: "minimal-ui",
                 orientation: "any",
             },
@@ -166,7 +166,7 @@ module.exports = {
             resolve: "gatsby-source-filesystem",
             options: {
                 name: "FooterLinkIcons",
-                path: `${__dirname}/src/images/footer-links`,
+                path: `${__dirname}/content/images/footer-links`,
             },
         },
         // Common Project Icons:
@@ -174,7 +174,7 @@ module.exports = {
             resolve: "gatsby-source-filesystem",
             options: {
                 name: "CommonProjectIcons",
-                path: `${__dirname}/src/images/projects/common-icons`,
+                path: `${__dirname}/content/images/projects/common-icons`,
             },
         },
         // Technology Icons:
@@ -182,7 +182,7 @@ module.exports = {
             resolve: "gatsby-source-filesystem",
             options: {
                 name: "TechnologyIcons",
-                path: `${__dirname}/src/images/projects/technology-icons`,
+                path: `${__dirname}/content/images/projects/technology-icons`,
             },
         },
         // Book Covers:
@@ -190,7 +190,7 @@ module.exports = {
             resolve: "gatsby-source-filesystem",
             options: {
                 name: "BookCovers",
-                path: `${__dirname}/src/images/reading/book-covers`,
+                path: `${__dirname}/content/images/reading/book-covers`,
             },
         },
         // Other Images:
@@ -198,7 +198,7 @@ module.exports = {
             resolve: "gatsby-source-filesystem",
             options: {
                 name: "Images",
-                path: `${__dirname}/src/images`,
+                path: `${__dirname}/content/images`,
             },
         },
 

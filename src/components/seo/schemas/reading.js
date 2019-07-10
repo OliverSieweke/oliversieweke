@@ -6,7 +6,7 @@ export function ReadingSchema(readingMetadata) {
     const { keywords } = readingMetadata;
     const { license, copyrightYear } = readingMetadata;
 
-    const oliverSiewekeSchema = new OliverSiewekeSchema();
+    const oliverSiewekeSchema = new OliverSiewekeSchema({});
     const { reading = [] } = readingMetadata;
     const hasPart = reading.map(book => new BookReviewSchema({
         ...book,

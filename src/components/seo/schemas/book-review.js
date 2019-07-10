@@ -8,7 +8,7 @@ export function BookReviewSchema(bookMetadata) {
     const copyrightYear = new Date().getFullYear() == Number(reviewDateCreated) ?
                           `${reviewDateCreated}` : `${reviewDateCreated} - ${new Date().getFullYear()}`;
 
-    const oliverSiewekeSchema = new OliverSiewekeSchema();
+    const oliverSiewekeSchema = new OliverSiewekeSchema({});
 
     return {
         "@context": "http://schema.org",

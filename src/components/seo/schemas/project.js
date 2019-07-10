@@ -7,7 +7,7 @@ export function ProjectSchema(projectMetadata) {
     const copyrightYear = new Date().getFullYear() === Number(dateCreated) ? `${dateCreated}`
                                                                    : `${dateCreated} - ${new Date().getFullYear()}`;
 
-    const oliverSiewekeSchema = new OliverSiewekeSchema();
+    const oliverSiewekeSchema = new OliverSiewekeSchema({});
 
     return {
         "@context": "http://schema.org",

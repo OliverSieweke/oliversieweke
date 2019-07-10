@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
+
 export const useSiteMetaData = () => {
     const { site: { dateModified, siteMetadata } } = useStaticQuery(graphql`
         query SiteMetadataQuery {
@@ -7,7 +8,8 @@ export const useSiteMetaData = () => {
                 dateModified: buildTime(formatString: "YYYY-MM-DD")
                 siteMetadata {
                     title
-                    url: siteUrl
+                    siteUrl
+                    url: siteUrl # Used as default if no url field is provided by more specific metadata objects
                     description
                     inLanguage
                     dateCreated

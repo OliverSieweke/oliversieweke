@@ -1,7 +1,7 @@
 import React from "react";
 
 import { PageSEO }             from "../components/seo/page-seo.js";
-import { OliverSiewekeSchema } from "../components/seo/schema-org/oliver-sieweke.js";
+import { OliverSiewekeSchema } from "../components/seo/schemas/oliver-sieweke.js";
 
 // ===================================================================================================================\\
 

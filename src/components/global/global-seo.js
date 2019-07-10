@@ -2,7 +2,7 @@ import React  from "react";
 import Helmet from "react-helmet";
 
 import { useSiteMetaData } from "../../utils/static-queries/use-site-metadata.js";
-import { WebsiteSchema }   from "../seo/schema-org/website.js";
+import { WebsiteSchema }   from "../seo/schemas/website.js";
 
 // ================================================================================================================== \\
 

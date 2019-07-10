@@ -8,7 +8,7 @@ export function ProgrammingNoteSchema(projectMetadata) {
     const copyrightYear = new Date().getFullYear() === dateCreated ? `${dateCreated}`
                                                                    : `${dateCreated} - ${new Date().getFullYear()}`;
 
-    const oliverSiewekeSchema = new OliverSiewekeSchema();
+    const oliverSiewekeSchema = new OliverSiewekeSchema({});
 
     return {
         "@context": "http://schema.org",

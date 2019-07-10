@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { graphql }          from "gatsby";
 
 import { PageSEO }               from "../components/seo/page-seo.js";
-import { ProgrammingNoteSchema } from "../components/seo/schema-org/programming-note.js";
+import { ProgrammingNoteSchema } from "../components/seo/schemas/programming-note.js";
 import { Markdown }              from "../components/markdown.js";
 
 import { useJavaScriptNotesToc } from "../utils/static-queries/use-javascript-notes-toc.js";

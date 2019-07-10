@@ -1,7 +1,7 @@
 import React from "react";
 
 import { PageSEO }        from "../components/seo/page-seo.js";
-import { ProjectsSchema } from "../components/seo/schema-org/projects.js";
+import { ProjectsSchema } from "../components/seo/schemas/projects.js";
 import { ProjectTile }    from "../components/projects/project-tile.js";
 
 import { useProjectsData } from "../utils/static-queries/use-projects-data.js";

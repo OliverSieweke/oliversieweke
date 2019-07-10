@@ -1,7 +1,7 @@
 import React from "react";
 
 import { PageSEO }       from "../components/seo/page-seo.js";
-import { ReadingSchema } from "../components/seo/schema-org/reading.js";
+import { ReadingSchema } from "../components/seo/schemas/reading.js";
 import { ReadingYear }   from "../components/reading/reading-year.js";
 
 import { useReadingData } from "../utils/static-queries/use-reading-data.js";
