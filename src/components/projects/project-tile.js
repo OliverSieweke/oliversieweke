@@ -1,5 +1,6 @@
 import React    from "react";
 import { Link } from "gatsby";
+import Img               from "gatsby-image";
 
 import { useCommonProjectIcons } from "../../utils/static-queries/use-common-project-icons.js";
 
@@ -7,7 +8,7 @@ import styles from "../../pages/projects.module.css";
 
 // ================================================================================================================== \\
 
-export const ProjectTile = ({ name, subtitle, logoURL, description, url, github, path }) => {
+export const ProjectTile = ({ name, subtitle, description, image, logoURL, url, github, path }) => {
 // DATA ----------------------------------------------------------------------------------------------------------------
     const { githubIconURL, linkIconURL } = useCommonProjectIcons();
 
@@ -40,7 +41,10 @@ export const ProjectTile = ({ name, subtitle, logoURL, description, url, github,
             </div>
 
             <div className={styles.projectMiddle}>
-                <div className={styles.image}></div>
+                <Img
+                    className={styles.image}
+                    fluid={image.fluid}
+                />
                 <Link className={styles.descriptionLink} to={path}>
                     <div className={styles.descriptionContainer}>
                         <p className={styles.description}>{description}</p>

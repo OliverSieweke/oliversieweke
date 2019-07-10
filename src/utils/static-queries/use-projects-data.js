@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 
 export const useProjectsData = () => {
-    const { projects, logos } = useStaticQuery(graphql`
+    const { projects, logos, images } = useStaticQuery(graphql`
         query ProjectsDataQuery {
             projects: allFile(filter: {name: {eq: "project-info"}, sourceInstanceName: {eq: "Project"}}) {
                 ...projectDataFragment
@@ -14,8 +14,20 @@ export const useProjectsData = () => {
                     }
                 }
             }
+            images: allFile(filter: {name: { eq: "tile-image" }, sourceInstanceName: {eq: "Project"}}) {
+                edges {
+                    node {
+                        childImageSharp {
+                            fluid(maxWidth: 400) {
+                                ...GatsbyImageSharpFluid_tracedSVG
+                            }
+                        }
+                        relativeDirectory
+                    }
+                }
+            }
         }
-        
+
         fragment projectDataFragment on FileConnection {
             edges {
                 node {
@@ -49,9 +61,11 @@ export const useProjectsData = () => {
 
     return projects.edges.map(({ node: { childJsonData } }) => {
         const logo = logos.edges.find(({ node }) => node.relativeDirectory === childJsonData.identifier);
+        const image = images.edges.find(({ node }) => node.relativeDirectory === childJsonData.identifier);
 
         return {
             ...childJsonData,
+            image: image.node.childImageSharp,
             logoURL: logo.node.publicURL,
         };
     });
