@@ -15,7 +15,7 @@ export function BookReviewSchema(bookMetadata) {
         "@type": "UserReview",
         author: oliverSiewekeSchema,
         itemReviewed: new BookSchema(bookMetadata),
-        description: `Oliver Sieweke's review of the book "${name}" by ${author.name}.`,
+        description: `Oliver Sieweke's short review of "${name}" by ${author.name}.`,
         reviewBody: review,
         url: reviewURL,
         dateCreated: reviewDateCreated,

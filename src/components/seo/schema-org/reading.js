@@ -11,7 +11,7 @@ export function ReadingSchema(readingMetadata) {
     const hasPart = reading.map(book => new BookReviewSchema({
         ...book,
         license,
-        reviewURL: `https://www.oliversieweke.com/${link}`, // Using location.pathname is causing SSR issues.
+        reviewURL: `https://www.oliversieweke.com${link}`, // Using location.pathname is causing SSR issues.
     }));
 
     return {
@@ -20,7 +20,7 @@ export function ReadingSchema(readingMetadata) {
         name,
         description,
         author: oliverSiewekeSchema,
-        url: `https://www.oliversieweke.com/${link}`, // Using location.pathname is causing SSR issues.
+        url: `https://www.oliversieweke.com${link}`, // Using location.pathname is causing SSR issues.
         inLanguage,
         keywords,
         dateCreated,

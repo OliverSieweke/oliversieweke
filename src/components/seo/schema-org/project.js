@@ -4,7 +4,7 @@ export function ProjectSchema(projectMetadata) {
     const { name, type, applicationCategory, headline, description, inLanguage, url, dateCreated } = projectMetadata;
     const { keywords, license } = projectMetadata;
 
-    const copyrightYear = new Date().getFullYear() === dateCreated ? `${dateCreated}`
+    const copyrightYear = new Date().getFullYear() === Number(dateCreated) ? `${dateCreated}`
                                                                    : `${dateCreated} - ${new Date().getFullYear()}`;
 
     const oliverSiewekeSchema = new OliverSiewekeSchema();

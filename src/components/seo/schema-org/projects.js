@@ -2,7 +2,7 @@ import { OliverSiewekeSchema } from "./oliver-sieweke.js";
 import { ProjectSchema }       from "./project.js";
 
 export function ProjectsSchema(projectsMetadata) {
-    const { name, description, url, inLanguage, dateCreated, datePublished, dateModified } = projectsMetadata;
+    const { name, description, link, inLanguage, dateCreated, datePublished, dateModified } = projectsMetadata;
     const { keywords } = projectsMetadata;
     const { license, copyrightYear } = projectsMetadata;
 
@@ -16,7 +16,7 @@ export function ProjectsSchema(projectsMetadata) {
         name,
         description,
         author: oliverSiewekeSchema,
-        url,
+        url: `https://www.oliversieweke.com${link}`, // Using location.pathname is causing SSR issues.
         inLanguage,
         keywords,
         dateCreated,
