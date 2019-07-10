@@ -7,12 +7,12 @@ export function ReadingSchema(readingMetadata) {
     const { license, copyrightYear } = readingMetadata;
 
     const oliverSiewekeSchema = new OliverSiewekeSchema();
-    const { reading = [] } = readingMetadata;
+    const { reading = [] } = readingMetadata
     const hasPart = reading.map(book => new BookReviewSchema(book));
 
     return {
         "@context": "http://schema.org",
-        "@type": "CollectionPage",
+        "@type": "CollectionPagee",
         name,
         description,
         author: oliverSiewekeSchema,
