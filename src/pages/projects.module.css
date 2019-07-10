@@ -23,7 +23,7 @@
     justify-content: space-between;
 }
 .icon-link {
-    margin: 0;
+    margin: 0 0.3rem;
 }
 .icon-links {
     display: flex;
@@ -31,7 +31,7 @@
 .icon-image {
     display: block;
     height: 1.3rem;
-    margin: 0 0.2rem;
+    margin: 0;
 }
 
 
