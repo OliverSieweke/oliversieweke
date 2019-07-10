@@ -5,7 +5,7 @@ export function BookReviewSchema(bookMetadata) {
     const { name, author, review, reviewURL, reviewDateCreated, reviewDatePublished } = bookMetadata;
     const { reviewLicense } = bookMetadata;
 
-    const copyrightYear = new Date().getFullYear() === reviewDateCreated ?
+    const copyrightYear = new Date().getFullYear() == Number(reviewDateCreated) ?
                           `${reviewDateCreated}` : `${reviewDateCreated} - ${new Date().getFullYear()}`;
 
     const oliverSiewekeSchema = new OliverSiewekeSchema();

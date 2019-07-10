@@ -4,16 +4,10 @@ import { PageSEO }       from "../components/seo/page-seo.js";
 import { ReadingSchema } from "../components/seo/schema-org/reading.js";
 import { ReadingYear }   from "../components/reading/reading-year.js";
 
-import { useSiteMetaData } from "../utils/static-queries/use-site-metadata.js";
-import { useReadingData }  from "../utils/static-queries/use-reading-data.js";
+import { useReadingData } from "../utils/static-queries/use-reading-data.js";
 
 function Reading({ location }) {
-    const { license } = useSiteMetaData();
-    const reading = useReadingData().map(book => ({
-        ...book,
-        reviewURL: location.href,
-        reviewLicense: license,
-    }));
+    const reading = useReadingData();
 
     const readingByYear = reading.reduce((accumulator, book) => {
         if (accumulator[book.yearRead]) {

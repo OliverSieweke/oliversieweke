@@ -1,5 +1,6 @@
 export function OliverSiewekeSchema() {
     return {
+        "@context": "http://schema.org",
         "@type": "Person",
         name: "Oliver Sieweke",
         givenName: "Oliver",
