@@ -46,6 +46,7 @@
         },
         "isbn": {
             "type": "string",
+            "patter": "^(97(8|9))-\\d{10}$",
             "description": "ISBN-13 of the book."
         },
         "yearRead": {
