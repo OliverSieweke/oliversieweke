@@ -24,35 +24,6 @@ Property Attributes
 
 The state of object properties is defined through their attributes. The availalbe property attributes differ between data and accessor properties as follows (default values are specified in brackets):
 
-<table>
-  <tr>
-    <td rowspan="3"></td>
-    <th colspan="2"><b>Data Property</b></th>
-    <th colspan="2"><b>Accessor Property</b></th>
-  </tr>
-  <tr>
-    <td align="center"><pre>[[Value]]</pre></td>
-    <td align="center"><b>Any value</b> [undefined] - Specifies the propertie's value.</td>
-    <td align="center"><pre>[[Get]]</pre></td>
-    <td align="center"><b>Function</b> [undefined] - Specifies the <em>getter</em> function.</td>
-  </tr>
-  <tr>
-    <td align="center">[[Writable]]</td>
-    <td align="center"><b>Boolean</b> [false] - Specifies whether the value may be changed through an assignment operation.</td>
-    <td align="center"><pre>[[Set]]</pre></td>
-    <td align="center"><b>Function</b> [undefined] - Specifies the <em>setter</em> function.</td>
-  </tr>
-    <tr>
-    <td align="center"><pre>[[Enumerable]]</pre></td>
-    <td align="center" colspan="4"><b>Boolean</b> [false] - Determines whether the property can be iterated over in a <em>for...in</em> loop or will get included in an Object.keys() for non symbols. object.assign and spread for all</td>
-  </tr>
-  </tr>
-  <tr>
-    <td align="left"><pre>[[Configurable]]</pre></td>
-    <td align="center" colspan="4"><b>Boolean</b> - Determines whether the property attributes can be changed.</td>
-  </tr>
-</table>
-
 ---
 
 Reading Properties Keys
@@ -60,8 +31,8 @@ Reading Properties Keys
 
 To read property attributes the following methods can be used:
 
-* `Object.keys()` to retrieve all own, non-enumerable, non-symbol property keys.
-* `Object.getOwnPropertyNames()` to retrive all own non-symbol property keys.
+* `js±Object.keys()` to retrieve all own, non-enumerable, non-symbol property keys.
+* `none±Object.getOwnPropertyNames()` to retrive all own non-symbol property keys.
 * `Object.getOwnPropertySymbols()` to retrieve all own symbol property keys.
 * in operator for checkin
 
@@ -143,10 +114,20 @@ A property descriptor is an object that can contain any of the following keys: `
 
 NB: change from data to accessor other properties are lost.
 
-**NB 2**: any other properties than the ones listed will be ignored without causing any errors.
+**NB 2**: any other properties than the ones listed will be ignored without causing any errors..
 
-```js
+```js{1,4-6}{numberLines: true}
 const obj = {};
+
+const hey = /asdf/gu
+
+class Hey {
+}
+
+const a = /asdf/g
+function hey() {}
+    const a = true;
+
 
 // Invalid Values
 Object.defineProperty(obj, "prop", { get: 7 });

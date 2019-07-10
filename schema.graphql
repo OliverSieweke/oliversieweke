@@ -841,11 +841,13 @@ type SitePluginPackageJsonPeerDependencies {
 }
 
 type SitePluginPluginOptions {
+    aliases: SitePluginPluginOptionsAliases
     background_color: String
     categories: [String]
     description: String
     display: String
     icon: String
+    inlineCodeMarker: String
     lang: String
     linkImagesToOriginal: Boolean
     name: String
@@ -862,6 +864,10 @@ type SitePluginPluginOptions {
     typeName: String
 }
 
+type SitePluginPluginOptionsAliases {
+    js: String
+}
+
 type SitePluginPluginOptionsPlugins {
     browserAPIs: [String]
     id: String
@@ -869,13 +875,20 @@ type SitePluginPluginOptionsPlugins {
     pluginFilepath: String
     pluginOptions: SitePluginPluginOptionsPluginsPluginOptions
     resolve: String
+    ssrAPIs: [String]
     version: String
 }
 
 type SitePluginPluginOptionsPluginsPluginOptions {
+    aliases: SitePluginPluginOptionsPluginsPluginOptionsAliases
+    inlineCodeMarker: String
     linkImagesToOriginal: Boolean
     quality: Int
     tracedSVG: Boolean
+}
+
+type SitePluginPluginOptionsPluginsPluginOptionsAliases {
+    js: String
 }
 
 type SiteSiteMetadata {
@@ -1876,11 +1889,13 @@ enum SitePageFieldsEnum {
     pluginCreator___parent___parent___children
     pluginCreator___parent___parent___id
     pluginCreator___pluginFilepath
+    pluginCreator___pluginOptions___aliases___js
     pluginCreator___pluginOptions___background_color
     pluginCreator___pluginOptions___categories
     pluginCreator___pluginOptions___description
     pluginCreator___pluginOptions___display
     pluginCreator___pluginOptions___icon
+    pluginCreator___pluginOptions___inlineCodeMarker
     pluginCreator___pluginOptions___lang
     pluginCreator___pluginOptions___linkImagesToOriginal
     pluginCreator___pluginOptions___name
@@ -1894,6 +1909,7 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___plugins___name
     pluginCreator___pluginOptions___plugins___pluginFilepath
     pluginCreator___pluginOptions___plugins___resolve
+    pluginCreator___pluginOptions___plugins___ssrAPIs
     pluginCreator___pluginOptions___plugins___version
     pluginCreator___pluginOptions___quality
     pluginCreator___pluginOptions___short_name
@@ -2012,11 +2028,13 @@ enum SitePluginFieldsEnum {
     parent___parent___parent___children
     parent___parent___parent___id
     pluginFilepath
+    pluginOptions___aliases___js
     pluginOptions___background_color
     pluginOptions___categories
     pluginOptions___description
     pluginOptions___display
     pluginOptions___icon
+    pluginOptions___inlineCodeMarker
     pluginOptions___lang
     pluginOptions___linkImagesToOriginal
     pluginOptions___name
@@ -2029,10 +2047,12 @@ enum SitePluginFieldsEnum {
     pluginOptions___plugins___id
     pluginOptions___plugins___name
     pluginOptions___plugins___pluginFilepath
+    pluginOptions___plugins___pluginOptions___inlineCodeMarker
     pluginOptions___plugins___pluginOptions___linkImagesToOriginal
     pluginOptions___plugins___pluginOptions___quality
     pluginOptions___plugins___pluginOptions___tracedSVG
     pluginOptions___plugins___resolve
+    pluginOptions___plugins___ssrAPIs
     pluginOptions___plugins___version
     pluginOptions___quality
     pluginOptions___short_name
@@ -2513,12 +2533,18 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
     elemMatch: SitePluginPackageJsonPeerDependenciesFilterInput
 }
 
+input SitePluginPluginOptionsAliasesFilterInput {
+    js: StringQueryOperatorInput
+}
+
 input SitePluginPluginOptionsFilterInput {
+    aliases: SitePluginPluginOptionsAliasesFilterInput
     background_color: StringQueryOperatorInput
     categories: StringQueryOperatorInput
     description: StringQueryOperatorInput
     display: StringQueryOperatorInput
     icon: StringQueryOperatorInput
+    inlineCodeMarker: StringQueryOperatorInput
     lang: StringQueryOperatorInput
     linkImagesToOriginal: BooleanQueryOperatorInput
     name: StringQueryOperatorInput
@@ -2542,6 +2568,7 @@ input SitePluginPluginOptionsPluginsFilterInput {
     pluginFilepath: StringQueryOperatorInput
     pluginOptions: SitePluginPluginOptionsPluginsPluginOptionsFilterInput
     resolve: StringQueryOperatorInput
+    ssrAPIs: StringQueryOperatorInput
     version: StringQueryOperatorInput
 }
 
@@ -2549,7 +2576,13 @@ input SitePluginPluginOptionsPluginsFilterListInput {
     elemMatch: SitePluginPluginOptionsPluginsFilterInput
 }
 
+input SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput {
+    js: StringQueryOperatorInput
+}
+
 input SitePluginPluginOptionsPluginsPluginOptionsFilterInput {
+    aliases: SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput
+    inlineCodeMarker: StringQueryOperatorInput
     linkImagesToOriginal: BooleanQueryOperatorInput
     quality: IntQueryOperatorInput
     tracedSVG: BooleanQueryOperatorInput

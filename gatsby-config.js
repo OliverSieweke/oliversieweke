@@ -123,6 +123,8 @@ module.exports = {
             resolve: "gatsby-transformer-remark",
             options: {
                 plugins: [
+                    "gatsby-remark-smartypants",
+                    "gatsby-remark-autolink-headers",
                     {
                         resolve: "gatsby-remark-images",
                         options: {
@@ -131,11 +133,17 @@ module.exports = {
                             tracedSVG: true,
                         },
                     },
+                    {
+                        resolve: "gatsby-remark-prismjs",
+                        options: {
+                            inlineCodeMarker: "±",
+                            aliases: { js: "javascript" },
+                        },
+                    },
                 ],
             },
         },
         "gatsby-plugin-catch-links",
-
         // JSON Files:
         {
             resolve: "gatsby-transformer-json",

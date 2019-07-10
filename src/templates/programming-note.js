@@ -7,6 +7,9 @@ import { Markdown }              from "../components/markdown.js";
 
 import { useJavaScriptNotesToc } from "../utils/static-queries/use-javascript-notes-toc.js";
 
+import "typeface-source-code-pro";
+import "./code.css";
+
 // ===================================================================================================================\\
 
 const ProgrammingNote = ({ data, location, setToc }) => {

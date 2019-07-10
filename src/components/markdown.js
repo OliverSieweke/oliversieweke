@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 // ===================================================================================================================\\
 
 // RENDER --------------------------------------------------------------------------------------------------------------
-export const Markdown = ({ markdown: { html } }) => < div dangerouslySetInnerHTML={{ __html: html }} />;
+export const Markdown = ({ markdown: { html } }) => < div dangerouslySetInnerHTML={{ __html: html }}/>;
 
 // QUERY ---------------------------------------------------------------------------------------------------------------
 export const query = graphql`
