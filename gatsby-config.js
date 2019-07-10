@@ -103,10 +103,7 @@ module.exports = {
         // Netlify Headers:
         "gatsby-plugin-netlify",
         // Images:
-        {
-            resolve: "gatsby-plugin-sharp",
-            options: { quality: 100 },
-        },
+        "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
 
 // Data ----------------------------------------------------------------------------------------------------------------
@@ -128,7 +125,6 @@ module.exports = {
                     {
                         resolve: "gatsby-remark-images",
                         options: {
-                            quality: 100,
                             linkImagesToOriginal: false,
                             tracedSVG: true,
                         },
