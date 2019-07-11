@@ -1,32 +1,35 @@
-import React from "react";
+import React              from "react";
+import { ReadingYear }    from "../components/reading/reading-year.js";
+// Queries •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+import { useReadingData } from "../static-queries/use-reading-data.js";
+// SEO •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+import { PageSEO }        from "../components/seo/page-seo.js";
+import { ReadingSchema }  from "../components/seo/schemas/reading.js";
 
-import { PageSEO }       from "../components/seo/page-seo.js";
-import { ReadingSchema } from "../components/seo/schemas/reading.js";
-import { ReadingYear }   from "../components/reading/reading-year.js";
 
-import { useReadingData } from "../utils/static-queries/use-reading-data.js";
+// ================================================================================================================== \\
+// ================================================== READING PAGE ================================================== \\
 
-function Reading({ location }) {
+export default function Reading({ location }) {
+// DATA ----------------------------------------------------------------------------------------------------------------
     const reading = useReadingData();
-
-    const readingByYear = reading.reduce((accumulator, book) => {
-        if (accumulator[book.yearRead]) {
-            accumulator[book.yearRead].push(book);
-        } else {
-            accumulator[book.yearRead] = [book];
-        }
-        return accumulator;
+    const readingByYear = reading.reduce((booksByYear, book) => {
+        // noinspection JSUnresolvedVariable
+        booksByYear[book.yearRead] = [...booksByYear[book.yearRead] || [], book];
+        return booksByYear;
     }, {});
 
-    let bookCount = 0;
+    let bookCount = 0; // Used to place book cover on the right or on the left.
 
-    // RENDER --------------------------------------------------------------------------------------------------------------
+// RENDER --------------------------------------------------------------------------------------------------------------
     return (
         <React.Fragment>
-            <PageSEO pageMetadata={{ reading }} Schema={ReadingSchema} location={location}/>
+            <PageSEO location={location} Schema={ReadingSchema} pageMetadata={{ reading }}/>
+
             <h1>Reading</h1>
+
             {reading.length ? Object.entries(readingByYear)
-                                    .sort(([a], [b]) => Math.sign(Number(b) - Number(a)))
+                                    .sort(([a], [b]) => Math.sign(Number(b) - Number(a))) // Sort by year, descending
                                     .map(([year, books]) => {
                                         const readingYear = <ReadingYear key={year} {...{ year, books, bookCount }} />;
                                         bookCount += books.length;
@@ -36,5 +39,3 @@ function Reading({ location }) {
         </React.Fragment>
     );
 }
-
-export default Reading;

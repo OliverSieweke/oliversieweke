@@ -3,15 +3,16 @@ import { BookReviewSchema }    from "./book-review.js";
 
 export function ReadingSchema(readingMetadata) {
     const { name, description, link, inLanguage, dateCreated, datePublished, dateModified } = readingMetadata;
-    const { keywords } = readingMetadata;
     const { license, copyrightYear } = readingMetadata;
-
-    const oliverSiewekeSchema = new OliverSiewekeSchema({});
+    const { keywords } = readingMetadata;
     const { reading = [] } = readingMetadata;
+
+    const oliverSiewekeSchema = new OliverSiewekeSchema();
+
     const hasPart = reading.map(book => new BookReviewSchema({
         ...book,
         license,
-        reviewURL: `https://www.oliversieweke.com${link}`, // Using location.pathname is causing SSR issues.
+        reviewURL: `https://www.oliversieweke.com${link}`, // Workaround - using location.pathname is causing SSR issues.
     }));
 
     return {
@@ -19,16 +20,17 @@ export function ReadingSchema(readingMetadata) {
         "@type": "CollectionPage",
         name,
         description,
-        author: oliverSiewekeSchema,
-        url: `https://www.oliversieweke.com${link}`, // Using location.pathname is causing SSR issues.
+        url: `https://www.oliversieweke.com${link}`, // Workaround - using location.pathname is causing SSR issues.
         inLanguage,
-        keywords,
         dateCreated,
-        datePublished,
         dateModified,
+        author: oliverSiewekeSchema,
+        datePublished,
+        publisher: oliverSiewekeSchema,
         license,
         copyrightYear,
         copyrightHolder: oliverSiewekeSchema,
         hasPart,
+        keywords,
     };
 }

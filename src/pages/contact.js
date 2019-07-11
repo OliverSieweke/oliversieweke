@@ -2,19 +2,15 @@ import React                   from "react";
 // SEO •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { PageSEO }             from "../components/seo/page-seo.js";
 import { OliverSiewekeSchema } from "../components/seo/schemas/oliver-sieweke.js";
-// Queries •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import { useProfileImage }     from "../static-queries/use-profile-image.js";
 
 
 // ===================================================================================================================\\
-// ============================================= CONTACT PAGE ======================================================= \\
+// ================================================== CONTACT PAGE ================================================== \\
 
 export default function Contact({ location }) {
-    const { publicURL } = useProfileImage();
-
     return (
         <React.Fragment>
-            <PageSEO location={location} Schema={OliverSiewekeSchema} metadata={{ image: publicURL }}/>
+            <PageSEO location={location} Schema={OliverSiewekeSchema}/>
 
             <h1>Contact</h1>
 

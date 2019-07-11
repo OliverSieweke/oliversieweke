@@ -7,6 +7,5 @@ const BOOKS_ORDER = {
 
 };
 
-
 export const booksOrder = year => (a, b) => BOOKS_ORDER[year].indexOf(a.identifier)
                                             - BOOKS_ORDER[year].indexOf(b.identifier);

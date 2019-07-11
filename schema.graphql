@@ -495,16 +495,7 @@ type JsonData implements Node {
     name: String
     parent: Node
     review: String
-    reviewDateCreated(
-        #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
-        difference: String,
-        #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
-        formatString: String,
-        #Returns a string generated with Moment.js' `fromNow` function
-        fromNow: Boolean,
-        #Configures the locale Moment.js will use to format the date.
-        locale: String
-    ): Date
+    reviewDateCreated: Int
     reviewDatePublished(
         #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
         difference: String,
@@ -639,6 +630,7 @@ type MarkdownRemarkFrontmatter {
         locale: String
     ): Date
     description: String
+    headline: String
     keywords: [String]
     name: String
     title: String
@@ -674,7 +666,7 @@ type Query {
     directory(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, fields: DirectoryFieldsFilterInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): Directory
     file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, fields: FileFieldsFilterInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
     imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput, resolutions: ImageSharpResolutionsFilterInput, sizes: ImageSharpSizesFilterInput): ImageSharp
-    jsonData(applicationCategory: StringQueryOperatorInput, author: JsonDataAuthorFilterInput, children: NodeFilterListInput, dateCreated: DateQueryOperatorInput, datePublished: DateQueryOperatorInput, description: StringQueryOperatorInput, github: StringQueryOperatorInput, headline: StringQueryOperatorInput, id: StringQueryOperatorInput, identifier: StringQueryOperatorInput, inLanguage: StringQueryOperatorInput, internal: InternalFilterInput, isbn: StringQueryOperatorInput, keywords: StringQueryOperatorInput, license: StringQueryOperatorInput, name: StringQueryOperatorInput, parent: NodeFilterInput, review: StringQueryOperatorInput, reviewDateCreated: DateQueryOperatorInput, reviewDatePublished: DateQueryOperatorInput, subtitle: StringQueryOperatorInput, technologies: JsonDataTechnologiesFilterInput, title: StringQueryOperatorInput, type: StringQueryOperatorInput, url: StringQueryOperatorInput, yearRead: DateQueryOperatorInput): JsonData
+    jsonData(applicationCategory: StringQueryOperatorInput, author: JsonDataAuthorFilterInput, children: NodeFilterListInput, dateCreated: DateQueryOperatorInput, datePublished: DateQueryOperatorInput, description: StringQueryOperatorInput, github: StringQueryOperatorInput, headline: StringQueryOperatorInput, id: StringQueryOperatorInput, identifier: StringQueryOperatorInput, inLanguage: StringQueryOperatorInput, internal: InternalFilterInput, isbn: StringQueryOperatorInput, keywords: StringQueryOperatorInput, license: StringQueryOperatorInput, name: StringQueryOperatorInput, parent: NodeFilterInput, review: StringQueryOperatorInput, reviewDateCreated: IntQueryOperatorInput, reviewDatePublished: DateQueryOperatorInput, subtitle: StringQueryOperatorInput, technologies: JsonDataTechnologiesFilterInput, title: StringQueryOperatorInput, type: StringQueryOperatorInput, url: StringQueryOperatorInput, yearRead: DateQueryOperatorInput): JsonData
     markdownRemark(children: NodeFilterListInput, excerpt: StringQueryOperatorInput, excerptAst: JSONQueryOperatorInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MarkdownRemarkFrontmatterFilterInput, headings: MarkdownHeadingFilterListInput, html: StringQueryOperatorInput, htmlAst: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, rawMarkdownBody: StringQueryOperatorInput, tableOfContents: StringQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: wordCountFilterInput): MarkdownRemark
     site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
     sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, context: SitePageContextFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
@@ -842,6 +834,7 @@ type SitePluginPackageJsonPeerDependencies {
 
 type SitePluginPluginOptions {
     aliases: SitePluginPluginOptionsAliases
+    backgroundColor: String
     background_color: String
     categories: [String]
     description: String
@@ -850,18 +843,22 @@ type SitePluginPluginOptions {
     inlineCodeMarker: String
     lang: String
     linkImagesToOriginal: Boolean
+    maxWidth: Int
     name: String
     orientation: String
     path: String
     pathCheck: Boolean
+    pathPrefix: String
     pathToConfigModule: String
     plugins: [SitePluginPluginOptionsPlugins]
-    quality: Int
     short_name: String
+    showCaptions: Boolean
     start_url: String
     theme_color: String
     tracedSVG: Boolean
     typeName: String
+    withWebp: Boolean
+    wrapperStyle: String
 }
 
 type SitePluginPluginOptionsAliases {
@@ -881,10 +878,15 @@ type SitePluginPluginOptionsPlugins {
 
 type SitePluginPluginOptionsPluginsPluginOptions {
     aliases: SitePluginPluginOptionsPluginsPluginOptionsAliases
+    backgroundColor: String
     inlineCodeMarker: String
     linkImagesToOriginal: Boolean
-    quality: Int
+    maxWidth: Int
+    pathPrefix: String
+    showCaptions: Boolean
     tracedSVG: Boolean
+    withWebp: Boolean
+    wrapperStyle: String
 }
 
 type SitePluginPluginOptionsPluginsPluginOptionsAliases {
@@ -1548,6 +1550,7 @@ enum MarkdownRemarkFieldsEnum {
     frontmatter___dateModified
     frontmatter___datePublished
     frontmatter___description
+    frontmatter___headline
     frontmatter___keywords
     frontmatter___name
     frontmatter___title
@@ -1890,6 +1893,7 @@ enum SitePageFieldsEnum {
     pluginCreator___parent___parent___id
     pluginCreator___pluginFilepath
     pluginCreator___pluginOptions___aliases___js
+    pluginCreator___pluginOptions___backgroundColor
     pluginCreator___pluginOptions___background_color
     pluginCreator___pluginOptions___categories
     pluginCreator___pluginOptions___description
@@ -1898,10 +1902,12 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___inlineCodeMarker
     pluginCreator___pluginOptions___lang
     pluginCreator___pluginOptions___linkImagesToOriginal
+    pluginCreator___pluginOptions___maxWidth
     pluginCreator___pluginOptions___name
     pluginCreator___pluginOptions___orientation
     pluginCreator___pluginOptions___path
     pluginCreator___pluginOptions___pathCheck
+    pluginCreator___pluginOptions___pathPrefix
     pluginCreator___pluginOptions___pathToConfigModule
     pluginCreator___pluginOptions___plugins
     pluginCreator___pluginOptions___plugins___browserAPIs
@@ -1911,12 +1917,14 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___plugins___resolve
     pluginCreator___pluginOptions___plugins___ssrAPIs
     pluginCreator___pluginOptions___plugins___version
-    pluginCreator___pluginOptions___quality
     pluginCreator___pluginOptions___short_name
+    pluginCreator___pluginOptions___showCaptions
     pluginCreator___pluginOptions___start_url
     pluginCreator___pluginOptions___theme_color
     pluginCreator___pluginOptions___tracedSVG
     pluginCreator___pluginOptions___typeName
+    pluginCreator___pluginOptions___withWebp
+    pluginCreator___pluginOptions___wrapperStyle
     pluginCreator___resolve
     pluginCreator___ssrAPIs
     pluginCreator___version
@@ -2029,6 +2037,7 @@ enum SitePluginFieldsEnum {
     parent___parent___parent___id
     pluginFilepath
     pluginOptions___aliases___js
+    pluginOptions___backgroundColor
     pluginOptions___background_color
     pluginOptions___categories
     pluginOptions___description
@@ -2037,29 +2046,38 @@ enum SitePluginFieldsEnum {
     pluginOptions___inlineCodeMarker
     pluginOptions___lang
     pluginOptions___linkImagesToOriginal
+    pluginOptions___maxWidth
     pluginOptions___name
     pluginOptions___orientation
     pluginOptions___path
     pluginOptions___pathCheck
+    pluginOptions___pathPrefix
     pluginOptions___pathToConfigModule
     pluginOptions___plugins
     pluginOptions___plugins___browserAPIs
     pluginOptions___plugins___id
     pluginOptions___plugins___name
     pluginOptions___plugins___pluginFilepath
+    pluginOptions___plugins___pluginOptions___backgroundColor
     pluginOptions___plugins___pluginOptions___inlineCodeMarker
     pluginOptions___plugins___pluginOptions___linkImagesToOriginal
-    pluginOptions___plugins___pluginOptions___quality
+    pluginOptions___plugins___pluginOptions___maxWidth
+    pluginOptions___plugins___pluginOptions___pathPrefix
+    pluginOptions___plugins___pluginOptions___showCaptions
     pluginOptions___plugins___pluginOptions___tracedSVG
+    pluginOptions___plugins___pluginOptions___withWebp
+    pluginOptions___plugins___pluginOptions___wrapperStyle
     pluginOptions___plugins___resolve
     pluginOptions___plugins___ssrAPIs
     pluginOptions___plugins___version
-    pluginOptions___quality
     pluginOptions___short_name
+    pluginOptions___showCaptions
     pluginOptions___start_url
     pluginOptions___theme_color
     pluginOptions___tracedSVG
     pluginOptions___typeName
+    pluginOptions___withWebp
+    pluginOptions___wrapperStyle
     resolve
     ssrAPIs
     version
@@ -2350,7 +2368,7 @@ input JsonDataFilterInput {
     name: StringQueryOperatorInput
     parent: NodeFilterInput
     review: StringQueryOperatorInput
-    reviewDateCreated: DateQueryOperatorInput
+    reviewDateCreated: IntQueryOperatorInput
     reviewDatePublished: DateQueryOperatorInput
     subtitle: StringQueryOperatorInput
     technologies: JsonDataTechnologiesFilterInput
@@ -2405,6 +2423,7 @@ input MarkdownRemarkFrontmatterFilterInput {
     dateModified: DateQueryOperatorInput
     datePublished: DateQueryOperatorInput
     description: StringQueryOperatorInput
+    headline: StringQueryOperatorInput
     keywords: StringQueryOperatorInput
     name: StringQueryOperatorInput
     title: StringQueryOperatorInput
@@ -2539,6 +2558,7 @@ input SitePluginPluginOptionsAliasesFilterInput {
 
 input SitePluginPluginOptionsFilterInput {
     aliases: SitePluginPluginOptionsAliasesFilterInput
+    backgroundColor: StringQueryOperatorInput
     background_color: StringQueryOperatorInput
     categories: StringQueryOperatorInput
     description: StringQueryOperatorInput
@@ -2547,18 +2567,22 @@ input SitePluginPluginOptionsFilterInput {
     inlineCodeMarker: StringQueryOperatorInput
     lang: StringQueryOperatorInput
     linkImagesToOriginal: BooleanQueryOperatorInput
+    maxWidth: IntQueryOperatorInput
     name: StringQueryOperatorInput
     orientation: StringQueryOperatorInput
     path: StringQueryOperatorInput
     pathCheck: BooleanQueryOperatorInput
+    pathPrefix: StringQueryOperatorInput
     pathToConfigModule: StringQueryOperatorInput
     plugins: SitePluginPluginOptionsPluginsFilterListInput
-    quality: IntQueryOperatorInput
     short_name: StringQueryOperatorInput
+    showCaptions: BooleanQueryOperatorInput
     start_url: StringQueryOperatorInput
     theme_color: StringQueryOperatorInput
     tracedSVG: BooleanQueryOperatorInput
     typeName: StringQueryOperatorInput
+    withWebp: BooleanQueryOperatorInput
+    wrapperStyle: StringQueryOperatorInput
 }
 
 input SitePluginPluginOptionsPluginsFilterInput {
@@ -2582,10 +2606,15 @@ input SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput {
 
 input SitePluginPluginOptionsPluginsPluginOptionsFilterInput {
     aliases: SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput
+    backgroundColor: StringQueryOperatorInput
     inlineCodeMarker: StringQueryOperatorInput
     linkImagesToOriginal: BooleanQueryOperatorInput
-    quality: IntQueryOperatorInput
+    maxWidth: IntQueryOperatorInput
+    pathPrefix: StringQueryOperatorInput
+    showCaptions: BooleanQueryOperatorInput
     tracedSVG: BooleanQueryOperatorInput
+    withWebp: BooleanQueryOperatorInput
+    wrapperStyle: StringQueryOperatorInput
 }
 
 input SitePluginSortInput {

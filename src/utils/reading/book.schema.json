@@ -60,9 +60,8 @@
             "description": "Review of the book."
         },
         "reviewDateCreated": {
-            "type": "string",
-            "pattern": "\\d{4}",
-            "description": "Year the book was read."
+            "type": "integer",
+            "description": "Year the book review was written."
         },
         "reviewDatePublished": {
             "type": "string",

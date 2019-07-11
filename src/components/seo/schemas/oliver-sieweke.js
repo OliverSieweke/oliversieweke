@@ -1,4 +1,11 @@
-export function OliverSiewekeSchema({ image, siteUrl }) {
+import { useProfileImage } from "../../../static-queries/use-profile-image.js";
+import { useSiteMetaData } from "../../../static-queries/use-site-metadata.js";
+
+
+export function OliverSiewekeSchema() {
+    const { publicURL } = useProfileImage();
+    const { siteUrl } = useSiteMetaData();
+
     return {
         "@context": "http://schema.org",
         "@type": "Person",
@@ -8,7 +15,7 @@ export function OliverSiewekeSchema({ image, siteUrl }) {
         birthDate: 1992,
         jobTitle: "Web Developer",
         email: "oliver@sieweke.eu",
-        image: `${siteUrl}${image}`,
+        image: `${siteUrl}${publicURL}`,
         url: siteUrl,
         address: {
             "@type": "PostalAddress",

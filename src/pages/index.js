@@ -11,7 +11,7 @@ import styles                  from "../styles/index.module.css";
 
 
 // ================================================================================================================== \\
-// ============================================== INDEX PAGE ======================================================== \\
+// =================================================== INDEX PAGE =================================================== \\
 
 export default function Index({ location }) {
 // DATA ----------------------------------------------------------------------------------------------------------------
@@ -21,12 +21,12 @@ export default function Index({ location }) {
     const age = ageDate.getUTCFullYear() - 1970;
 
     // Profile Image
-    const { publicURL, childImageSharp } = useProfileImage();
+    const { childImageSharp } = useProfileImage();
 
 // RENDER --------------------------------------------------------------------------------------------------------------
     return (
         <React.Fragment>
-            <PageSEO location={location} Schema={OliverSiewekeSchema} metadata={{ image: publicURL }}/>
+            <PageSEO location={location} Schema={OliverSiewekeSchema}/>
 
             <h1>About</h1>
 

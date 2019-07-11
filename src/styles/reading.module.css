@@ -1,7 +1,11 @@
+/* READING YEAR ----------------------------------------------------------------------------------------------------- */
+.year {
+    margin: 0.3rem 0;
+}
+
 /* BOOK SECTION ----------------------------------------------------------------------------------------------------- */
 .book {
     margin: 2rem 0;
-    overflow: hidden; /* Insure the div wraps around the whole book section. */
 }
 
 /* IMAGE ------------------------------------------------------------------------------------------------------------ */
@@ -17,23 +21,23 @@
     border: 1px solid black;
 }
 
-/* CONTENT ---------------------------------------------------------------------------------------------------------- */
+/* TITLE ------------------------------------------------------------------------------------------------------------ */
 .title {
-    display: inline; /* Prevent the link to spread the whole line. */
+    display: inline; /* Prevent the link to take up the whole line. */
     margin: 0;
     font-size: 1.1rem;
     color: hsla(0,0%,0%,0.8);
     text-decoration: #FF6200 underline;
 }
-.subtitle {
+.subtitle, .author-date {
     margin: 0.1rem 0 0 0;
     font-size: 0.9rem;
 }
 .author-date {
-    margin: 0.1rem 0 0 0 ;
-    font-size: 0.9rem;
     font-weight: lighter;
 }
+
+/* CONTENT ---------------------------------------------------------------------------------------------------------- */
 .review {
     margin: 0.9rem 0 0 0;
     font-size: 0.9rem;
