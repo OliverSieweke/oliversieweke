@@ -27,10 +27,10 @@
     "inLanguage": "en",
     "url": "https://www.dragoon.eu/",
     "github": "https://www.github.com/OliverSieweke/dragoon",
+    "dateCreated": "2019",
+    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
     "keywords": [
         "Subtitles",
         "PowerPoint"
-    ],
-    "dateCreated": "2019",
-    "license": "https://www.gnu.org/licenses/gpl-3.0.html"
+    ]
 }

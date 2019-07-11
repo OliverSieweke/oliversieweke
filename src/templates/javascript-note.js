@@ -20,6 +20,7 @@ const ProgrammingNote = ({ data, location, setToc }) => {
 
     const toc = useJavaScriptNotesToc();
 
+    // noinspection JSCheckFunctionSignatures
     useEffect(() => {
         setToc(toc);
         return setToc;

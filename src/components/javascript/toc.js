@@ -22,6 +22,7 @@ const TocItem = ({ name, subNodes, slug, depth, location }) => {
         setOpen(!open);
     }
 
+    // noinspection JSCheckFunctionSignatures
     useEffect(() => { // Open relevant folders on page load
         if (location.pathname.match(new RegExp(`^${slug}`, "u"))) {
             setOpen(true);

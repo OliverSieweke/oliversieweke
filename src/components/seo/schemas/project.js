@@ -2,7 +2,7 @@ import { OliverSiewekeSchema } from "./oliver-sieweke.js";
 
 
 export function ProjectSchema(projectMetadata) {
-    const { type, applicationCategory, name, headline, description, inLanguage, url, dateCreated } = projectMetadata;
+    const { type, name, headline, applicationCategory, description, inLanguage, url, dateCreated } = projectMetadata;
     const { license, keywords } = projectMetadata;
 
     const currentYear = new Date().getFullYear();
@@ -14,9 +14,9 @@ export function ProjectSchema(projectMetadata) {
     return {
         "@context": "http://schema.org",
         "@type": type,
-        applicationCategory,
         name,
         headline,
+        applicationCategory,
         description,
         ...url ? { url } : {},
         inLanguage,

@@ -1,4 +1,4 @@
-export const TECHNOLOGY_SECTION_FIELD_TO_NAME_MAP = new Map([
+export const TECHNOLOGY_CATEGORY_FIELD_TO_NAME_MAP = new Map([
     ["server", "Server"],
     ["data", "Data"],
     ["hosting", "Hosting"],

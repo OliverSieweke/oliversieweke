@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 export const useReadingData = () => {
     const { reading, covers } = useStaticQuery(graphql`
         query ReadingDataQuery {
-            reading: allFile(filter: { sourceInstanceName: {eq: "Reading"} }) {
+            reading: allFile(filter: { sourceInstanceName: { eq: "Reading" } }) {
                 edges {
                     node {
                         childJsonData {

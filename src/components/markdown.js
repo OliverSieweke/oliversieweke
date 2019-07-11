@@ -8,7 +8,7 @@ export const Markdown = ({ markdown: { html } }) => < div dangerouslySetInnerHTM
 
 // QUERY ---------------------------------------------------------------------------------------------------------------
 export const query = graphql`
-    fragment allMarkdownHtmlFragment on FileConnection {
+    fragment allMarkdownHtmlFragment on FileConnection {  # Remove if not needed anymore
         edges {
             node {
                 identifier: name

@@ -1,7 +1,7 @@
 import React               from "react";
 import { ProjectTile }     from "../components/projects/project-tile.js";
 // Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import { useProjectsData } from "../utils/static-queries/use-projects-data.js";
+import { useProjectsData } from "../static-queries/use-projects-data.js";
 import { projectsOrder }   from "../utils/projects/projects-order.js";
 // SEO •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { PageSEO }         from "../components/seo/page-seo.js";

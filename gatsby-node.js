@@ -4,15 +4,15 @@
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
-
-// TODO: go through the possible remark config options
-
+// I) Add Slugs --------------------------------------------------------------------------------------------------------
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions;
 
+    // noinspection JSUnresolvedVariable
     const isProject = node.sourceInstanceName === "Project" &&
                       node.internal.type === "Directory" &&
                       node.dir.match(/content\/projects\/?$/u); // Exclude root 'projects' folder
+    // noinspection JSUnresolvedVariable
     const isJavaScriptNote = node.sourceInstanceName === "JavaScriptNote" &&
                              node.internal.type === "File" &&
                              node.internal.mediaType === "text/markdown";
@@ -32,19 +32,19 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 
+// II) Create Pages ----------------------------------------------------------------------------------------------------
 exports.createPages = ({ graphql, actions }) => Promise.all([
-    createProgrammingNotesPages({ graphql, actions }),
+    createJavascriptNotePages({ graphql, actions }),
     createProjectPages({ graphql, actions }),
 ]);
 
 
-function createProgrammingNotesPages({ graphql, actions }) {
-    // TODO query
+function createJavascriptNotePages({ graphql, actions }) {
     const { createPage } = actions;
 
     return graphql(`
         query JavaScriptSlugs {
-            allFile(filter: {sourceInstanceName: {eq: "JavaScriptNote"}, dir: {regex: "/content/javascript/?/"}}) {
+            allFile(filter: { sourceInstanceName: { eq: "JavaScriptNote" }, dir: { regex: "/content/javascript/?/" } }) { # dir is provided in the query to exclude the root folder from the results
                 edges {
                     node {
                         fields {
@@ -58,7 +58,7 @@ function createProgrammingNotesPages({ graphql, actions }) {
         edges.forEach(({ node: { fields: { slug } } }) => {
             createPage({
                 path: slug,
-                component: path.resolve("./src/templates/programming-note.js"),
+                component: path.resolve("./src/templates/javascript-note.js"),
                 context: { slug },
             });
         });
@@ -70,7 +70,7 @@ function createProjectPages({ graphql, actions }) {
 
     return graphql(`
         query ProjectSlugs {
-            allDirectory(filter: {sourceInstanceName: {eq: "Project"}, dir: {regex: "/content/projects/?$/"}}) {
+            allDirectory(filter: {sourceInstanceName: {eq: "Project"}, dir: {regex: "/content/projects/?$/"}}) { # dir is provided in the query to exclude the root folder from the results
                 edges {
                     node {
                         name
@@ -90,5 +90,4 @@ function createProjectPages({ graphql, actions }) {
             });
         });
     });
-
 }
