@@ -9,7 +9,7 @@ export const useSiteMetaData = () => {
                 siteMetadata {
                     title
                     siteUrl
-                    url: siteUrl # Used as default if no url field is provided by more specific metadata objects
+                    url: siteUrl # Will be used as default if no url field is provided by more specific metadata objects
                     description
                     inLanguage
                     dateCreated

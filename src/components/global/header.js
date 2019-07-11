@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 
 import styles from "./header.module.css";
 
-import { useSiteMetaData } from "../../utils/static-queries/use-site-metadata.js";
+import { useSiteMetaData } from "../../static-queries/use-site-metadata.js";
 
 // ================================================================================================================== \\
 

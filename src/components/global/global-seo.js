@@ -3,7 +3,7 @@ import Helmet              from "react-helmet";
 // SEO •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { WebsiteSchema }   from "../seo/schemas/website.js";
 // Queries •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import { useSiteMetaData } from "../../utils/static-queries/use-site-metadata.js";
+import { useSiteMetaData } from "../../static-queries/use-site-metadata.js";
 import { useProfileImage } from "../../static-queries/use-profile-image.js";
 
 

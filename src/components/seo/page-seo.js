@@ -1,7 +1,7 @@
 import React               from "react";
 import Helmet              from "react-helmet";
 // Queries •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import { useSiteMetaData } from "../../utils/static-queries/use-site-metadata.js";
+import { useSiteMetaData } from "../../static-queries/use-site-metadata.js";
 
 
 // ================================================================================================================== \\
