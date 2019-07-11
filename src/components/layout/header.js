@@ -30,6 +30,7 @@ export const Header = () => {
                             <Link to={link}
                                   className={styles.navigationLink}
                                   activeClassName={styles.activeLink}
+                                  activeStyle={{ color: "red" }}
                                   partiallyActive={link !== "/"}
                             >
                                 {linkText}

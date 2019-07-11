@@ -7,8 +7,8 @@ import { Footer }          from "./footer.js";
 import "../../styles/global.css";
 import styles              from "../../styles/layout.module.css";
 // Fonts •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import "typeface-merriweather";
-import "typeface-lato";
+// import "typeface-merriweather";
+// import "typeface-lato";
 
 // ================================================================================================================== \\
 // ================================================ LAYOUT COMPONENT ================================================ \\
