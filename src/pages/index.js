@@ -29,6 +29,7 @@ export default function Index({ location }) {
             <PageSEO location={location} Schema={OliverSiewekeSchema} metadata={{ image: publicURL }}/>
 
             <h1>About</h1>
+
             <Img
                 className={styles.profileImage}
                 fixed={childImageSharp.fixed}

@@ -31,7 +31,6 @@ export const PageSEO = ({ location, Schema, metadata: pageMetadata = {} }) => {
                 ...pageMetadata.keywords || [],
             ])),
             meta: Array.from(new Set([
-                ...defaultPageMetadata.meta || [],
                 ...configPageMetadata.meta || [],
                 ...pageMetadata.meta || [],
             ])),
