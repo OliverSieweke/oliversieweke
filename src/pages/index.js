@@ -1,7 +1,7 @@
 import React                   from "react";
 import { Link }                from "gatsby";
 import Img                     from "gatsby-image";
-// Queries •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+// Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { useProfileImage }     from "../static-queries/use-profile-image.js";
 // SEO •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { PageSEO }             from "../components/seo/page-seo.js";

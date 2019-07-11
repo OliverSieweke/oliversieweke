@@ -1,6 +1,6 @@
 import React              from "react";
 import { ReadingYear }    from "../components/reading/reading-year.js";
-// Queries •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+// Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { useReadingData } from "../static-queries/use-reading-data.js";
 // SEO •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { PageSEO }        from "../components/seo/page-seo.js";

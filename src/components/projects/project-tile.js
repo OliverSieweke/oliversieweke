@@ -1,43 +1,50 @@
-import React    from "react";
-import { Link } from "gatsby";
-import Img               from "gatsby-image";
-
-import { useCommonProjectIcons } from "../../utils/static-queries/use-common-project-icons.js";
-
-import styles from "../../pages/projects.module.css";
+import React                     from "react";
+import { Link }                  from "gatsby";
+import Img                       from "gatsby-image";
+// Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+import { useCommonProjectIcons } from "../../static-queries/use-common-project-icons.js";
+// Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+import styles                    from "../../styles/projects.module.css";
 
 // ================================================================================================================== \\
+// ============================================= PROJECT TILE COMPONENT ============================================= \\
 
 export const ProjectTile = ({ name, subtitle, description, image, logoURL, url, github, path }) => {
 // DATA ----------------------------------------------------------------------------------------------------------------
     const { githubIconURL, linkIconURL } = useCommonProjectIcons();
 
 // RENDER --------------------------------------------------------------------------------------------------------------
+    // noinspection JSUnresolvedVariable
     return (
-        <div className={styles.projectContainer}>
+        <section className={styles.projectContainer}>
             <div className={styles.iconBar}>
                 <Link to={path}>
-                    <img className={styles.iconImage} alt={`${name} Logo`} src={logoURL}/>
+                    <img className={styles.icon} alt={`${name} Logo`} src={logoURL}/>
                 </Link>
-                <div className={styles.iconLinks}>
-                    {github &&
-                     <a className={styles.iconLink}
-                        title={`${name} GitHub Repo`}
-                        href={github}
-                        target="_blank"
-                        rel="noopener noreferrer">
-                         <img className={styles.iconImage} alt="GitHub" src={githubIconURL}/>
-                     </a>}
-                    {url &&
-                     <a className={styles.iconLink}
-                        title={`${name} Website`}
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer">
-                         <img className={styles.iconImage} alt="Link" src={linkIconURL}/>
-                     </a>
-                    }
-                </div>
+                {
+                    (github || url) &&
+                    <div className={styles.icons}>
+                        {
+                            github &&
+                            <a className={styles.iconLink}
+                               title={`${name} GitHub Repo`}
+                               href={github}
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <img className={styles.icon} alt="GitHub" src={githubIconURL}/>
+                            </a>}
+                        {
+                            url &&
+                            <a className={styles.iconLink}
+                               title={`${name} Website`}
+                               href={url}
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <img className={styles.icon} alt="Link" src={linkIconURL}/>
+                            </a>
+                        }
+                    </div>
+                }
             </div>
 
             <div className={styles.projectMiddle}>
@@ -55,6 +62,6 @@ export const ProjectTile = ({ name, subtitle, description, image, logoURL, url, 
                 <h1 className={styles.name}>{name}</h1>
                 <h1 className={styles.subtitle}>{subtitle}</h1>
             </Link>
-        </div>
+        </section>
     );
 };

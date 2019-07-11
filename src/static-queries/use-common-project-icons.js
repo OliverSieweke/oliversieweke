@@ -1,9 +1,10 @@
 import { graphql, useStaticQuery } from "gatsby";
 
+
 export const useCommonProjectIcons = () => {
-    const { allFile: { edges: iconEdges } } = useStaticQuery(graphql`
+    const { commonProjectIcons: { edges } } = useStaticQuery(graphql`
         query CommonProjectIconsQuery {
-            allFile(filter: { sourceInstanceName: { eq: "CommonProjectIcons" } }) {
+            commonProjectIcons: allFile(filter: { sourceInstanceName: { eq: "CommonProjectIcons" } }) {
                 edges {
                     node {
                         name
@@ -14,7 +15,7 @@ export const useCommonProjectIcons = () => {
         }
     `);
 
-    const icons = iconEdges.map(({ node }) => node);
+    const icons = edges.map(({ node }) => node);
 
     const { publicURL: githubIconURL } = icons.find(({ name }) => name === "github");
     const { publicURL: linkIconURL } = icons.find(({ name }) => name === "link");

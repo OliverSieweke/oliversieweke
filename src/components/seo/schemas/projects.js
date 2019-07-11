@@ -3,11 +3,12 @@ import { ProjectSchema }       from "./project.js";
 
 export function ProjectsSchema(projectsMetadata) {
     const { name, description, link, inLanguage, dateCreated, datePublished, dateModified } = projectsMetadata;
-    const { keywords } = projectsMetadata;
     const { license, copyrightYear } = projectsMetadata;
-
-    const oliverSiewekeSchema = new OliverSiewekeSchema({});
+    const { keywords } = projectsMetadata;
     const { projects = [] } = projectsMetadata;
+
+    const oliverSiewekeSchema = new OliverSiewekeSchema();
+
     const hasPart = projects.map(project => new ProjectSchema(project));
 
     return {
@@ -15,16 +16,17 @@ export function ProjectsSchema(projectsMetadata) {
         "@type": "CollectionPage",
         name,
         description,
-        author: oliverSiewekeSchema,
-        url: `https://www.oliversieweke.com${link}`, // Using location.pathname is causing SSR issues.
+        url: `https://www.oliversieweke.com${link}`, // Workaround - using location.pathname is causing SSR issues.
         inLanguage,
-        keywords,
         dateCreated,
-        datePublished,
         dateModified,
+        author: oliverSiewekeSchema,
+        datePublished,
+        publisher: oliverSiewekeSchema,
         license,
         copyrightYear,
         copyrightHolder: oliverSiewekeSchema,
         hasPart,
+        keywords,
     };
 }

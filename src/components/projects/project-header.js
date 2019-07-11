@@ -1,7 +1,7 @@
 import React       from "react";
 import { graphql } from "gatsby";
 
-import { useCommonProjectIcons } from "../../utils/static-queries/use-common-project-icons.js";
+import { useCommonProjectIcons } from "../../static-queries/use-common-project-icons.js";
 
 import styles from "./project.module.css";
 // ===================================================================================================================\\

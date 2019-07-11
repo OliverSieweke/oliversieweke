@@ -26,7 +26,7 @@
     display: inline; /* Prevent the link to take up the whole line. */
     margin: 0;
     font-size: 1.1rem;
-    color: hsla(0,0%,0%,0.8);
+    color: hsla(0, 0%, 0%, 0.8);
     text-decoration: #FF6200 underline;
 }
 .subtitle, .author-date {

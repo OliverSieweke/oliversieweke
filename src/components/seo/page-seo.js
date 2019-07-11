@@ -1,6 +1,6 @@
 import React               from "react";
 import Helmet              from "react-helmet";
-// Queries •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+// Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { useSiteMetaData } from "../../static-queries/use-site-metadata.js";
 
 

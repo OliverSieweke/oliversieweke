@@ -1,10 +1,10 @@
+/* PROJECTS --------------------------------------------------------------------------------------------------------- */
 .projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 -0.7rem;
 }
-
 .project-container {
     height: 12.75rem;
     width: 12.3rem;
@@ -22,26 +22,26 @@
     align-items: center;
     justify-content: space-between;
 }
+.icons {
+    display: flex;
+}
 .icon-link {
     margin: 0 0.3rem;
 }
-.icon-links {
-    display: flex;
-}
-.icon-image {
+.icon {
     display: block;
     height: 1.3rem;
     margin: 0;
 }
 
-
 /* MIDDLE ----------------------------------------------------------------------------------------------------------- */
-.project-container:hover .description-link  {
+.project-container:hover .description-link {
     display: block;
 }
-.project-container:hover .image  {
+.project-container:hover .image {
     filter: brightness(30%);
 }
+
 .projectMiddle {
     height: 100%;
     overflow: hidden;
@@ -55,7 +55,6 @@
     padding: 0.7rem;
     text-decoration: none;
     color: white;
-    overflow: hidden;
 }
 .description-container {
     height: 100%;
@@ -66,19 +65,18 @@
     font-size: 0.9rem;
     line-height: 1.18745rem;
 }
+
 .image {
     height: 100%;
     width: 100%;
-    position: relative;
-    top: 0;
 }
 
 /* TITLE ------------------------------------------------------------------------------------------------------------ */
 .title {
     padding: 0.5rem 0.6rem;
-    border-top: 1px solid black;
     color: hsla(0, 0%, 0%, 0.8);
     text-decoration: none;
+    border-top: 1px solid black;
 }
 .name {
     margin: 0 0 0.3rem 0;

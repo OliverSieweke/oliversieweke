@@ -1,5 +1,6 @@
 import React          from "react";
 import Img    from "gatsby-image";
+// Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { booksOrder } from "../../utils/reading/books-order.js";
 // Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import styles         from "../../styles/reading.module.css";
