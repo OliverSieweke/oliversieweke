@@ -1,7 +1,7 @@
 import { OliverSiewekeSchema } from "./oliver-sieweke.js";
 
 export function WebsiteSchema(siteMetadata) {
-    const { name, description, url, inLanguage, dateCreated, datePublished, dateModified } = siteMetadata;
+    const { name, description, url, image, inLanguage, dateCreated, datePublished, dateModified } = siteMetadata;
     const { keywords } = siteMetadata;
     const { license, copyrightYear } = siteMetadata;
 
@@ -11,8 +11,9 @@ export function WebsiteSchema(siteMetadata) {
         "@context": "http://schema.org",
         "@type": "WebSite",
         name,
-        url,
         description,
+        url,
+        image,
         inLanguage,
         dateCreated,
         datePublished,
