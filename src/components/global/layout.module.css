@@ -28,6 +28,7 @@
 }
 
 .main {
-    width: inherit;
+    min-width: 100%;    /* Take whole width without overflowing */
+    max-width: 100%;    /* Take whole width without overflowing */
     padding: 2rem 2rem 1.5rem 2rem;
 }

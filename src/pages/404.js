@@ -1,11 +1,28 @@
-import React from "react";
+import React       from "react";
+import { Link }    from "gatsby";
+// SEO •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+import { PageSEO } from "../components/seo/page-seo.js";
+// Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+import styles      from "../styles/404.module.css";
 
-// TODO: add title or keep default?
-const NotFoundPage = () => (
-    <React.Fragment>
-        <h1>NOT FOUND</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </React.Fragment>
-);
 
-export default NotFoundPage;
+// ================================================================================================================== \\
+// =============================================== 404 PAGE ========================================================= \\
+
+export default function NotFound({ location }) {
+    const metadata = {
+        title: "404 | Oliver Sieweke",
+        description: "Page not found.",
+    };
+
+    return (
+        <React.Fragment>
+            <PageSEO location={location} metadata={metadata}/>
+
+            <h1>Ooops! Page not found!</h1>
+            <Link className={styles.link} to="/">
+                Back to Homepage!
+            </Link>
+        </React.Fragment>
+    );
+}
