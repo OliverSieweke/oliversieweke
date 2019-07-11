@@ -3,8 +3,7 @@ import { Link } from "gatsby";
 // Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { useSiteMetaData } from "../../static-queries/use-site-metadata.js";
 // Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-// import styles from "../../styles/layout.module.css";
-import styles from "./header.module.css";
+import styles from "../../styles/layout.module.css";
 
 
 // ================================================================================================================== \\
@@ -30,7 +29,6 @@ export const Header = () => {
                             <Link to={link}
                                   className={styles.navigationLink}
                                   activeClassName={styles.activeLink}
-                                  activeStyle={{ color: "red" }}
                                   partiallyActive={link !== "/"}
                             >
                                 {linkText}

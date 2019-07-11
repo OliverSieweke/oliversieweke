@@ -70,7 +70,7 @@ function createProjectPages({ graphql, actions }) {
 
     return graphql(`
         query ProjectSlugs {
-            allDirectory(filter: {sourceInstanceName: {eq: "Project"}, dir: {regex: "/content/projects/?$/"}}) { # dir is provided in the query to exclude the root folder from the results
+            allDirectory(filter: { sourceInstanceName: { eq: "Project" }, dir: { regex: "/content/projects/?$/" } }) { # dir is provided in the query to exclude the root folder from the results
                 edges {
                     node {
                         name
