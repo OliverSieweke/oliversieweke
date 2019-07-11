@@ -23,7 +23,7 @@ export default function Projects({ location }) {
 // RENDER --------------------------------------------------------------------------------------------------------------
     return (
         <React.Fragment>
-            <PageSEO location={location} Schema={ProjectsSchema} pageMetadata={{ projects }}/>
+            <PageSEO location={location} Schema={ProjectsSchema} metadata={{ projects }}/>
 
             <h1>Projects</h1>
             <div className={styles.projects}>

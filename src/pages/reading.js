@@ -24,7 +24,7 @@ export default function Reading({ location }) {
 // RENDER --------------------------------------------------------------------------------------------------------------
     return (
         <React.Fragment>
-            <PageSEO location={location} Schema={ReadingSchema} pageMetadata={{ reading }}/>
+            <PageSEO location={location} Schema={ReadingSchema} metadata={{ reading }}/>
 
             <h1>Reading</h1>
 
