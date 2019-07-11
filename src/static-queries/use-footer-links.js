@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
+
 export const useFooterLinks = () => {
     const { site: { siteMetadata: { footerLinks } }, footerLinkIcons } = useStaticQuery(graphql`
         query FooterLinksQuery {
@@ -23,8 +24,10 @@ export const useFooterLinks = () => {
     `);
 
     return footerLinks.map(footerLink => {
+        // noinspection JSUnresolvedVariable
         const icon = footerLinkIcons.edges.find(({ node }) => node.name === footerLink.name);
 
+        // noinspection JSUnresolvedVariable
         return {
             ...footerLink,
             iconURL: icon.node.publicURL,

@@ -85,7 +85,8 @@ export default function Index({ location }) {
                 <Link to="/javascript/">
                     JavaScript notes
                 </Link>
-                . Now that it&apos;s here I might start putting it to other uses. Please roam about and feel free to
+                {/* eslint-disable-next-line max-len */}
+                . Now that it&apos;s here I might start putting it to other uses. Please roam about and feel free to&nbsp;
                 <Link to="/contact/">
                     contact
                 </Link>
