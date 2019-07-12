@@ -2,7 +2,7 @@ import React                   from "react";
 import { graphql }             from "gatsby";
 import { ProjectHeader }       from "../components/projects/project-header.js";
 import { ProjectTechnologies } from "../components/projects/project-technologies.js";
-import { Markdown }            from "../components/markdown.js";
+import { Markdown }            from "../components/common/markdown.js";
 // SEO •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { PageSEO }             from "../components/seo/page-seo.js";
 import { ProjectSchema }       from "../components/seo/schemas/project.js";

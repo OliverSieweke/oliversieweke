@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GlobalSEO }       from "./global-seo.js";
 import { Header }          from "./header.js";
-import { Toc }             from "../javascript/toc.js";
+import { JavaScriptToc }   from "../javascript/javascript-toc.js";
 import { Footer }          from "./footer.js";
 // Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import "../../styles/global.css";
@@ -21,7 +21,7 @@ export const Layout = ({ children, location }) => {
             <GlobalSEO/>
             <Header/>
             <div className={styles.page}>
-                {toc && <Toc toc={toc} location={location}/>}
+                {toc && <JavaScriptToc toc={toc} location={location}/>}
                 <div className={styles.contentContainer}>
                     <div className={`${styles.content} ${toc ? styles.javascriptContent : ""}`}>
                         <main className={styles.main}>

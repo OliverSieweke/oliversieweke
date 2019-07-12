@@ -44,7 +44,7 @@ function createJavascriptNotePages({ graphql, actions }) {
 
     return graphql(`
         query JavaScriptSlugs {
-            allFile(filter: { sourceInstanceName: { eq: "JavaScriptNote" }, dir: { regex: "/content/javascript/?/" } }) { # dir is provided in the query to exclude the root folder from the results
+            javaScriptNotes: allFile(filter: { sourceInstanceName: { eq: "JavaScriptNote" }, dir: { regex: "/content/javascript/?/" } }) { # dir is provided in the query to exclude the root folder from the results
                 edges {
                     node {
                         fields {
@@ -54,7 +54,7 @@ function createJavascriptNotePages({ graphql, actions }) {
                 }
             }
         }
-  `).then(({ data: { allFile: { edges } } }) => {
+  `).then(({ data: { javaScriptNotes: { edges } } }) => {
         edges.forEach(({ node: { fields: { slug } } }) => {
             createPage({
                 path: slug,
@@ -70,7 +70,7 @@ function createProjectPages({ graphql, actions }) {
 
     return graphql(`
         query ProjectSlugs {
-            allDirectory(filter: { sourceInstanceName: { eq: "Project" }, dir: { regex: "/content/projects/?$/" } }) { # dir is provided in the query to exclude the root folder from the results
+            projects: allDirectory(filter: { sourceInstanceName: { eq: "Project" }, dir: { regex: "/content/projects/?$/" } }) { # dir is provided in the query to exclude the root folder from the results
                 edges {
                     node {
                         name
@@ -81,7 +81,7 @@ function createProjectPages({ graphql, actions }) {
                 }
             }
         }
-    `).then(({ data: { allDirectory: { edges } } }) => {
+    `).then(({ data: { projects: { edges } } }) => {
         edges.forEach(({ node: { name, fields: { slug } } }) => {
             createPage({
                 path: slug,
