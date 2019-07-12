@@ -30,7 +30,8 @@ export const ProjectTile = ({ name, subtitle, description, image, logoURL, url, 
                                title={`${name} GitHub Repo`}
                                href={github}
                                target="_blank"
-                               rel="noopener noreferrer">
+                               rel="noopener noreferrer"
+                            >
                                 <img className={styles.icon} alt="GitHub" src={githubIconURL}/>
                             </a>}
                         {
@@ -39,7 +40,8 @@ export const ProjectTile = ({ name, subtitle, description, image, logoURL, url, 
                                title={`${name} Website`}
                                href={url}
                                target="_blank"
-                               rel="noopener noreferrer">
+                               rel="noopener noreferrer"
+                            >
                                 <img className={styles.icon} alt="Link" src={linkIconURL}/>
                             </a>
                         }

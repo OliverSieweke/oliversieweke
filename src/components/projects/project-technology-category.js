@@ -12,11 +12,13 @@ export const ProjectTechnologyCategory = ({ categoryName, categoryTechnologies }
         <ul className={styles.categoryTechnologies}>
             {categoryTechnologies.map(({ name, url, iconURL }) => (
                 <li className={styles.technologyItem} key={name}>
-                    <a className={styles.technologyLink}
-                       title={name}
-                       href={url}
-                       target="_blank"
-                       rel="noopener noreferrer">
+                    <a
+                        className={styles.technologyLink}
+                        title={name}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <img className={styles.technologyIcon} alt={`${name} Logo`} src={iconURL}/>
                         <span>{name}</span>
                     </a>
