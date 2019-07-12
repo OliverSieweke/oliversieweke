@@ -58,8 +58,8 @@
 /* ARROW ICON ------------------------------------------------------------------------------------------------------- */
 .link-icon {
     display: inline-block;
-    margin-left: -1.2rem;
-    margin-right: 0.6rem;
+    margin-left: -1.8rem;
+    padding: 0 0.6rem;
 }
 .link-icon-active {
     transform: rotate(90deg);
