@@ -936,6 +936,7 @@ module.exports = {
                     "a", "b", "c",                                              // Standard variables
                     "e",                                                        // Event
                     "id",
+                    "js"
                 ],
             },
         ],
