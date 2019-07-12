@@ -2,7 +2,7 @@
 /* HEADER | PAGE */
 .layout {
     display: grid;
-    grid-template-rows: 4rem minmax(auto, calc(100vh - 4rem));
+    grid-template-rows: auto minmax(auto, calc(100vh - 4rem));
 }
 
 /* TOC | CONTENT */
@@ -15,7 +15,12 @@
     justify-self: stretch;
     display: flex;
     justify-content: center;
-    overflow: scroll;
+    overflow: auto;
+}
+@media screen and (max-width: 400px) {
+    .content-container {
+        overflow: visible;
+    }
 }
 .content {
     width: 44rem;
@@ -23,12 +28,17 @@
     display: grid;
     grid-template-rows: 1fr 3rem;
 }
+@media screen and (max-width: 400px) {
+    .content {
+        grid-template-rows: 1fr 5.6rem;
+    }
+}
 .javascript-content {
     max-width: calc(100vw - 15rem);
 }
 .main {
-    min-width: 100%;    /* Take whole width without overflowing */
-    max-width: 100%;    /* Take whole width without overflowing */
+    min-width: 100%; /* Take whole width without overflowing */
+    max-width: 100%; /* Take whole width without overflowing */
     padding: 2rem 2rem 1.5rem 2rem;
 }
 
@@ -39,7 +49,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.7rem 1rem 1.5rem;
-    box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.75);
+}
+@media screen and (max-width: 400px) {
+    .header {
+        flex-direction: column;
+    }
 }
 
 /* NAME */
@@ -47,6 +62,11 @@
     margin: 0 1.7rem 0 0;
     font-weight: normal;
     font-family: Lato sans-serif;
+}
+@media screen and (max-width: 400px) {
+    .name {
+        margin: 0;
+    }
 }
 .name-link {
     text-decoration: none;
@@ -64,6 +84,14 @@
     justify-content: center;
     list-style-type: none;
 }
+@media screen and (max-width: 400px) {
+    .navigation-list {
+        border-top: 1px solid rgba(0, 0, 0, 0.75);
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+}
+
 .navigation-item {
     margin: 0 0.6rem;
     font-size: 1.33rem;
@@ -106,6 +134,12 @@
     list-style-type: none;
     display: flex;
 }
+@media screen and (max-width: 400px) {
+    .footer-links-list {
+        top: 30%;
+        transform: translate(-50%, -30%);
+    }
+}
 .footer-link {
     margin: 0;
 }
@@ -122,6 +156,14 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+}
+@media screen and (max-width: 400px) {
+    .copyright {
+        margin: 1.2rem 0;
+        top: 55%;
+        right: 50%;
+        transform: translate(50%, -55%);
+    }
 }
 .copyright-link {
     margin: 0;
