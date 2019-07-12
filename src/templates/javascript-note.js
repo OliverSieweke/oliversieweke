@@ -34,7 +34,9 @@ export default function JavaScriptNote({ data, location, setToc }) {
         <React.Fragment>
             <PageSEO location={location} Schema={JavaScriptNoteSchema} metadata={metadata}/>
 
-            <Markdown markdown={childMarkdownRemark}/>
+            <article>
+                <Markdown markdown={childMarkdownRemark}/>
+            </article>
         </React.Fragment>
     );
 }

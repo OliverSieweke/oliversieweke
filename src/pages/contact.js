@@ -2,8 +2,8 @@ import React                   from "react";
 // SEO •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { PageSEO }             from "../components/seo/page-seo.js";
 import { OliverSiewekeSchema } from "../components/seo/schemas/oliver-sieweke.js";
-
-
+// Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+import styles from "../styles/contact.module.css";
 // ===================================================================================================================\\
 // ================================================== CONTACT PAGE ================================================== \\
 
@@ -14,9 +14,9 @@ export default function Contact({ location }) {
 
             <h1>Contact</h1>
 
-            <p>
+            <address className={styles.address}>
                 The best way to contact me is at <a title="Email" href="mailto:oliver@sieweke.eu">oliver@sieweke.eu</a>.
-            </p>
+            </address>
 
             <br/>
             <hr/>
