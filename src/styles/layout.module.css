@@ -41,6 +41,11 @@
     max-width: 100%; /* Take whole width without overflowing */
     padding: 2rem 2rem 1.5rem 2rem;
 }
+@media screen and (max-width: 400px) {
+    .main {
+        padding: 2rem 1.5rem 0.5rem 1.5rem;
+    }
+}
 
 /* HEADER ----------------------------------------------------------------------------------------------------------- */
 .header {
