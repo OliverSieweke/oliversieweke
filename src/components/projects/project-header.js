@@ -22,11 +22,11 @@ export const ProjectHeader = ({ name, subtitle, url, github }) => {
             {(github || url) &&
              <div className={styles.icons}>
                  {github &&
-                  <a title="GitHub Repo" href={github} target="_blank" rel="noopener noreferrer">
+                  <a className={styles.iconLink} title="GitHub Repo" href={github} target="_blank" rel="noopener noreferrer">
                       <img className={styles.icon} alt="GitHub" src={githubIconURL}/>
                   </a>}
                  {url &&
-                  <a title="Website" href={url} target="_blank" rel="noopener noreferrer">
+                  <a className={styles.iconLink} title="Website" href={url} target="_blank" rel="noopener noreferrer">
                       <img className={styles.icon} alt="Link" src={linkIconURL}/>
                   </a>
                  }

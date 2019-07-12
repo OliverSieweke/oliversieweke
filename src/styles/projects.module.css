@@ -35,40 +35,38 @@
 }
 
 /* MIDDLE ----------------------------------------------------------------------------------------------------------- */
-.project-container:hover .description-link {
-    display: block;
-}
-.project-container:hover .image {
-    filter: brightness(30%);
+@media (hover: hover) {
+    .project-container:hover .description-container {
+        display: block;
+    }
+    .project-container:hover .image {
+        filter: brightness(30%);
+    }
 }
 
-.projectMiddle {
-    height: 100%;
+.project-middle {
+    display: flex;
     overflow: hidden;
-}
-.description-link {
-    display: none;
-    position: relative;
-    height: 100%;
-    top: -100%;
-    margin: 0;
-    padding: 0.7rem;
     text-decoration: none;
-    color: white;
 }
 .description-container {
-    height: 100%;
+    display: none;
+    box-sizing: border-box;
     overflow: hidden;
+    min-width: 100%;
+    border: 0.7rem solid transparent;
+    transform: translateX(-100%);
+    color: white;
 }
 .description {
     margin: 0;
+    height: 100%;
     font-size: 0.9rem;
     line-height: 1.18745rem;
 }
 
 .image {
-    height: 100%;
-    width: 100%;
+    min-width: 100%;
 }
 
 /* TITLE ------------------------------------------------------------------------------------------------------------ */

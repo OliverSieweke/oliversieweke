@@ -48,18 +48,15 @@ export const ProjectTile = ({ name, subtitle, description, image, logoURL, url, 
                     </div>
                 }
             </div>
-
-            <div className={styles.projectMiddle}>
+            <Link className={styles.projectMiddle} to={path}>
                 <Img
                     className={styles.image}
                     fluid={image.childImageSharp.fluid}
                 />
-                <Link className={styles.descriptionLink} to={path}>
-                    <div className={styles.descriptionContainer}>
-                        <p className={styles.description}>{description}</p>
-                    </div>
-                </Link>
-            </div>
+                <div className={styles.descriptionContainer}>
+                    <p className={styles.description}>{description}</p>
+                </div>
+            </Link>
             <Link className={styles.title} to={path}>
                 <h1 className={styles.name}>{name}</h1>
                 <h1 className={styles.subtitle}>{subtitle}</h1>
