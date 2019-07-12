@@ -18,7 +18,7 @@ const initialToc = new TocNode({
 
 export const useJavaScriptToc = () => {
     const { javaScriptNotes: { edges } } = useStaticQuery(graphql`
-        query notesTocQuery {
+        query JavaScriptTocQuery {
             javaScriptNotes: allFile(filter: {sourceInstanceName: {eq: "JavaScriptNote"}}) {
                 edges {
                     node {

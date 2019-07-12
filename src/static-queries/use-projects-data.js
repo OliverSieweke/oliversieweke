@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
+import { projectsOrder }           from "../utils/projects/projects-order.js";
 
 
 export const useProjectsData = () => {
@@ -77,5 +78,5 @@ export const useProjectsData = () => {
             image: image.node.childImageSharp,
             logoURL: logo.node.publicURL,
         };
-    });
+    }).sort(projectsOrder);
 };

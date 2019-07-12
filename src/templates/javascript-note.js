@@ -41,7 +41,7 @@ export default function JavaScriptNote({ data, location, setToc }) {
 
 // QUERY ---------------------------------------------------------------------------------------------------------------
 export const query = graphql`
-    query JavaScriptQuery($slug: String!) {
+    query JavaScriptNoteQuery($slug: String!) {
         javaScriptNote: file(fields: { slug: { eq: $slug } }, sourceInstanceName: { eq: "JavaScriptNote" }) {
             ...markdownHtmlFragment
         }
