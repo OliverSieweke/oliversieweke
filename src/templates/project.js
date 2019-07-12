@@ -15,16 +15,18 @@ import styles                  from "../styles/project.module.css";
 
 export default function Project({ data, location }) {
 // DATA ----------------------------------------------------------------------------------------------------------------
-    const { projectInfo, mainDescription, technicalDescription } = data;
+    const { projectInfo, image, mainDescription, technicalDescription } = data;
     const { childJsonData: projectInfoJson } = projectInfo;
     const { technologies } = projectInfoJson;
     const { childMarkdownRemark: mainDescriptionMarkdown } = mainDescription;
     const { childMarkdownRemark: technicalDescriptionMarkdown } = technicalDescription;
 
+    const metadata = { ...projectInfoJson, image };
+    
 // RENDER --------------------------------------------------------------------------------------------------------------
     return (
         <React.Fragment>
-            <PageSEO location={location} Schema={ProjectSchema} metadata={projectInfoJson}/>
+            <PageSEO location={location} Schema={ProjectSchema} metadata={metadata}/>
 
             <section>
                 <ProjectHeader {...projectInfoJson} />
@@ -45,6 +47,9 @@ export const query = graphql`
     query ProjectQuery($dirRegex: String!) {
         projectInfo: file(name: { eq: "project-info" }, sourceInstanceName: { eq: "Project" }, dir: { regex: $dirRegex }) {
             ...projectDataFragment
+        }
+        image: file(name: { eq: "tile-image" }, sourceInstanceName: { eq: "Project" }, dir: { regex: $dirRegex }) {
+            publicURL
         }
         mainDescription: file(name: { eq: "main-description" }, sourceInstanceName: { eq: "Project" }, dir: { regex: $dirRegex }) {
             ...markdownHtmlFragment

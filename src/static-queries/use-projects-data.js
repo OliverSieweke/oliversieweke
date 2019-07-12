@@ -23,6 +23,7 @@ export const useProjectsData = () => {
             images: allFile(filter: { name: { eq: "tile-image" }, sourceInstanceName: { eq: "Project" } }) {
                 edges {
                     node {
+                        publicURL
                         childImageSharp {
                             fluid(maxWidth: 400) {
                                 aspectRatio
@@ -75,7 +76,10 @@ export const useProjectsData = () => {
         // noinspection JSUnresolvedVariable
         return {
             ...childJsonData,
-            image: image.node.childImageSharp,
+            image: {
+                publicURL: image.node.publicURL,
+                childImageSharp: image.node.childImageSharp,
+            },
             logoURL: logo.node.publicURL,
         };
     }).sort(projectsOrder);

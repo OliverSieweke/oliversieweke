@@ -50,7 +50,7 @@ export const ProjectTile = ({ name, subtitle, description, image, logoURL, url, 
             <div className={styles.projectMiddle}>
                 <Img
                     className={styles.image}
-                    fluid={image.fluid}
+                    fluid={image.childImageSharp.fluid}
                 />
                 <Link className={styles.descriptionLink} to={path}>
                     <div className={styles.descriptionContainer}>

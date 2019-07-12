@@ -1,10 +1,10 @@
 import { OliverSiewekeSchema } from "./oliver-sieweke.js";
 
 
-export function JavaScriptNoteSchema(projectMetadata) {
-    const { name, headline, description, articleSection, wordCount, articleBody, url, inLanguage } = projectMetadata;
-    const { dateCreated, dateModified, datePublished } = projectMetadata;
-    const { license, keywords } = projectMetadata;
+export function JavaScriptNoteSchema(noteMetadata) {
+    const { name, headline, description, articleSection, wordCount, articleBody, url, inLanguage } = noteMetadata;
+    const { dateCreated, dateModified, datePublished } = noteMetadata;
+    const { license, keywords } = noteMetadata;
 
     const copyrightYear = new Date().getFullYear() === dateCreated ? `${dateCreated}`
                                                                    : `${dateCreated} - ${new Date().getFullYear()}`;

@@ -1,4 +1,4 @@
-import { useSquareProfileImage } from "../../../static-queries/use-profile-image.js";
+import { useSquareProfileImage } from "../../../static-queries/use-square-profile-image.js";
 import { useSiteMetaData } from "../../../static-queries/use-site-metadata.js";
 
 

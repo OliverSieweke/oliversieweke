@@ -2,9 +2,9 @@ import { OliverSiewekeSchema } from "./oliver-sieweke.js";
 import { BookSchema }          from "./book.js";
 
 
-export function BookReviewSchema(bookMetadata) {
-    const { name, review, reviewURL, reviewDateCreated, author, reviewDatePublished } = bookMetadata;
-    const { reviewLicense } = bookMetadata;
+export function BookReviewSchema(reviewMetadata) {
+    const { name, review, reviewURL, reviewDateCreated, author, reviewDatePublished } = reviewMetadata;
+    const { reviewLicense } = reviewMetadata;
 
     const currentYear = new Date().getFullYear();
     const copyrightYear = currentYear === reviewDateCreated ? `${reviewDateCreated}`
@@ -15,7 +15,7 @@ export function BookReviewSchema(bookMetadata) {
     return {
         "@context": "http://schema.org",
         "@type": "UserReview",
-        itemReviewed: new BookSchema(bookMetadata),
+        itemReviewed: new BookSchema(reviewMetadata),
         description: `Oliver Sieweke's short review of "${name}" by ${author.name}.`,
         reviewBody: review,
         url: reviewURL,

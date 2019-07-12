@@ -1,7 +1,10 @@
-import { AuthorSchema } from "./author.js";
+import { AuthorSchema }    from "./author.js";
+import { useSiteMetaData } from "../../../static-queries/use-site-metadata.js";
+
 
 export function BookSchema(bookMetadata) {
-    const { name, author, datePublished, url, isbn, cover } = bookMetadata;
+    const { name, author, datePublished, cover, url, isbn } = bookMetadata;
+    const { siteUrl } = useSiteMetaData();
 
     // noinspection JSUnresolvedVariable
     return {
@@ -12,6 +15,6 @@ export function BookSchema(bookMetadata) {
         author: new AuthorSchema(author),
         url,
         isbn,
-        image: cover.publicURL,
+        image: `${siteUrl}${cover.publicURL}`,
     };
 }
