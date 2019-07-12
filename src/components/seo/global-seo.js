@@ -4,7 +4,7 @@ import Helmet              from "react-helmet";
 import { WebsiteSchema }   from "./schemas/website.js";
 // Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { useSiteMetaData } from "../../static-queries/use-site-metadata.js";
-import { useProfileImage } from "../../static-queries/use-profile-image.js";
+import { useSquareProfileImage } from "../../static-queries/use-square-profile-image.js";
 
 
 // ================================================================================================================== \\
@@ -14,7 +14,7 @@ export const GlobalSEO = () => {
 // DATA ----------------------------------------------------------------------------------------------------------------
     const siteMetadata = useSiteMetaData();
     const { title, name, inLanguage: lang, keywords, siteUrl } = siteMetadata;
-    const { publicURL } = useProfileImage();
+    const { publicURL } = useSquareProfileImage();
 
     const websiteSchema = new WebsiteSchema({
         ...siteMetadata,
