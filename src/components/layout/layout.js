@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GlobalSEO }       from "./global-seo.js";
+import { GlobalSEO }       from "../seo/global-seo.js";
 import { Header }          from "./header.js";
 import { JavaScriptToc }   from "../javascript/javascript-toc.js";
 import { Footer }          from "./footer.js";

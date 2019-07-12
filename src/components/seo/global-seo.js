@@ -1,7 +1,7 @@
 import React               from "react";
 import Helmet              from "react-helmet";
 // SEO •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import { WebsiteSchema }   from "../seo/schemas/website.js";
+import { WebsiteSchema }   from "./schemas/website.js";
 // Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { useSiteMetaData } from "../../static-queries/use-site-metadata.js";
 import { useProfileImage } from "../../static-queries/use-profile-image.js";

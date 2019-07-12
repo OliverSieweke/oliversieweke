@@ -21,3 +21,15 @@ export const useProfileImage = () => {
 
     return profileImage;
 };
+
+export const useSquareProfileImage = () => {
+    const { profileImage } = useStaticQuery(graphql`
+        query ProfileImageQuery {
+            profileImage: file(relativePath: { eq: "square-profile.jpg" }, sourceInstanceName: { eq: "Images" }) {
+                publicURL
+            }
+        }
+    `);
+
+    return profileImage;
+};

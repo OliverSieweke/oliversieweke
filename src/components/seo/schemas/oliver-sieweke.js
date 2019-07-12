@@ -1,9 +1,9 @@
-import { useProfileImage } from "../../../static-queries/use-profile-image.js";
+import { useSquareProfileImage } from "../../../static-queries/use-profile-image.js";
 import { useSiteMetaData } from "../../../static-queries/use-site-metadata.js";
 
 
 export function OliverSiewekeSchema() {
-    const { publicURL } = useProfileImage();
+    const { publicURL } = useSquareProfileImage();
     const { siteUrl } = useSiteMetaData();
 
     return {
