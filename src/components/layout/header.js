@@ -1,17 +1,21 @@
-import React    from "react";
-import { Link } from "gatsby";
+import React               from "react";
+import { Link }            from "gatsby";
 // Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { useSiteMetaData } from "../../static-queries/use-site-metadata.js";
+import { useBurgerMenu }   from "../../static-queries/use-burger-menu.js";
 // Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import styles from "../../styles/layout.module.css";
+import styles              from "../../styles/layout.module.css";
 
 
 // ================================================================================================================== \\
 // ================================================ HEADER COMPONENT ================================================ \\
 
-export const Header = () => {
+export const Header = ({ toc, tocVisible, setTocVisible }) => {
 // DATA ----------------------------------------------------------------------------------------------------------------
     const { navigationItems } = useSiteMetaData();
+    const burgerMenuURL = useBurgerMenu().publicURL;
+
+    const toggleTocVisible = () => setTocVisible(!tocVisible);
 
 // RENDER --------------------------------------------------------------------------------------------------------------
     return (
@@ -37,6 +41,10 @@ export const Header = () => {
                     ))}
                 </ul>
             </nav>
+            {toc && // We want to display the burger menu whenever a TOC is available
+             <button onClick={toggleTocVisible} className={styles.burger}>
+                 <img className={styles.burgerImage} alt="Menu" src={burgerMenuURL}/>
+             </button>}
         </header>
     );
 };

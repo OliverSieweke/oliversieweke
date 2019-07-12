@@ -14,18 +14,20 @@ import "typeface-lato";
 // ================================================ LAYOUT COMPONENT ================================================ \\
 
 export const Layout = ({ children, location }) => {
-    const [toc, setToc] = useState(); // A slightly different layout is required for the Javascript notes with TOC.
+    // A slightly different layout is required for the Javascript notes with TOC.
+    const [toc, setToc] = useState();
+    const [tocVisible, setTocVisible] = useState();
 
     return (
         <div className={styles.layout}>
             <GlobalSEO/>
-            <Header/>
+            <Header {...{ toc, tocVisible, setTocVisible }}/>
             <div className={styles.page}>
-                {toc && <JavaScriptToc toc={toc} location={location}/>}
+                {tocVisible && <JavaScriptToc {...{ toc, setTocVisible, location }}/>}
                 <div className={styles.contentContainer}>
                     <div className={`${styles.content} ${toc ? styles.javascriptContent : ""}`}>
                         <main className={styles.main}>
-                            {React.cloneElement(children, { setToc })}
+                            {React.cloneElement(children, { setToc, setTocVisible })}
                         </main>
                         <Footer/>
                     </div>

@@ -7,6 +7,14 @@
     border-right: 1px solid darkgray;
 }
 
+@media screen and (max-width: 400px) {
+    .toc {
+        width: 100%;
+        overflow: visible;
+    }
+}
+
+
 /* LISTS ------------------------------------------------------------------------------------------------------------ */
 .list {
     margin: 0;

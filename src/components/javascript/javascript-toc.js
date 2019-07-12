@@ -7,20 +7,34 @@ import styles                         from "../../styles/javascript.module.css";
 // ================================================================================================================== \\
 // ============================================ JAVASCRIPT TOC COMPONENT ============================================ \\
 
-export const JavaScriptToc = ({ toc, location }) => (
+export const JavaScriptToc = ({ toc, setTocVisible, location }) => (
     <nav className={styles.toc}>
         {Boolean(toc.subNodes.length) &&
-         toc.subNodes.map(node => <TocItem key={node.identifier} {...node} depth={1} location={location}/>)}
+         toc.subNodes.map(node => (
+             <TocItem
+                 key={node.identifier}
+                 depth={1}
+                 {...node}
+                 {...{ location, setTocVisible }}
+             />
+         ))}
     </nav>
 );
 
-const TocItem = ({ name, subNodes, slug, depth, location }) => {
+const TocItem = ({ depth, name, subNodes, slug, location, setTocVisible }) => {
     const [open, setOpen] = useState(false);
 
     function toggleOpen(e) {
         e.preventDefault();     // Dont't navigate, only toggle
         e.stopPropagation();    // Dont't navigate, only toggle:
         setOpen(!open);
+    }
+
+    function handleLinkClick() {
+        setOpen(true);
+        if (matchMedia("screen and (max-width: 400px)").matches) {
+            setTocVisible(false);
+        }
     }
 
     // Open relevant folders on page load:
@@ -34,9 +48,10 @@ const TocItem = ({ name, subNodes, slug, depth, location }) => {
     const subItems = subNodes.length && subNodes.map(node => (
         <TocItem
             key={node.identifier}
-            {...node}
             depth={depth + 1}
-            location={location}/>
+            {...node}
+            {...{ location, setTocVisible }}
+        />
     ));
 
     return (
@@ -46,7 +61,7 @@ const TocItem = ({ name, subNodes, slug, depth, location }) => {
                     className={`${styles.link} ${styles[`link${depth}`]}`}
                     activeClassName={styles.activeLink}
                     to={slug}
-                    onClick={() => setOpen(true)}
+                    onClick={handleLinkClick}
                 >
                     {Boolean(subNodes.length) &&
                      <span

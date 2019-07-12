@@ -14,7 +14,7 @@ import "typeface-source-code-pro";
 // ================================================================================================================== \\
 // ============================================ JAVASCRIPT NOTE TEMPLATE ============================================ \\
 
-export default function JavaScriptNote({ data, location, setToc }) {
+export default function JavaScriptNote({ data, location, setToc, setTocVisible }) {
 // DATA ----------------------------------------------------------------------------------------------------------------
     const { javaScriptNote } = data;
     const { articleSection, childMarkdownRemark } = javaScriptNote;
@@ -23,10 +23,18 @@ export default function JavaScriptNote({ data, location, setToc }) {
 
     const toc = useJavaScriptToc();
 
+    // The actual TOC content and its visibility need to be passed back up to the layout container
     // noinspection JSCheckFunctionSignatures
     useEffect(() => {
         setToc(toc);
         return setToc;
+    }, []);
+    // noinspection JSCheckFunctionSignatures
+    useEffect(() => {
+        if (matchMedia("screen and (min-width: 401px)").matches) {
+            setTocVisible(true);
+        }
+        return setTocVisible;
     }, []);
 
 // RENDER --------------------------------------------------------------------------------------------------------------
