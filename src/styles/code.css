@@ -39,7 +39,7 @@
 
 
 /*
- Solarized Color Schemes originally by Ethan Schoonover
+ Adapted from Solarized Color Schemes originally by Ethan Schoonover
  http://ethanschoonover.com/solarized
 
  Ported for PrismJS by Hector Matos
@@ -82,7 +82,7 @@ pre[class*="language-"] {
     line-height: 1.4;
 
     -moz-tab-size: 4;
-    -o-tab-size: 4;
+    /*noinspection CssBrowserCompatibilityForProperties*/
     tab-size: 4;
 
     -webkit-hyphens: none;

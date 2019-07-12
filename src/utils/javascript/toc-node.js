@@ -8,6 +8,7 @@ export class TocNode {
 
     addOrComplementNode(node) { // This can be a mere identifier or a full node
         const { identifier, childMarkdownRemark, fields } = node;
+        // noinspection JSUnresolvedVariable
         const name = childMarkdownRemark && childMarkdownRemark.frontmatter && childMarkdownRemark.frontmatter.name;
         const slug = fields && fields.slug;
 
