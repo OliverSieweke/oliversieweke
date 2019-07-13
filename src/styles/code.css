@@ -121,6 +121,8 @@ pre[class*="language-"] {
     background: #3B4252;
     text-decoration: inherit;   /* White underline for links: */
     display: inline-block;      /* White underline for links: */
+    max-width: 100%;
+    overflow: auto;
 }
 
 .token.comment,
