@@ -1,20 +1,9 @@
 const TOC_ORDER = [
     "presentation",
     [
-        "nested-test",
-        [
-            "nested-test-2",
-            "nested-test-1",
-        ],
+        "inheritance",
+        ["pseudoclassical-inheritance"],
     ],
-    [
-        "test",
-        [
-            "test-1",
-            "test-2",
-        ],
-    ],
-    "working-with-properties",
 ];
 
 export const orderToc = (toc, order = TOC_ORDER) => {

@@ -1,12 +1,12 @@
 ---
-name: "Oliver Sieweke's JavaScript Notes" 
-headline: "Presentation"
+name: "Presentation" 
+headline: "Oliver Sieweke's JavaScript Notes"
 title: "JavaScript | Oliver Sieweke"
-description: "This page presents Oliver Sieweke's JavaScript notes."
+description: "JavaScript notes by Oliver Sieweke."
 dateCreated: "2019"
 datePublished: "2019"
 dateModified: "2019"
-keywords: ["JavaScript","Notes", "Oliver Sieweke"]
+keywords: ["JavaScript", "Notes", "Oliver Sieweke"]
 ---
 
 #Welcome to Oli's JavaScript Notes
@@ -15,7 +15,7 @@ I've been taking and improving my JavaScrip notes since I started learning the l
 
 The notes are not meant as tutorials or discussion pages and there is no linear progression - this is more akin to my personal <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN</a>. They won't be to everyone's taste but if you're wired like me, or if you are looking for details on a specific topic, you might find them useful.
 
-_**Note:** My notes are receiving a little clean-up and will get added gradually in the next couple of weeks._
+_**Note:** my notes are receiving a little clean-up and will get added gradually in the next couple of weeks._
 
 ---
 
