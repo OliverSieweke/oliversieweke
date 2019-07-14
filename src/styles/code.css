@@ -116,11 +116,12 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
+    font-size: 0.9em;
     border-radius: .1em;
     background: #3B4252;
     text-decoration: inherit;   /* White underline for links: */
     display: inline-block;      /* White underline for links: */
-    vertical-align: bottom;     /* White underline for links: */
+    vertical-align: text-top;   /* White underline for links: */
     max-width: 100%;
     overflow: auto;
 }
