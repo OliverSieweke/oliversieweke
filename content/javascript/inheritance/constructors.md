@@ -40,7 +40,7 @@ Given that those properties are writable (and configurable for the `constructor`
 * The reference of the `prototype` property should not be replaced after instances were created.
 * It should be ensured that the relationship `Constructor.prototype.constructor === Constructor` is maintained, where the `constructor` property should also be non-enumerable.
 
-One of the cases where the `Constructor.prototype.constructor === Constructor` relationship can be broken for instance is when the reference of a constructor's `prototype` property is replaced:
+One of the cases where the `Constructor.prototype.constructor === Constructor` relationship can be broken, for instance, is when the reference of a constructor's `prototype` property is replaced:
 
 ```js
 function Vertebrate() {}
@@ -68,7 +68,7 @@ This is especially important in non-strict mode. Indeed constructor functions of
 
 ### Syntax
 
-To invoke a function as a constructor, the function call needs to be preceded by the `new` keyword.​ When no parameters are passed to the function, parentheses can be omitted. 
+To invoke a function as a constructor, the function call needs to be preceded by the `new` keyword.​ Parentheses can be omitted When no parameters are passed to the function, . 
 
 When a non-constructor function is invoked with the new keyword a `TypeError` is thrown.
 
@@ -88,15 +88,13 @@ const a = new Reptile();        // TypeError: Reptile is not a constructor
 
 Internally the following happens when a function is invoked as a constructor with the `new` keyword:
 
-1. The [implicit parameter]() `new.target` is set to be the constructor itself (in non constructor invocations it is set to **undefined**).
+1. The [implicit parameter]() `new.target` is set to be the constructor itself (while in non constructor invocations it is set to **undefined**).
 2. A new object is created.
 3. The prototype of the newly created object is set to:
-  1. `new.target.prototype` (i.e the constructor’s `prototype` property) if it is an object.
-  2. `Object.prototype` if the constructor’s `prototype` property is a primitive value.
+    * `new.target.prototype` (i.e the constructor’s `prototype` property) if it is an object.
+    * `Object.prototype` if `new.target.prototype` property is a primitive value.
 4. The constructor function is executed with the provided arguments and the `this` context bound to the newly created object.
 5. If the function does not explicitly return an object, the newly created object is returned.
-
-**NB 1**: The `prototype` property will always exist on constructor functions as it is non-configurable.
 
 The `new` operator could thus be mimicked as follows:
 
@@ -104,7 +102,8 @@ The `new` operator could thus be mimicked as follows:
 function invokeAsConstructor(Constructor, args) {
     const isObject = value => value && typeof value === "object";
     
-    const prototype = isObject(Constructor.prototype) ? Constructor.prototype : Object.prototype;
+    const prototype = isObject(Constructor.prototype) ? Constructor.prototype
+                                                      : Object.prototype;
     const instance = Object.create(prototype);
     const returnValue = Constructor.apply(instance, args);
 
@@ -124,11 +123,11 @@ The `Reflect.construct(constructor, args[, newTarget])` method acts like the `ne
 
 1. `constructor`: the constructor to be called.
 2. `args`: an [array like]() object specifying the arguments to be passed to the constructor.
-3. `newTarget`: an optional constructor function that specifies the value of `new.target` in the constructor invocation (defaults to `constructor`)
+3. `newTarget`: an optional constructor function that specifies the value of `new.target` in the constructor invocation (it defaults to `constructor`).
 
 A `TypeError` is thrown if `constructor` or `newTarget` are not constructor functions or if `args` is not an array like object.
 
-Invoking a constructor through` Reflect.construct()` has the exact same effect as calling it with the `new` keyword, except that `new.target` may be set to a different value than the original constructor in step **1.** above. This makes it possible to use the initialisation logic of one constructor while using the `prototype` property of another one.
+Invoking a constructor through `Reflect.construct()` has the exact same effect as calling it with the `new` keyword, except that `new.target` may be set to a different value than the original constructor in step 1 above. This makes it possible to use the initialisation logic of one constructor while using the `prototype` property of another one.
 
 `super(...args)`
 
