@@ -116,14 +116,15 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-    font-size: 0.9em;
-    border-radius: .1em;
-    background: #3B4252;
-    text-decoration: inherit;   /* White underline for links: */
-    display: inline-block;      /* White underline for links: */
-    vertical-align: text-top;   /* White underline for links: */
     max-width: 100%;
     overflow: auto;
+    font-size: 0.9em;
+    border-radius: .1em;
+    display: inline-block;      /* White underline for links: */
+    vertical-align: text-top;   /* White underline for links: */
+    text-decoration: inherit;   /* White underline for links: */
+    color: hsla(0, 0%, 0%, 0.8);
+    background-color: #EFF0F1;
 }
 
 .token.comment,
