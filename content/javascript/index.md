@@ -13,7 +13,7 @@ keywords: ["JavaScript", "Notes", "Oliver Sieweke"]
 
 I've been taking and improving my JavaScrip notes since I started learning the language in 2017. The notes have grown and reached a point where they could be useful to others, drawing together information that is not always that easily found. So I thought I would share them here.
 
-The notes are not meant as tutorials or discussion pages and there is no linear progression - this is more akin to my personal <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN</a>. They won't be to everyone's taste but if you're wired like me, or if you are looking for details on a specific topic, you might find them useful.
+The notes are not meant as tutorials or discussion pages and there is no linear progression - they are more akin to my personal <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN</a> and a way to organize things in my head. This won't be to everyone's taste but if you're wired like me, or if you are looking for details on a specific topic, you might find them useful.
 
 _**Note:** my notes are receiving a little clean-up and will get added gradually in the next couple of weeks._
 

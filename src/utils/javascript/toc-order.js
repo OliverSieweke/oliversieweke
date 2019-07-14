@@ -2,7 +2,10 @@ const TOC_ORDER = [
     "presentation",
     [
         "inheritance",
-        ["pseudoclassical-inheritance"],
+        [
+            "constructors",
+            "pseudoclassical-inheritance",
+        ],
     ],
 ];
 
