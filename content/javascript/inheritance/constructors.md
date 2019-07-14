@@ -9,6 +9,8 @@ dateModified: "2019"
 keywords: ["Constructors", "JavaScript", "Notes", "Oliver Sieweke"]
 ---
 
+![constructor](../../images/javascript/constructor.png)
+
 # Constructors
 
 ---
@@ -150,7 +152,7 @@ There is no direct link between an instance and its constructor. They are merely
 * Replacing the prototype of an instance with `Object.setPrototypeOf()`.
 * Replacing the constructor’s `prototype` property after instances were created.
 
-### Explicitely Returning Objects
+### Explicitly Returning Objects
 
 Explicitly returning objects from constructor functions is discouraged. Indeed the benefit of constructor functions mainly lies in the fact that they automatically set up inheritance for newly created instances. This feature is lost by explicitly returning objects - in those case it may often be more appropriate and less confusing to use straight [factory functions]().
 
