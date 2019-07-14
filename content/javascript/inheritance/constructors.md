@@ -88,7 +88,7 @@ const a = new Reptile();        // TypeError: Reptile is not a constructor
 
 Internally the following happens when a function is invoked as a constructor with the `new` keyword:
 
-1. The [implicit parameter]() `new.target` is set to be the constructor itself (while in non constructor invocations it is set to **undefined**).
+1. The [implicit parameter]() `new.target` is set to the constructor itself (while in non constructor invocations it is set to **undefined**).
 2. A new object is created.
 3. The prototype of the newly created object is set to:
     * `new.target.prototype` (i.e the constructor’s `prototype` property) if it is an object.
@@ -127,9 +127,9 @@ The `Reflect.construct(constructor, args[, newTarget])` method acts like the `ne
 
 A `TypeError` is thrown if `constructor` or `newTarget` are not constructor functions or if `args` is not an array like object.
 
-Invoking a constructor through `Reflect.construct()` has the exact same effect as calling it with the `new` keyword, except that `new.target` may be set to a different value than the original constructor in step 1 above. This makes it possible to use the initialisation logic of one constructor while using the `prototype` property of another one.
+Invoking a constructor through `Reflect.construct()` has the exact same effect as calling it with the `new` keyword, except that `new.target` may be specified and set to a different value than the original constructor in step 1 above. This makes it possible to use the initialisation logic of one constructor while using the `prototype` property of another one.
 
-`super(...args)`
+### `super(...args)`
 
 The `super()` invocation can be used inside the constructors of derived classes exclusively and is equivalent to:
 
@@ -140,7 +140,7 @@ The `super()` invocation can be used inside the constructors of derived classes 
 
 ---
 
-## Notes
+## Further Notes
 
 ### Instance / Constructor Relationship
 
@@ -151,7 +151,7 @@ There is no direct link between an instance and its constructor. They are merely
 
 ### Explicitly Returning Objects
 
-Explicitly returning objects from constructor functions is discouraged. Indeed the benefit of constructor functions mainly lies in the fact that they automatically set up inheritance for newly created instances. This feature is lost by explicitly returning objects - in those case it may often be more appropriate and less confusing to use straight [factory functions]().
+Explicitly returning objects from constructor functions is discouraged. Indeed the benefit of constructor functions mainly lies in the fact that they automatically set up inheritance for newly created instances. This feature is lost by explicitly returning objects - in those cases it may often be more appropriate and less confusing to use straight [factory functions]().
 
 ### Use Case for the `constructor` Property
 
@@ -187,4 +187,4 @@ console.log(dodo);      //Bird { name: 'Dodo' }
 console.log(dodoClone); //Bird { name: 'Dodo' }
 ```
 
-**NB**: The above type of uses assumes that the relationship `Constructor.prototype.constructor === Constructor` is being enforced throughout.
+**NB**: The above type of use assumes that the relationship `Constructor.prototype.constructor === Constructor` is being enforced throughout.
