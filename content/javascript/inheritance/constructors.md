@@ -9,8 +9,6 @@ dateModified: "2019"
 keywords: ["Constructors", "JavaScript", "Notes", "Oliver Sieweke"]
 ---
 
-![constructor](../../images/javascript/constructor.png)
-
 # Constructors
 
 ---
