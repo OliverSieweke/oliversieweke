@@ -31,7 +31,7 @@ All JavaScript objects have an internal `[[Prototype]]` property that points to 
 
 ### Legacy
 
-Many browsers implemented an accessor property `__proto__` that exposed the internal `[[Prototype]]` property. This was included in ES6 as a legacy feature but is deprecated and should not be used. Instead `Object.getPrototypeOf()` and `Object.setPrototypeOf()` are now available (see [The Prototype Chain]()).
+Many browsers implemented an accessor property `__proto__` that exposed the internal `[[Prototype]]` property. This was included in ES6 as a legacy feature but is deprecated and should not be used. Instead `Object.getPrototypeOf()` and `Object.setPrototypeOf()` are now available (see [Prototype Chain]()).
 
 ---
 

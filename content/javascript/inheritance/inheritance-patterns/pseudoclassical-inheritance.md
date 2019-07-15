@@ -151,8 +151,8 @@ function inherits(constructor, superConstructor) {
 
 ## Resources
 
-* **Chapter 5 - Inheritance**, _The Principles of Object-Oriented JavaScript_, Zakas (2014).
-* **Chapter 5 - Inheritance**, _JavaScript: The Good Parts_, Crockford (2008).
+* **Chapter 5 - Inheritance**, [_The Principles of Object-Oriented JavaScript_](/reading/#object-oriented-js), Zakas (2014).
+* **Chapter 5 - Inheritance**, [_JavaScript: The Good Parts_](/reading/#javascrtipt-the-good-parts), Crockford (2008).
 
 
 Addition on constructor inheritance.
