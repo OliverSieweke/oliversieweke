@@ -1,8 +1,8 @@
 const BOOKS_ORDER = {
     "2019": ["understanding-es6"],
     "2018": [
-        "javascript-the-good-parts",
         "object-oriented-js",
+        "javascript-the-good-parts",
     ],
 
 };
