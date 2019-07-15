@@ -142,6 +142,28 @@ The `super()` invocation can be used inside the constructors of derived classes 
 
 ## Further Notes
 
+### Scope Safe Constructors
+
+To prevent the problems that can arise when constructors are invoked as ordinary functions *scope safe constructors* can be used, which behave the same way regardless of whether they are called with `new`/`Reflect.construct()`/`super()` or not.
+
+Scope safe constructors check that they were called as constructors via the implicit `new.target` parameter and call themselves recursively with the new `keyword` if not:
+```js
+function Bird(name) {
+    if (!new.target) {
+        return new Bird(name);
+    } else {
+        Object.assign(this, { name });
+    }
+}
+
+const dodo = Bird("Dodo");
+console.log(dodo);  // Bird { name: 'Dodo' }
+```
+
+It is also common to see the check being made via `!(this instanceof Bird)` which is slightly less accurate as it will also get triggered when `Bird` is invoked via `Reflect.construct()` with a custom `newTarget` value.
+
+With strict mode and linting rules (such as ESLint's <a href="https://eslint.org/docs/rules/new-cap" target="_blank" rel="noopener noreferrer">`new-cap`</a> rule) available, this seems mostly unnecessary today.
+
 ### Instance / Constructor Relationship
 
 There is no direct link between an instance and its constructor. They are merely related through the fact that the instance’s internal `[[Prototype]]` property and the constructor’s own `prototype` property both point to the same object. Special care should thus be taken with the following actions, which will disrupt the relationship between an instance and its constructor:
