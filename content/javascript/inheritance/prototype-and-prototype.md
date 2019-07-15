@@ -43,7 +43,7 @@ Many browsers implemented an accessor property `__proto__` that exposed the inte
 
 As an illustration of the difference between the `prototype` and `[[Protoype]]` properties, consider part of the built-in prototype chain:
 
-![Built-In Prototype Chain](../../images/javascript/prototype-and-%5B%5Bprototype%5D%5D.png)
+![Built-In Prototype Chain](../../images/javascript/prototype-and-prototype.png)
 
 The diagram makes sense once one realises that all constructors are functions and thus inherit from `Function.prototype`, while the `prototype` properties refer to ordinary objects which thus inherit from `Object.prototype`. (Note the special case of `Function`, for which the `prototype` and `[[Prototype]]` properties point to the same object: `Function.prototype`.)
 
