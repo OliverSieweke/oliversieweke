@@ -1,5 +1,5 @@
 ---
-name: "prototype and [[Prototype]]" 
+name: "[[Prototype]] and prototype" 
 headline: "The difference between prototype and [[Prototype]]"
 title: "JavaScript | prototype and [[Prototype]]"
 description: "Avoiding possible confusions by clearly distinguising between a constructor's prototype property and the internal [[Prototype]] property."
@@ -9,7 +9,7 @@ dateModified: "2019"
 keywords: ["prototype", "JavaScript", "Notes", "Oliver Sieweke"]
 ---
 
-# `prototype` and `[[Prototype]]`
+# `[[Prototype]]` and `prototype`
 
 Much confusion about prototypes can be avoided by clearly distinguishing between the `prototype` property of ordinary synchronous functions and the internal `[[Prototype]]` property present on all JavaScript objects.
 
@@ -41,10 +41,10 @@ As an illustration of the difference between the `prototype` and `[[Protoype]]` 
 
 ![Built-In Prototype Chain](../../images/javascript/prototype-and-prototype.png)
 
-The diagram makes sense once one realises that all constructors are functions and thus inherit from `Function.prototype`, while the `prototype` properties refer to ordinary objects which thus inherit from `Object.prototype`. (Note the special case of `Function`, for which the `prototype` and `[[Prototype]]` properties point to the same object: `Function.prototype`.)
+The diagram makes sense once one realises that all constructors are functions and thus inherit from `Function.prototype`, while the `prototype` properties refer to ordinary objects which thus inherit from `Object.prototype`. (Note the special case of `Function`, for which the own `prototype` and the internal `[[Prototype]]` properties point to the same object: `Function.prototype`.)
 
 ---
 
 ## Resources
 
-* **Chapter 4 - Constructors and Prototypes**, _The Principles of Object-Oriented JavaScript_, Zakas (2014).
+* **Chapter 4 - Constructors and Prototypes**, [_The Principles of Object-Oriented JavaScript_](/reading/#object-oriented-js), Zakas (2014).
