@@ -1,5 +1,5 @@
 import React          from "react";
-import Img    from "gatsby-image";
+import Img            from "gatsby-image";
 // Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { booksOrder } from "../../utils/reading/books-order.js";
 // Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -28,10 +28,10 @@ export const ReadingYear = ({ year, books, bookCount }) => (
 
 // ================================================================================================================== \\
 // ================================================= BOOK COMPONENT ================================================= \\
-function Book({ name, subtitle, author, datePublished, cover, url, review, bookCount }) {
+function Book({ identifier, name, subtitle, author, datePublished, cover, url, review, bookCount }) {
     // noinspection JSUnresolvedVariable
     return (
-        <section className={styles.book}>
+        <section id={identifier} className={styles.book}>
             <a
                 className={bookCount%2 ? styles.imageContainerLeft : styles.imageContainerRight}
                 title={name}
