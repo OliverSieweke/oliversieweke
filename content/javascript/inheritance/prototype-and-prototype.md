@@ -19,13 +19,9 @@ Much confusion about prototypes can be avoided by clearly distinguishing between
 
 Some built-in functions and all **user defined ordinary synchronous functions** get created with an own `prototype` property (along with the `name` and `length` properties) having the following attributes:
 
-| **Attribute**     | **Value** |
-| ----------------- |---------- |
-| [[Writable]]      | `true`    |
-| [[Enumerable]]    | `false`   |
-| [[Configurable]]  | `false`   |
+![Prototype Attributes](../../images/javascript/prototype-attributes.png)
 
-This allows those functions to operate as [constructors](/constructors) (shared methods and properties can be defined on the `prototype` object).
+This allows those functions to operate as [constructors](/javascript/inheritance/constructors) (shared methods and properties can be defined on the `prototype` object).
 
 ---
 
@@ -35,7 +31,7 @@ All JavaScript objects have an internal `[[Prototype]]` property that points to 
 
 ### Legacy
 
-Many browsers implemented an accessor property `__proto__` that exposed the internal `[[Prototype]]` property. This was included in ES6 as a legacy feature but is deprecated and should not be used. Instead `Object.getPrototypeOf()` and `Object.setPrototypeOf()` are now available (see [The Prototype Chain]().
+Many browsers implemented an accessor property `__proto__` that exposed the internal `[[Prototype]]` property. This was included in ES6 as a legacy feature but is deprecated and should not be used. Instead `Object.getPrototypeOf()` and `Object.setPrototypeOf()` are now available (see [The Prototype Chain]()).
 
 ---
 
