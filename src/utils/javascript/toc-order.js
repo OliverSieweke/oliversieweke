@@ -18,7 +18,7 @@ export const orderToc = (toc, order = TOC_ORDER) => {
 
     for (const node of toc.subNodes) {
         if (node.subNodes.length) {
-            orderToc(node, TOC_ORDER.find(element => element[0] === node.identifier)[1]);
+            orderToc(node, order.find(element => element[0] === node.identifier)[1]);
         }
     }
 
