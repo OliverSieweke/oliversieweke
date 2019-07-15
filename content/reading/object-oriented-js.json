@@ -11,5 +11,5 @@
     "yearRead": "2018",
     "reviewDateCreated": 2019,
     "reviewDatePublished": "2019",
-    "review": "This is my absolutely favorite JavaScript book, worth reading multiple times! It is short, dense, precise and extremely well explained. It is after reading this book that things really clicked in my head and I started developing the right mental models around objects and prototypes. Although it comes from the pre-ES6 era, I find it still very relevant and it provides a firm foundation for understanding the internals of ES6 classes."
+    "review": "This is my absolutely favorite JavaScript book - short, precise and extremely well explained. Worth reading multiple times! It is after reading this book that things really clicked in my head and I started developing the right mental models around objects and prototypes. Although it comes from the pre-ES6 era, I still find it very relevant and it equips with a firm foundation for understanding the internals of ES6 classes."
 }
