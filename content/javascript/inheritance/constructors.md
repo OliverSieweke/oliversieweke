@@ -188,3 +188,9 @@ console.log(dodoClone); //Bird { name: 'Dodo' }
 ```
 
 **NB**: The above type of use assumes that the relationship `Constructor.prototype.constructor === Constructor` is being enforced throughout.
+
+---
+
+## Resources
+
+* **Chapter 4 - Constructors and Prototypes**, _The Principles of Object-Oriented JavaScript_, Zakas (2014).

@@ -3,8 +3,12 @@ const TOC_ORDER = [
     [
         "inheritance",
         [
+            "prototype-and-[[prototype]]",
             "constructors",
-            "pseudoclassical-inheritance",
+            [
+                "inheritance-patterns",
+                ["pseudoclassical-inheritance"],
+            ],
         ],
     ],
 ];
