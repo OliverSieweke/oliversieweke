@@ -1,6 +1,8 @@
 const PROJECTS_ORDER = [
-    "octopus",
     "dragoon",
+    "octopus",
+    "dragoonmoon",
+    "dragoontoon",
 ];
 
 export const projectsOrder = (a, b) => PROJECTS_ORDER.indexOf(a.identifier)

@@ -6,7 +6,7 @@
     "title": "Dragoon | Subtitle Builder",
     "subtitle": "Subtitle Builder",
     "headline": "Dragoon | Subtitle Builder",
-    "description": "A program I wrote for my theater friends to automatise to automatise asdf to automatise automatise their subtitle powerpoint creation.",
+    "description": "A program I wrote for my theater friends to automatise their subtitle powerpoint creation.",
     "technologies": {
         "server": [
             "Node.js"
@@ -15,17 +15,17 @@
             "Heroku"
         ],
         "data": [
-            "Heroku"
+            "AWS S3"
         ],
         "frontEnd": [
-            "Heroku"
+            "Vanilla JS"
         ],
         "other": [
             "PptxGenJS"
         ]
     },
     "inLanguage": "en",
-    "url": "https://www.dragoon.eu/",
+    "url": "http://www.dragoon.eu/",
     "github": "https://www.github.com/OliverSieweke/dragoon",
     "dateCreated": "2019",
     "license": "https://www.gnu.org/licenses/gpl-3.0.html",
