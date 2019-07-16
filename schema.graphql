@@ -554,10 +554,12 @@ type JsonDataGroupConnection {
 
 type JsonDataTechnologies {
     data: [String]
+    frameworks: [String]
     frontEnd: [String]
     hosting: [String]
     other: [String]
     server: [String]
+    styling: [String]
 }
 
 type MarkdownHeading {
@@ -1493,10 +1495,12 @@ enum JsonDataFieldsEnum {
     reviewDatePublished
     subtitle
     technologies___data
+    technologies___frameworks
     technologies___frontEnd
     technologies___hosting
     technologies___other
     technologies___server
+    technologies___styling
     title
     type
     url
@@ -2385,10 +2389,12 @@ input JsonDataSortInput {
 
 input JsonDataTechnologiesFilterInput {
     data: StringQueryOperatorInput
+    frameworks: StringQueryOperatorInput
     frontEnd: StringQueryOperatorInput
     hosting: StringQueryOperatorInput
     other: StringQueryOperatorInput
     server: StringQueryOperatorInput
+    styling: StringQueryOperatorInput
 }
 
 input MarkdownHeadingFilterInput {

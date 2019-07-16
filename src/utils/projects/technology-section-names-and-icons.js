@@ -3,7 +3,9 @@ export const TECHNOLOGY_CATEGORY_FIELD_TO_NAME_MAP = new Map([
     ["data", "Data"],
     ["hosting", "Hosting"],
     ["frontEnd", "Front-End"],
-    ["other", "Libraries"],
+    ["styling", "Styling"],
+    ["frameworks", "Frameworks"],
+    ["libraries", "Libraries"],
 ]);
 
 export const TECHNOLOGY_NAME_TO_URL_AND_ICON_MAP = new Map([
@@ -26,5 +28,25 @@ export const TECHNOLOGY_NAME_TO_URL_AND_ICON_MAP = new Map([
     [
         "PptxGenJS",
         { url: "https://gitbrent.github.io/PptxGenJS/", iconName: "pptxgenjs" },
+    ],
+    [
+        "Netlify",
+        { url: "https://www.netlify.com/", iconName: "netlify" },
+    ],
+    [
+        "GraphQL",
+        { url: "https://www.graphql.org/", iconName: "graph-ql" },
+    ],
+    [
+        "React.js",
+        { url: "https://www.reactjs.org/", iconName: "react-js" },
+    ],
+    [
+        "CSS Modules",
+        { url: "https://www.github.com/css-modules", iconName: "css-modules" },
+    ],
+    [
+        "Gatsby",
+        { url: "https://www.gatsbyjs.org/", iconName: "gatsby" },
     ],
 ]);

@@ -19,7 +19,7 @@ export function ProjectSchema(projectMetadata) {
         "@type": type,
         name,
         headline,
-        applicationCategory,
+        ...applicationCategory ? { applicationCategory } : {},
         description,
         image: `${siteUrl}${image.publicURL}`,
         ...url ? { url } : {},

@@ -22,7 +22,7 @@
         },
         "applicationCategory": {
             "type": "string",
-            "description": "Schema.org application category."
+            "description": "Schema.org application category. [https://stackoverflow.com/a/36932418/10367549]"
         },
         "title": {
             "type": "string",
@@ -59,7 +59,8 @@
                     "type": "array",
                     "contains": {
                         "enum": [
-                            "AWS S3"
+                            "AWS S3",
+                            "GraphQL"
                         ]
                     },
                     "minItems": 1,
@@ -69,7 +70,8 @@
                     "type": "array",
                     "contains": {
                         "enum": [
-                            "Heroku"
+                            "Heroku",
+                            "Netlify"
                         ]
                     },
                     "minItems": 1,
@@ -79,13 +81,34 @@
                     "type": "array",
                     "contains": {
                         "enum": [
-                            "Vanilla JS"
+                            "Vanilla JS",
+                            "React.js"
                         ]
                     },
                     "minItems": 1,
                     "description": "List of front-end technologies used for the project."
                 },
-                "other": {
+                "styling": {
+                    "type": "array",
+                    "contains": {
+                        "enum": [
+                            "CSS Modules"
+                        ]
+                    },
+                    "minItems": 1,
+                    "description": "List of front-end styling libraries used for the project."
+                },
+                "frameworks": {
+                    "type": "array",
+                    "contains": {
+                        "enum": [
+                            "Gatsby"
+                        ]
+                    },
+                    "minItems": 1,
+                    "description": "List of frameworks used for the project."
+                },
+                "libraries": {
                     "type": "array",
                     "contains": {
                         "enum": [
@@ -93,7 +116,7 @@
                         ]
                     },
                     "minItems": 1,
-                    "description": "List of other important technologies used for the project."
+                    "description": "List of important libraries used for the project."
                 }
             },
             "additionalProperties": false
@@ -135,7 +158,6 @@
         "identifier",
         "name",
         "type",
-        "applicationCategory",
         "title",
         "subtitle",
         "headline",

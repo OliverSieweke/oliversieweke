@@ -53,6 +53,8 @@ export const useProjectsData = () => {
                     server
                     data
                     hosting
+                    frameworks
+                    styling
                     frontEnd
                     other
                 }

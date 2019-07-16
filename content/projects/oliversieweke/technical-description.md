@@ -1,0 +1,5 @@
+The server runs in <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">Node.js</a> and a small file system is managed on <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener noreferrer">AWS S3</a>. The input text is processed in several steps and the program does its best to cut sentences at places that make sense while trying to keep the slides balanced and the translations in sync (this was the trickiest part of the project). At the end <a href="https://gitbrent.github.io/PptxGenJS/" target="_blank" rel="noopener noreferrer">PptxGenJS</a> is used to style and produce the final powerpoint (big thanks to <a href="https://github.com/gitbrent" target="_blank" rel="noopener noreferrer">Brent Ely</a> for his amazing library!).
+
+The project only required a simple front-end, so I though I'd use the opportunity to get a bit of a feeling again for how it is to build a website without any frameworks - the answer: not that terrible and rather instructive.
+
+This is a low-traffic site which uses <a href="https://heroku.com/" target="_blank" rel="noopener noreferrer">Heroku's</a> free tiers, so the initial page load may take some time...
