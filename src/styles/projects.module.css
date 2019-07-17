@@ -39,9 +39,6 @@
     .project-container:hover .description-container {
         display: block;
     }
-    .project-container:hover .image {
-        filter: brightness(30%);
-    }
 }
 
 .project-middle {
@@ -57,6 +54,7 @@
     border: 0.7rem solid transparent;
     transform: translateX(-100%);
     color: white;
+    background: rgba(0, 0, 0, 0.8);
 }
 .description {
     margin: 0;
