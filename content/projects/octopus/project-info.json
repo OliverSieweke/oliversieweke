@@ -6,7 +6,7 @@
     "title": "Octopus | Crypto-Trading Bot",
     "subtitle": "Crypto-Trading Bot",
     "headline": "Octopus | Crypto-Trading Bot",
-    "description": "My own trading bot.",
+    "description": "A bot that continually buys and sells cryptocurrencies, following simple rebalancing strategies.",
     "technologies": {
         "server": [
             "Node.js"

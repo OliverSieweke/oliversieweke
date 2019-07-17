@@ -160,7 +160,7 @@ const dodo = Bird("Dodo");
 console.log(dodo);  // Bird { name: 'Dodo' }
 ```
 
-It is also common to see the check being made via `!(this instanceof Bird)` which is slightly less accurate as it will also get triggered when `Bird` is invoked via `Reflect.construct()` with a custom `newTarget` value.
+It is also common to see the check being made via `!(this instanceof Bird)` which is slightly less accurate as it might also get triggered when `Bird` is invoked via `Reflect.construct()` with a custom `newTarget` value.
 
 With strict mode and linting rules (such as ESLint's <a href="https://eslint.org/docs/rules/new-cap" target="_blank" rel="noopener noreferrer">`new-cap`</a> rule) available, this seems mostly unnecessary today.
 
