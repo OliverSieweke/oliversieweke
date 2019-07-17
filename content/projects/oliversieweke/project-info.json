@@ -17,9 +17,7 @@
             "GraphQL"
         ],
         "frontEnd": [
-            "React.js"
-        ],
-        "styling": [
+            "React.js",
             "CSS Modules"
         ],
         "frameworks": [
@@ -27,7 +25,6 @@
         ]
     },
     "inLanguage": "en",
-    "url": "https://www.oliversieweke.com/",
     "github": "https://www.github.com/OliverSieweke/oliversieweke",
     "dateCreated": "2019",
     "license": "https://creativecommons.org/licenses/by-nc/4.0/",

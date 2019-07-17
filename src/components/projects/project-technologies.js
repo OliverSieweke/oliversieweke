@@ -20,6 +20,7 @@ export const ProjectTechnologies = ({ technologies }) => {
     const technologyCategories = Object.entries(technologies)
                                        .filter(([, categoryTechnologies]) => categoryTechnologies)
                                        .map(([category, categoryTechnologies]) => ({
+                                           category,
                                            categoryName: TECHNOLOGY_CATEGORY_FIELD_TO_NAME_MAP.get(category),
                                            categoryTechnologies: categoryTechnologies.map(name => {
                                                const { url, iconName } = TECHNOLOGY_NAME_TO_URL_AND_ICON_MAP.get(name);
@@ -34,11 +35,11 @@ export const ProjectTechnologies = ({ technologies }) => {
 // RENDER --------------------------------------------------------------------------------------------------------------
     return (
         <section className={styles.technologies}>
-            {Object.entries(technologyCategories)
+            {technologyCategories
                    .sort(projectTechnologySectionsOrder)
-                   .map(([, section]) => (
+                   .map(section => (
                        <ProjectTechnologyCategory
-                           key={section.categoryName}
+                           key={section.category}
                            {...section}
                        />
                    ))

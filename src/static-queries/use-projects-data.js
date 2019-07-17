@@ -54,9 +54,8 @@ export const useProjectsData = () => {
                     data
                     hosting
                     frameworks
-                    styling
                     frontEnd
-                    other
+                    libraries
                 }
                 inLanguage
                 url

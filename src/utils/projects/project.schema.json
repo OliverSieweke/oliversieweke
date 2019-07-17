@@ -46,76 +46,73 @@
             "properties": {
                 "server": {
                     "type": "array",
-                    "contains": {
+                    "items": {
                         "enum": [
                             "Node.js",
-                            "Express"
+                            "Express.js"
                         ]
                     },
                     "minItems": 1,
+                    "uniqueItems": true,
                     "description": "List of server technologies used for the project."
                 },
                 "data": {
                     "type": "array",
-                    "contains": {
+                    "items": {
                         "enum": [
                             "AWS S3",
                             "GraphQL"
                         ]
                     },
                     "minItems": 1,
+                    "uniqueItems": true,
                     "description": "List of data related technologies used for the project."
                 },
                 "hosting": {
                     "type": "array",
-                    "contains": {
+                    "items": {
                         "enum": [
                             "Heroku",
                             "Netlify"
                         ]
                     },
                     "minItems": 1,
+                    "uniqueItems": true,
                     "description": "List of hosting technologies used for the project."
                 },
                 "frontEnd": {
                     "type": "array",
-                    "contains": {
+                    "items": {
                         "enum": [
                             "Vanilla JS",
-                            "React.js"
-                        ]
-                    },
-                    "minItems": 1,
-                    "description": "List of front-end technologies used for the project."
-                },
-                "styling": {
-                    "type": "array",
-                    "contains": {
-                        "enum": [
+                            "React.js",
                             "CSS Modules"
                         ]
                     },
                     "minItems": 1,
-                    "description": "List of front-end styling libraries used for the project."
+                    "uniqueItems": true,
+                    "description": "List of front-end technologies used for the project."
                 },
                 "frameworks": {
                     "type": "array",
-                    "contains": {
+                    "items": {
                         "enum": [
                             "Gatsby"
                         ]
                     },
                     "minItems": 1,
+                    "uniqueItems": true,
                     "description": "List of frameworks used for the project."
                 },
                 "libraries": {
                     "type": "array",
-                    "contains": {
+                    "items": {
                         "enum": [
                             "PptxGenJS"
                         ]
                     },
                     "minItems": 1,
+                    "uniqueItems": true,
                     "description": "List of important libraries used for the project."
                 }
             },

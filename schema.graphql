@@ -557,9 +557,9 @@ type JsonDataTechnologies {
     frameworks: [String]
     frontEnd: [String]
     hosting: [String]
+    libraries: [String]
     other: [String]
     server: [String]
-    styling: [String]
 }
 
 type MarkdownHeading {
@@ -1498,9 +1498,9 @@ enum JsonDataFieldsEnum {
     technologies___frameworks
     technologies___frontEnd
     technologies___hosting
+    technologies___libraries
     technologies___other
     technologies___server
-    technologies___styling
     title
     type
     url
@@ -2392,9 +2392,9 @@ input JsonDataTechnologiesFilterInput {
     frameworks: StringQueryOperatorInput
     frontEnd: StringQueryOperatorInput
     hosting: StringQueryOperatorInput
+    libraries: StringQueryOperatorInput
     other: StringQueryOperatorInput
     server: StringQueryOperatorInput
-    styling: StringQueryOperatorInput
 }
 
 input MarkdownHeadingFilterInput {

@@ -1,7 +1,1 @@
-Dragoon is a program I wrote for my <a href="https://theaterimnu.de/" target="_blank" rel="noopener noreferrer">theater friends</a> to automatise their subtitle creation. They are performing french plays in Berlin and were spending an incredible amount of time tediously copy-pasting and formatting german and english translations into powerpoint files. Dragoon does it all with a lot of flexibility in a matter of seconds now.
-
-The <a href="http://www.dragoon.eu/" target="_blank" rel="noopener noreferrer">web interface</a> allows anyone to upload translation files, using one of the supported formats to specify the text to be included, the number of translations, where empty slides and forced linebreaks should occur etc. Finally the user can set some styling options and download the resulting powerpoint. 
-
----
-
-**Note**: I'm currently finalizing a <a href="http://www.dragoon.eu/" target="_blank" rel="noopener noreferrer">web interface</a> and configuration options, so that this tool can be used without my intervention in the future. I'm still dealing with a couple of complications but it's almost ready...
+The main motivation behind this website was to share my <a href="/projects/" target="_blank" rel="noopener noreferrer">projects</a> and <a href="/javascript/" target="_blank" rel="noopener noreferrer">JavaScript notes</a> notes. I also quite liked the idea to have a little place on the web where I would be able to publish stuff whenever I want.

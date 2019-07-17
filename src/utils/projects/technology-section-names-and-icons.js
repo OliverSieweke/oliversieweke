@@ -49,4 +49,8 @@ export const TECHNOLOGY_NAME_TO_URL_AND_ICON_MAP = new Map([
         "Gatsby",
         { url: "https://www.gatsbyjs.org/", iconName: "gatsby" },
     ],
+    [
+        "Express.js",
+        { url: "https://www.expressjs.com/", iconName: "express-js" },
+    ],
 ]);
