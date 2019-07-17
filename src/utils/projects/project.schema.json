@@ -60,6 +60,7 @@
                     "type": "array",
                     "items": {
                         "enum": [
+                            "PostgreSQL",
                             "AWS S3",
                             "GraphQL"
                         ]

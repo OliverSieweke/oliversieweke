@@ -3,9 +3,9 @@
     "name": "Octopus",
     "type": "SoftwareApplication",
     "applicationCategory": "Finance",
-    "title": "Octopus | Crypto-trading Bot",
-    "subtitle": "Crypto-trading Bot",
-    "headline": "Octopus | Crypto-trading Bot",
+    "title": "Octopus | Crypto-Trading Bot",
+    "subtitle": "Crypto-Trading Bot",
+    "headline": "Octopus | Crypto-Trading Bot",
     "description": "My own trading bot.",
     "technologies": {
         "server": [

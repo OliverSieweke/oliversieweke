@@ -1,0 +1,1 @@
+Memory-Box is a <a href="https://en.wikipedia.org/wiki/Spaced_repetition" target="_blank" rel="noopener noreferrer">spaced repetition</a> application that provides an interface and algorithm for users to learn and share flashcards efficiently.

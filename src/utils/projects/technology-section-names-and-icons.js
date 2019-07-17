@@ -53,4 +53,8 @@ export const TECHNOLOGY_NAME_TO_URL_AND_ICON_MAP = new Map([
         "Express.js",
         { url: "https://www.expressjs.com/", iconName: "express-js" },
     ],
+    [
+        "PostgreSQL",
+        { url: "https://www.postgresql.org/", iconName: "postgre-sql" },
+    ],
 ]);
