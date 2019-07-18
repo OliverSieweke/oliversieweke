@@ -34,6 +34,10 @@ export const Header = ({ toc, tocVisible, setTocVisible }) => {
                                   className={styles.navigationLink}
                                   activeClassName={styles.activeLink}
                                   partiallyActive={link !== "/"}
+                                  // getProps={data => {
+                                  //     console.log(data);
+                                  //     return data.isCurrent ? { className: styles.activeLink } : null;
+                                  // }}
                             >
                                 {linkText}
                             </Link>
