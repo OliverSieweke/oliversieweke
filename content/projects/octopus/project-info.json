@@ -5,7 +5,7 @@
     "applicationCategory": "Finance",
     "title": "Octopus | Crypto-Trading Bot",
     "subtitle": "Crypto-Trading Bot",
-    "headline": "Octopus | Crypto-Trading Bot",
+    "headline": "Crypto-Trading Bot",
     "description": "A bot that continually buys and sells cryptocurrencies, following simple rebalancing strategies.",
     "technologies": {
         "server": [

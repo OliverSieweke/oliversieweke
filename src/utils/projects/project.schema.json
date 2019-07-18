@@ -34,7 +34,7 @@
         },
         "headline": {
             "type": "string",
-            "description": "Headline of the project."
+            "description": "Headline of the project (used for schema.org)."
         },
         "description": {
             "type": "string",

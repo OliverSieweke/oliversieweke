@@ -5,7 +5,7 @@
     "applicationCategory": "Education",
     "title": "Memory-Box | Spaced Repetition",
     "subtitle": "Spaced Repetition Application",
-    "headline": "Memory-Box | Spaced Repetition",
+    "headline": "Spaced Repetition Application",
     "description": "A spaced repetition web application for users to learn and share flashcards efficiently.",
     "technologies": {
         "server": [
