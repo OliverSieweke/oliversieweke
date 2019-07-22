@@ -41,7 +41,7 @@ The internal `[[Prototype]]` property is set as follows in the different cases:
 
 ![Initial [[Prototype]]](../../images/javascript/initial-prototype.png)
 
-**NB**: An exception to the above diagram arises for constructors that explicitly return an object. In those cases the object’s `[[Prototype]]` property depends on how the returned object was created and does not automatically point to `Constructor.prototype` (see [Constructors](/javascript/inheritance/constructors/#constructors)).
+**NB**: An exception to the above diagram arises for constructors that explicitly return an object. In those cases the object’s `[[Prototype]]` property depends on how the returned object was created and does not automatically point to `Constructor.prototype` (see [Constructors](/javascript/inheritance/constructors/#main)).
 
 ---
 
