@@ -27,7 +27,7 @@ It follows from the above that there is a prototype <a href="https://en.wikipedi
 The initial reference of an object’s internal `[[Prototype]]` property depends on how the object was created. There are essentially 4 ways of creating a new object in JavaScript:
 
 1. `​Object.create()`
-2. [Constructor invocations](/javascript/inheritance/constructors/#main)
+2. [Constructor invocations](/javascript/inheritance/constructors/#constructor-invocation)
 3. Literals
     * Object literals
     * Array literals
@@ -41,7 +41,7 @@ The internal `[[Prototype]]` property is set as follows in the different cases:
 
 ![Initial [[Prototype]]](../../images/javascript/initial-prototype.png)
 
-**NB**: An exception to the above diagram arises for constructors that explicitly return an object. In those cases the object’s `[[Prototype]]` property depends on how the returned object was created and does not automatically point to `Constructor.prototype` (see [Constructors](/javascript/inheritance/constructors/#main)).
+**NB**: An exception to the above diagram arises for constructors that explicitly return an object. In those cases the object’s `[[Prototype]]` property depends on how the returned object was created and does not automatically point to `Constructor.prototype` (see [Constructors](/javascript/inheritance/constructors/#constructor-invocation)).
 
 ---
 
@@ -110,9 +110,7 @@ console.log(instance instanceof BoundConstructor);  // true
 
 ## Manipulating the Prototype Chain
 
-One method is available to change the prototype chain (other than by creating new objects):
-
-* `Object.setPrototypeOf()`
+`Object.setPrototypeOf()` is the only method available to change the prototype chain (other than by creating new objects).
 
 ### `Object.setPrototypeOf()`
 
@@ -211,3 +209,4 @@ Many browsers implemented an accessor property `__proto__` that exposed the inte
 ## Resources
 
 * **Chapter 4 - Constructors and Prototypes**, [_The Principles of Object-Oriented JavaScript_](/reading/#object-oriented-js), Zakas (2014).
+* **Direct comparison of `instanceof` and `isPrototypeOf`**, <a href="https://stackoverflow.com/a/54042809/10367549" target="_blank" rel="noopener noreferrer">*StackOverflow*</a>. 
