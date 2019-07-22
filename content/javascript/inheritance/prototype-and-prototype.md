@@ -11,6 +11,8 @@ keywords: ["prototype", "JavaScript", "Notes", "Oliver Sieweke"]
 
 # `[[Prototype]]` and `prototype`
 
+---
+
 Much confusion about prototypes can be avoided by clearly distinguishing between the `prototype` property of ordinary synchronous functions and the internal `[[Prototype]]` property present on all JavaScript objects.
 
 ---

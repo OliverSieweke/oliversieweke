@@ -1,8 +1,8 @@
 ---
 name: "Inheritance" 
-headline: "JavaScript Inheritance Patterns"
+headline: "Inheritance in JavaScript"
 title: "JavaScript | Inheritance"
-description: "Presentation and comparison of common JavaScript Inheritance Patterns."
+description: "Presentation of JavaScript inheritance mechanisms."
 dateCreated: "2019"
 datePublished: "2019"
 dateModified: "2019"

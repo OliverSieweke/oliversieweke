@@ -205,8 +205,8 @@ Bird.prototype = Object.create(Vertebrate.prototype, {
 const dodo = new Bird("Dodo");
 const dodoClone = dodo.clone();
 
-console.log(dodo);      //Bird { name: 'Dodo' }
-console.log(dodoClone); //Bird { name: 'Dodo' }
+console.log(dodo);      // Bird { name: 'Dodo' }
+console.log(dodoClone); // Bird { name: 'Dodo' }
 ```
 
 **NB**: The above type of use assumes that the relationship `Constructor.prototype.constructor === Constructor` is being enforced throughout.

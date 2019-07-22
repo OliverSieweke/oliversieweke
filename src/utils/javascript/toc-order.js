@@ -3,6 +3,7 @@ const TOC_ORDER = [
     [
         "inheritance",
         [
+            "prototype-chain",
             "prototype-and-prototype",
             "constructors",
             [
