@@ -26,7 +26,7 @@ export const Layout = ({ children, location }) => {
                 {tocVisible && <JavaScriptToc {...{ toc, setTocVisible, location }}/>}
                 <div className={styles.contentContainer}>
                     <div className={`${styles.content} ${toc ? styles.javascriptContent : ""}`}>
-                        <main className={styles.main}>
+                        <main id="main" className={styles.main}>
                             {React.cloneElement(children, { setToc, setTocVisible })}
                         </main>
                         <Footer/>
