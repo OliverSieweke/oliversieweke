@@ -144,7 +144,7 @@ Object.setPrototypeOf(c, a); 	// TypeError: Cyclic __proto__ value
 
 #### Performance
 
-Although `Object.setPrototypeOf()` is part of the language specifications, its use is <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf" target="_blank" rel="noopener noreferrer">discouraged</a> as it is a very slow operation due to how engines optimize property accesses.
+Although `Object.setPrototypeOf()` is part of the language specifications, its use is <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf" target="_blank" rel="noopener noreferrer">discouraged</a> as it can be a very slow operation due to how engines optimize property accesses.
 
 ---
 

@@ -56,7 +56,7 @@ const dodo = new Bird();
 dodo.greet();   // Hi! I'm a vertebrate!
 ```
 
-Both styles are functionally equivalent. Although **Style 2** is more concise and clearer in its intention it is not recommended as the use of `Object.setPrototypeOf()` is <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf" target="_blank" rel="noopener noreferrer">discouraged</a> for performance reasons.
+**Style 2** is more concise and clearer in its intention. Note that although `Object.setPrototypeOf()` is <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf" target="_blank" rel="noopener noreferrer">discouraged</a> for performance reasons, the above kind of use case is <a href="https://stackoverflow.com/questions/23807805/why-is-mutating-the-prototype-of-an-object-bad-for-performance/23809148?noredirect=1#comment100835384_23809148" target="_blank" rel="noopener noreferrer">probably fine</a>.
 
 ### Caveat
 
@@ -108,30 +108,24 @@ function Vertebrate(name) {
     this.name = name;
 }
 
-Object.assing(Vertebrate.prototype, {
+Object.assign(Vertebrate.prototype, {
     greet() {
         console.log(`Hi! I'm a ${this.name}!`);
     },
 });
 
 function Bird(name, canFly) {
-    Vertebrate.call(this, name);	// Constructor stealing
+    Vertebrate.call(this, name);    // Constructor stealing
     Object.assign(this, { canFly });
 }
 
-Bird.prototype = Object.create(Vertebrate.prototype, {
-    constructor: {
-        value: Bird,
-        writable: true,
-        configurable: true,
-    },
-});
+Object.setPrototypeOf(Bird.prototype, Vertebrate.prototype);
 
 const dodo = new Bird("Dodo", false);
 
-dodo.greet();			    // Hi! I'm a Dodo!
+dodo.greet();               // Hi! I'm a Dodo!
 console.log(dodo.name);     // Dodo
-console.log(dodo.canFly);	// false
+console.log(dodo.canFly);   // false
 ```
 
 ---
@@ -157,6 +151,3 @@ function inherits(constructor, superConstructor) {
 
 * **Chapter 5 - Inheritance**, [_The Principles of Object-Oriented JavaScript_](/reading/#object-oriented-js), Zakas (2014).
 * **Chapter 5 - Inheritance**, [_JavaScript: The Good Parts_](/reading/#javascrtipt-the-good-parts), Crockford (2008).
-
-
-Addition on constructor inheritance.
