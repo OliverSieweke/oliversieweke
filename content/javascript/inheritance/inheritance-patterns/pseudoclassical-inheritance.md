@@ -29,9 +29,11 @@ Inheritance is established between the constructors' `prototype` properties via 
 ```js
 function Vertebrate() {}
 
-Vertebrate.prototype.greet = function greet() {
-    console.log("Hi! I'm a vertebrate!");
-};
+Object.assing(Vertebrate.prototype, {
+    greet() {
+        console.log(`Hi! I'm a vertebrate!`);
+    },
+});
 
 function Bird() {}
 
@@ -106,9 +108,11 @@ function Vertebrate(name) {
     this.name = name;
 }
 
-Vertebrate.prototype.greet = function() {
-    console.log(`Hi! I'm a ${this.name}!`);
-};
+Object.assing(Vertebrate.prototype, {
+    greet() {
+        console.log(`Hi! I'm a ${this.name}!`);
+    },
+});
 
 function Bird(name, canFly) {
     Vertebrate.call(this, name);	// Constructor stealing

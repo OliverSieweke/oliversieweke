@@ -8,7 +8,10 @@ const TOC_ORDER = [
             "constructors",
             [
                 "inheritance-patterns",
-                ["pseudoclassical-inheritance"],
+                [
+                    "differential-inheritance",
+                    "pseudoclassical-inheritance",
+                ],
             ],
         ],
     ],
