@@ -107,7 +107,6 @@ Putting everything together, the most standard and accurate implementation of *P
 function Vertebrate(name) {
     this.name = name;
 }
-
 Object.assign(Vertebrate.prototype, {
     greet() {
         console.log(`Hi! I'm a ${this.name}!`);
@@ -118,7 +117,6 @@ function Bird(name, canFly) {
     Vertebrate.call(this, name);    // Constructor stealing
     Object.assign(this, { canFly });
 }
-
 Object.setPrototypeOf(Bird.prototype, Vertebrate.prototype);
 
 const dodo = new Bird("Dodo", false);
