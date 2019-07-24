@@ -12,6 +12,7 @@ const TOC_ORDER = [
                     "differential-inheritance",
                     "pseudoclassical-inheritance",
                     "concatenative-inheritance",
+                    "functional-inheritance",
                 ],
             ],
         ],
