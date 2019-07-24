@@ -13,9 +13,9 @@ keywords: ["Functional Inheritance", "JavaScript", "Notes", "Oliver Sieweke"]
 
 ---
 
-The term *Functional Inheritance* seems to have been coined by Douglas Crockford in [_JavaScript: The Good Parts_](/reading/#javascrtipt-the-good-parts) and describes a pattern that uses [_Factory Functions_]() in combination with the [_Module Pattern_]() to achieve privacy. This idea can be used in various ways and the pattern does not impose any particular methods for initializing objects or establishing inheritance.
+The term *Functional Inheritance* seems to have been coined by Douglas Crockford in [_JavaScript: The Good Parts_](/reading/#javascrtipt-the-good-parts) and describes a pattern that uses [Factory Functions]() in combination with the [Module Pattern]() to achieve privacy. This idea can be used in various ways and the pattern does not impose any particular methods for initializing objects or establishing inheritance.
 
-Below is an example of a `vertebrate` factory function that simply returns an object literal, the local `age` parameter remaining private and only accessible to the privileged `getAge()` and `growOlder()` methods. The `bird` factory function then creates `vertebrate` instance and [mixes in](javascript/inheritance/inheritance-patterns/concatenative-inheritance/#concatenative-inheritance) bird-specific properties.
+Below is an example of a `vertebrate` factory function that simply returns an object literal, the local `age` parameter remaining private and only accessible to the privileged `getAge()` and `growOlder()` methods. The `bird` factory function then creates a `vertebrate` instance and [mixes in](javascript/inheritance/inheritance-patterns/concatenative-inheritance/#concatenative-inheritance) bird-specific properties.
 
 ```js
 function vertebrate(name, age) {
@@ -44,7 +44,7 @@ dodo.growOlder();
 console.log(dodo.getAge()); // 8
 ```
 
-*NB*: In Crockford's original examples an optional `my` object containing shared secrets is further passed around to the factory functions.
+**NB**: In Crockford's original examples an optional `my` object containing shared secrets is further passed around to the factory functions.
 
 ---
 
