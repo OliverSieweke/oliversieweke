@@ -6,6 +6,7 @@ const TOC_ORDER = [
             "prototype-chain",
             "prototype-and-prototype",
             "constructors",
+            "classes",
             [
                 "inheritance-patterns",
                 [
