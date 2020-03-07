@@ -101,7 +101,7 @@ export default function Kreuzberg({ location }) {
 				<hr/>
 				<br/>
 				<h3 className={styles.h3}>Contact</h3>
-				<p>Feel free to drop me an email if you’re interested or if you have any questions: <a className={styles.email}
+				<p>Feel free to share the link and to drop me an email if you’re interested or if you have any questions: <a className={styles.email}
                                                                                            title="Email"
                                                                                            href="mailto:oliver@sieweke.eu">oliver@sieweke.eu</a><br/><em>(German, French and English are all fine.)</em>
 				</p>
