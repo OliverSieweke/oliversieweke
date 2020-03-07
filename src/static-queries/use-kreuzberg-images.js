@@ -19,6 +19,7 @@ export const useFlatLayoutImage = () => {
             }
             flatLayout: file(relativePath: { eq: "flat-layout.jpg" }, sourceInstanceName: { eq: "KreuzbergImages" }) {
                 publicURL
+                relativePath
                 childImageSharp {
                     fluid(maxWidth: 800) {
                         aspectRatio

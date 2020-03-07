@@ -36,7 +36,7 @@ export default function Kreuzberg({ location }) {
 						<a
        className={`${styles.flatPictureContainer} ${styles[`flatPictureContainer${flatPicture.name}`]}`}
        key={flatPicture.name}
-       href={`${flatPicture.relativePath}`}
+       href={flatPicture.relativePath}
 						>
 							{/* <div>{JSON.stringify(styles)}</div> */}
 							<Img
@@ -54,10 +54,14 @@ export default function Kreuzberg({ location }) {
 					<em>This is more or less what it looks like:</em>
 				</p>
 				<div className={styles.flatLayoutBorder}>
-					<Img
-      fluid={flatLayout.childImageSharp.fluid}
-      alt="Flat Layout"
-					/>
+					<a
+						href={flatLayout.relativePath}
+					>
+						<Img
+	      fluid={flatLayout.childImageSharp.fluid}
+	      alt="Flat Layout"
+						/>
+					</a>
 				</div>
 				<h3 className={styles.h3}>Location</h3>
 				<p>
