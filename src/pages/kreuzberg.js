@@ -14,7 +14,7 @@ export default function Kreuzberg({ location }) {
 
     const metadata = {
         title: "Flat in Kreuzberg - 56m² - 979€",
-        description: "Beautiful flat for 2 to rent in Kreuzberg/Bergmankiez, 1 year from August 2020.",
+        description: "Beautiful flat for 2 in Kreuzberg/Bergmankiez available 1 year from August 2020.",
         image: `${location.pathname}${presentationPicture.relativePath}`,
     };
 
