@@ -19,7 +19,7 @@ export const Layout = ({ children, location }) => {
     const [toc, setToc] = useState();
     const [tocVisible, setTocVisible] = useState();
     const { navigationItems } = useSiteMetaData();
-    const [firstPathElement] = location.pathname.match(/^\/?[^/]+/u);
+    const [firstPathElement] = location.pathname.match(/^\/?[^/]+/u) || [""];
 
     if (navigationItems.find(navigationItem => new RegExp(`^${firstPathElement}/$`, "u").test(navigationItem.link))) {
         return (

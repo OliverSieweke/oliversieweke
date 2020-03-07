@@ -81,7 +81,7 @@ module.exports = {
     },
     plugins: [
 // Performance ---------------------------------------------------------------------------------------------------------
-        // PWA Manifest:
+		// PWA Manifest:
         {
             resolve: "gatsby-plugin-manifest",
             options: {
@@ -98,16 +98,16 @@ module.exports = {
                 orientation: "any",
             },
         },
-        // Offline Support:
+		// Offline Support:
         "gatsby-plugin-offline", // NB: this should come after gatsby-plugin-manifest
-        // Netlify Headers:
+		// Netlify Headers:
         "gatsby-plugin-netlify",
-        // Images:
+		// Images:
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
 
 // Data ----------------------------------------------------------------------------------------------------------------
-        // JavaScript Notes:
+		// JavaScript Notes:
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -115,7 +115,7 @@ module.exports = {
                 path: `${__dirname}/content/javascript/`,
             },
         },
-        // Markdown Files:
+		// Markdown Files:
         {
             resolve: "gatsby-transformer-remark",
             options: {
@@ -141,12 +141,12 @@ module.exports = {
             },
         },
         "gatsby-plugin-catch-links",
-        // JSON Files:
+		// JSON Files:
         {
             resolve: "gatsby-transformer-json",
             options: { typeName: "JsonData" },
         },
-        // Projects:
+		// Projects:
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -154,7 +154,7 @@ module.exports = {
                 path: `${__dirname}/content/projects`,
             },
         },
-        // Reading:
+		// Reading:
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -162,7 +162,7 @@ module.exports = {
                 path: `${__dirname}/content/reading`,
             },
         },
-        // Footer Link Icons:
+		// Footer Link Icons:
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -170,7 +170,7 @@ module.exports = {
                 path: `${__dirname}/content/images/footer-links`,
             },
         },
-        // Common Project Icons:
+		// Common Project Icons:
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -178,7 +178,7 @@ module.exports = {
                 path: `${__dirname}/content/images/projects/common-icons`,
             },
         },
-        // Technology Icons:
+		// Technology Icons:
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -186,7 +186,7 @@ module.exports = {
                 path: `${__dirname}/content/images/projects/technology-icons`,
             },
         },
-        // Book Covers:
+		// Book Covers:
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -194,7 +194,15 @@ module.exports = {
                 path: `${__dirname}/content/images/reading/book-covers`,
             },
         },
-        // Other Images:
+		// Kreuzberg Images:
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "KreuzbergImages",
+                path: `${__dirname}/static/kreuzberg`,
+            },
+        },
+		// Other Images:
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -204,14 +212,17 @@ module.exports = {
         },
 
 // Style ---------------------------------------------------------------------------------------------------------------
-        // Typography:
+		// Typography:
         {
             resolve: "gatsby-plugin-typography",
             options: { pathToConfigModule: "src/utils/typography" },
         },
 
 // SEO -----------------------------------------------------------------------------------------------------------------
-        "gatsby-plugin-sitemap",
+        {
+            resolve: "gatsby-plugin-sitemap",
+            options: { excludes: ["/kreuzberg/*"] },
+        },
         "gatsby-plugin-robots-txt",
         "gatsby-plugin-react-helmet",
     ],
