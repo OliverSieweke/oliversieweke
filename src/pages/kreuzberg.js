@@ -97,6 +97,9 @@ export default function Kreuzberg({ location }) {
 					It&apos;s all in agreement with the landlord, so you&apos;ll get a proper contract and you&apos;ll be able to do your <em>Anmeldung</em> etc.
 					The only administrative hassle will be to sign the subletting contract, for gas, electricity and wifi, you will be able to simply keep my ongoing contracts.
 				</p>
+				<p>
+					Also, if you have a WG room to trade, that would be amazing!
+				</p>
 				<br/>
 				<hr/>
 				<br/>
