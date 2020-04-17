@@ -10,14 +10,14 @@ import { useSiteMetaData }    from "../static-queries/use-site-metadata.js";
 // ================================================================================================================== \\
 // =================================================== INDEX PAGE =================================================== \\
 
-export default function Kreuzberg2({ location }) {
+export default function Kreuzberg1({ location }) {
     const { presentationPicture, flatLayout, flatPictures } = useFlatLayoutImage();
     const url = location.href ? location.href.substr(location.href.lastIndexOf("/") + 1)
                               : useSiteMetaData().siteUrl;
 
     const metadata = {
-        title: "Flat in Kreuzberg - 56m² - 220€ / week",
-        description: "Beautiful flat for 2 in Kreuzberg/Bergmankiez available immediately.",
+        title: "Flat in Kreuzberg - 56m² - 979€",
+        description: "Beautiful flat for 2 in Kreuzberg/Bergmankiez available 1 year from September 2020.",
         image: `/kreuzberg/${presentationPicture.relativePath}`,
     };
 
@@ -26,29 +26,29 @@ export default function Kreuzberg2({ location }) {
         <React.Fragment>
             <PageSEO location={location} metadata={metadata}/>
             <main className={styles.main}>
-                <h1 className={styles.h1}>Flat in Kreuzberg - 56m<sup>2</sup> - 220€ / week</h1>
-                <h2 className={styles.h2}>Immediately until end of June</h2>
+                <h1 className={styles.h1}>Flat in Kreuzberg - 56m<sup>2</sup> - 979€</h1>
+                <h2 className={styles.h2}>1 year from September 2020</h2>
                 <hr/>
                 <br/>
                 <h3 className={styles.h3}>Hi there!</h3>
                 <p>
-                    Lucky you, someone forwarded you this link! Oli here 🐒, I temporarily moved out of my furnished flat in Kreuzberg/Bergmannkiez and it is available until end of June.
+                    Lucky you, someone forwarded you this link! Oli here 🐒, I’m subletting my furnished flat in Kreuzberg/Bergmannkiez for a year. It will be available from the <strong>01.09.20</strong> (although I am still rather flexible with the exact date).
                 </p>
                 <div className={styles.flatPicturesContainer}>
                     {flatPictures.sort((a, b) => a.name - b.name).map(flatPicture => (
-                        <a
-                            className={`${styles.flatPictureContainer} ${styles[`flatPictureContainer${flatPicture.name}`]}`}
-                            key={flatPicture.name}
-                            href={`${url}/kreuzberg/${flatPicture.relativePath}`}
-                        >
-                            {/* <div>{JSON.stringify(styles)}</div> */}
-                            <Img
-                                className={styles.flatPicture}
-                                fluid={flatPicture.childImageSharp.fluid}
-                                alt={`Flat Picture ${flatPicture.name}`}
-                            />
-                        </a>
-                    ))}
+                            <a
+                                className={`${styles.flatPictureContainer} ${styles[`flatPictureContainer${flatPicture.name}`]}`}
+                                key={flatPicture.name}
+                                href={`${url}/kreuzberg/${flatPicture.relativePath}`}
+                            >
+                                {/* <div>{JSON.stringify(styles)}</div> */}
+                                <Img
+                                    className={styles.flatPicture}
+                                    fluid={flatPicture.childImageSharp.fluid}
+                                    alt={`Flat Picture ${flatPicture.name}`}
+                                />
+                            </a>
+                        ))}
                 </div>
                 <h3 className={styles.h3}>Flat</h3>
                 <p>The flat is <strong>56m<sup>2</sup></strong> and perfect for a couple (you can have it just for yourself as well of course). There&apos;s one bedroom and a larger room which combines the kitchen and living area. It has a nice parquet floor and is very bright.
@@ -80,10 +80,30 @@ export default function Kreuzberg2({ location }) {
                     You&apos;ll be able to keep most of the furniture that you see on the pictures, as well as plants and kitchenware. Whatever isn&apos;t to your taste will easily go with me or in the attic that is just above the flat.
                 </p>
                 <h3 className={styles.h3}>Price</h3>
-                <p>I am currently paying 929€ + charges and would like to sublet the flat for 220€ / week (wifi, electricity and gas included).
+                <p>The exact costs will of course depend on your consumption but you can count about <strong>1.090€</strong>, all included:
                 </p>
+
+                <ul>
+                    <li>
+                        <strong>Rent:</strong> 979 €&emsp;|&emsp;(<em>I am currently paying 929€ and the landlord is surcharging 50€ for the sublease</em>)
+                    </li>
+                    <li><strong>Gas:</strong> 17 €</li>
+                    <li><strong>Electricity:</strong> 60 €</li>
+                    <li><strong>Internet:</strong> 33 €</li>
+                </ul>
+
+                I would also ask you for a month worth of rent in deposit.
                 <p>
                 </p>
+                <h3 className={styles.h3}>Other</h3>
+                <p>
+                    It&apos;s all in agreement with the landlord, so you&apos;ll get a proper contract and you&apos;ll be able to do your <em>Anmeldung</em> etc.
+                    The only administrative hassle will be to sign the subletting contract, for gas, electricity and wifi, you will be able to simply keep my ongoing contracts.
+                </p>
+                <p>
+                    Also, if you have a WG room to trade, that would be amazing!
+                </p>
+                <br/>
                 <hr/>
                 <br/>
                 <h3 className={styles.h3}>Contact</h3>
@@ -93,7 +113,7 @@ export default function Kreuzberg2({ location }) {
                     href="mailto:oliver@sieweke.eu">oliver@sieweke.eu</a><br/><em>(German, French and English are all fine.)</em>
                 </p>
                 <p>
-                    If you want to know more about me, just get rid of the <em>/kreuzberg-2/</em> part in the url and you&apos;ll land on my website (which I keep mostly for professional purposes as a developer).
+                    If you want to know more about me, just get rid of the <em>/kreuzberg1//</em> part in the url and you&apos;ll land on my website (which I keep mostly for professional purposes as a developer).
                 </p>
             </main>
         </React.Fragment>
