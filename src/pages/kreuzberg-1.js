@@ -16,8 +16,8 @@ export default function Kreuzberg1({ location }) {
                               : useSiteMetaData().siteUrl;
 
     const metadata = {
-        title: "Flat in Kreuzberg1 - 56m² - 979€",
-        description: "Beautiful flat for 2 in Kreuzberg1/Bergmankiez available 1 year from September 2020.",
+        title: "Flat in Kreuzberg - 56m² - 979€",
+        description: "Beautiful flat for 2 in Kreuzberg/Bergmankiez available 1 year from September 2020.",
         image: `/kreuzberg/${presentationPicture.relativePath}`,
     };
 

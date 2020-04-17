@@ -16,8 +16,8 @@ export default function Kreuzberg2({ location }) {
                               : useSiteMetaData().siteUrl;
 
     const metadata = {
-        title: "Flat in Kreuzberg1 - 56m² - 220€ / week",
-        description: "Beautiful flat for 2 in Kreuzberg1/Bergmankiez available immediately.",
+        title: "Flat in Kreuzberg - 56m² - 220€ / week",
+        description: "Beautiful flat for 2 in Kreuzberg/Bergmankiez available immediately.",
         image: `/kreuzberg/${presentationPicture.relativePath}`,
     };
 
