@@ -27,7 +27,7 @@ export default function Kreuzberg2({ location }) {
             <PageSEO location={location} metadata={metadata}/>
             <main className={styles.main}>
                 <h1 className={styles.h1}>Flat in Kreuzberg - 56m<sup>2</sup> - 220€ / week</h1>
-                <h2 className={styles.h2}>Immediately until end of June</h2>
+                <h2 className={styles.h2}>Available immediately until end of June</h2>
                 <hr/>
                 <br/>
                 <h3 className={styles.h3}>Hi there!</h3>
