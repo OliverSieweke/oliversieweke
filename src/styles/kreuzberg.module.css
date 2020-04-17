@@ -24,11 +24,11 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    margin: 3rem 0;
+    margin: 4rem 3vw;
 }
 .flat-picture-container {
-    flex-basis: 16vw;
-    margin: 0 1.5vw;
+    flex-basis: 20rem;
+    margin: 1vw;
     box-shadow: 0 0 15px darkslategray;
     border: darkslategray 2px solid;
 }
@@ -60,13 +60,9 @@
         padding: 10% 10%;
     }
     .flat-pictures-container {
-        margin: 2rem 0;
+        margin: 1rem 0;
     }
     .flat-picture-container {
-        flex-basis: 30vw;
-        margin: 1.5vw 1.5vw;
-    }
-    .flat-picture-container-1 {
-        order: 1;
+        margin: 3vw 3vw;
     }
 }
