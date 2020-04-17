@@ -4,6 +4,7 @@ import Img                    from "gatsby-image";
 import styles                 from "../styles/kreuzberg.module.css";
 import { useFlatLayoutImage } from "../static-queries/use-kreuzberg-images.js";
 import { PageSEO }            from "../components/seo/page-seo.js";
+import { useSiteMetaData }    from "../static-queries/use-site-metadata.js";
 
 
 // ================================================================================================================== \\
@@ -11,6 +12,8 @@ import { PageSEO }            from "../components/seo/page-seo.js";
 
 export default function Kreuzberg2({ location }) {
     const { presentationPicture, flatLayout, flatPictures } = useFlatLayoutImage();
+    const url = location.href ? location.href.substr(location.href.lastIndexOf("/") + 1)
+                              : useSiteMetaData().siteUrl;
 
     const metadata = {
         title: "Flat in Kreuzberg1 - 56m² - 220€ / week",
@@ -36,7 +39,7 @@ export default function Kreuzberg2({ location }) {
                         <a
                             className={`${styles.flatPictureContainer} ${styles[`flatPictureContainer${flatPicture.name}`]}`}
                             key={flatPicture.name}
-                            href={`${location.href.substr(location.href.lastIndexOf("/")+1)}/kreuzberg/${flatPicture.relativePath}`}
+                            href={`${url}/kreuzberg/${flatPicture.relativePath}`}
                         >
                             {/* <div>{JSON.stringify(styles)}</div> */}
                             <Img
@@ -55,7 +58,7 @@ export default function Kreuzberg2({ location }) {
                 </p>
                 <div className={styles.flatLayoutBorder}>
                     <a
-                        href={`${location.href.substr(location.href.lastIndexOf("/")+1)}/kreuzberg/${flatLayout.relativePath}`}
+                        href={`${url}/kreuzberg/${flatLayout.relativePath}`}
                     >
                         <Img
                             fluid={flatLayout.childImageSharp.fluid}

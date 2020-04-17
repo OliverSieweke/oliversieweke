@@ -4,6 +4,7 @@ import Img                    from "gatsby-image";
 import styles                 from "../styles/kreuzberg.module.css";
 import { useFlatLayoutImage } from "../static-queries/use-kreuzberg-images.js";
 import { PageSEO }            from "../components/seo/page-seo.js";
+import { useSiteMetaData }    from "../static-queries/use-site-metadata.js";
 
 
 // ================================================================================================================== \\
@@ -11,6 +12,8 @@ import { PageSEO }            from "../components/seo/page-seo.js";
 
 export default function Kreuzberg1({ location }) {
     const { presentationPicture, flatLayout, flatPictures } = useFlatLayoutImage();
+    const url = location.href ? location.href.substr(location.href.lastIndexOf("/") + 1)
+                              : useSiteMetaData().siteUrl;
 
     const metadata = {
         title: "Flat in Kreuzberg1 - 56m² - 979€",
@@ -33,19 +36,19 @@ export default function Kreuzberg1({ location }) {
                 </p>
                 <div className={styles.flatPicturesContainer}>
                     {flatPictures.sort((a, b) => a.name - b.name).map(flatPicture => (
-                        <a
-                            className={`${styles.flatPictureContainer} ${styles[`flatPictureContainer${flatPicture.name}`]}`}
-                            key={flatPicture.name}
-                            href={`${location.href.substr(location.href.lastIndexOf("/")+1)}/kreuzberg/${flatPicture.relativePath}`}
-                        >
-                            {/* <div>{JSON.stringify(styles)}</div> */}
-                            <Img
-                                className={styles.flatPicture}
-                                fluid={flatPicture.childImageSharp.fluid}
-                                alt={`Flat Picture ${flatPicture.name}`}
-                            />
-                        </a>
-                    ))}
+                            <a
+                                className={`${styles.flatPictureContainer} ${styles[`flatPictureContainer${flatPicture.name}`]}`}
+                                key={flatPicture.name}
+                                href={`${url}/kreuzberg/${flatPicture.relativePath}`}
+                            >
+                                {/* <div>{JSON.stringify(styles)}</div> */}
+                                <Img
+                                    className={styles.flatPicture}
+                                    fluid={flatPicture.childImageSharp.fluid}
+                                    alt={`Flat Picture ${flatPicture.name}`}
+                                />
+                            </a>
+                        ))}
                 </div>
                 <h3 className={styles.h3}>Flat</h3>
                 <p>The flat is <strong>56m<sup>2</sup></strong> and perfect for a couple (you can have it just for yourself as well of course). There&apos;s one bedroom and a larger room which combines the kitchen and living area. It has a nice parquet floor and is very bright.
@@ -55,7 +58,7 @@ export default function Kreuzberg1({ location }) {
                 </p>
                 <div className={styles.flatLayoutBorder}>
                     <a
-                        href={`${location.href.substr(location.href.lastIndexOf("/")+1)}/kreuzberg/${flatLayout.relativePath}`}
+                        href={`${url}/kreuzberg/${flatLayout.relativePath}`}
                     >
                         <Img
                             fluid={flatLayout.childImageSharp.fluid}
