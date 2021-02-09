@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="module" src="main.js"></script>
+    <link href="main.css" rel="stylesheet">
+    <link>
+    <title>Document</title>
+</head>
+<body>
+<main>
+    <h1>Feedback: Olo le Rigolo & Little Richard</h1>
+    <form id="form">
+        <label class="text-area">
+            Évaluation Générale
+            <textarea id="feedback"></textarea>
+        </label>
+        <div class="form-input">Fond Sonore</div>
+        <div class="radio" id="fond-sonore">
+            <label>
+                <input type="radio" name="fond-sonore">
+                Pauvre
+            </label>
+            <label>
+                <input type="radio" name="fond-sonore">
+                Acceptable
+            </label>
+            <label>
+                <input type="radio" name="fond-sonore" id="fond-sonore-to-select"/>
+                Exceptionnel!
+            </label>
+        </div>
+        <div class="form-input">Exercises</div>
+        <div class="radio" id="exercises">
+
+        <label>
+            <input type="radio" name="exercises">
+            Ennuyeux
+        </label>
+        <label>
+            <input type="radio" name="exercises">
+            Corrects
+        </label>
+        <label>
+            <input type="radio" name="exercises" id="exercises-to-select"/>
+            Excitants!
+        </label>
+        </div>
+        <button type="button" onclick="console.log('asdf');location.href = 'thank-you.html'">Valider</button>
+
+    </form>
+</main>
+
+</body>
+</html>
