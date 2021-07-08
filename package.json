@@ -4,6 +4,9 @@
   "description": "Narayanin",
   "author": "Oliver Sieweke <oliver@sieweke.eu> (https://www.oliversieweke.com/)",
   "license": "UNLICENSED",
+  "scripts": {
+    "build": ""
+  },
   "devDependencies": {
     "eslint": "^7.30.0"
   },

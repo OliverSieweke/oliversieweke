@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c02d3d1c-3b32-4de8-8aba-bba8cc1f5fe8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/javascript/inheritance/inheritance-patterns/pseudoclassical-inheritance.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/javascript/inheritance/inheritance-patterns/pseudoclassical-inheritance.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1jNxAlyTl6EcQHDNB7PvUr7D3bk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GitStage.ChangesTree.GroupingKeys" value="directory&#10;module&#10;repository" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.VCS" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c02d3d1c-3b32-4de8-8aba-bba8cc1f5fe8" name="Default Changelist" comment="" />
+      <created>1603658210849</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603658210849</updated>
+      <workItem from="1603658212011" duration="2768000" />
+      <workItem from="1603661173354" duration="1000" />
+      <workItem from="1605823093057" duration="1142000" />
+      <workItem from="1608714149957" duration="443000" />
+      <workItem from="1609358555859" duration="1280000" />
+      <workItem from="1609685959162" duration="849000" />
+      <workItem from="1610581027306" duration="7008000" />
+      <workItem from="1610925544106" duration="6256000" />
+      <workItem from="1612849769959" duration="1655000" />
+      <workItem from="1614202266553" duration="1108000" />
+      <workItem from="1614207295445" duration="1103000" />
+      <workItem from="1617018258130" duration="821000" />
+      <workItem from="1618749473420" duration="1220000" />
+      <workItem from="1625763643324" duration="606000" />
+    </task>
+    <task id="LOCAL-00001" summary="Set page to &quot;Under Construction&quot;">
+      <created>1603660826147</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603660826147</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ole Le Rigolo">
+      <created>1612849939115</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1612849939115</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Ole Le Rigolo">
+      <created>1612850266220</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1612850266220</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ole Le Rigolo">
+      <created>1612850276953</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1612850276953</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add netlify.toml configs">
+      <created>1612850632884</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612850632884</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add netlify.toml configs">
+      <created>1612850729689</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1612850729689</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix netlify.toml configs">
+      <created>1612850742948</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612850742948</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fix netlify.toml configs">
+      <created>1612850871548</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612850871548</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix netlify.toml configs">
+      <created>1612851039906</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1612851039906</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix netlify.toml configs">
+      <created>1612851167704</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1612851167704</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add public directory">
+      <created>1612851254251</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1612851254251</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Hack">
+      <created>1614202669048</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1614202669048</updated>
+    </task>
+    <task id="LOCAL-00013" summary="test">
+      <created>1614202975606</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1614202975606</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Narayanin">
+      <created>1625763779372</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1625763779372</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Initial Narayanin">
+      <created>1625763888404</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1625763888404</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Initial Narayanin">
+      <created>1625764035354</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1625764035354</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Initial Narayanin">
+      <created>1625764047455</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1625764047455</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Initial Narayanin">
+      <created>1625764051031</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1625764051031</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Initial Narayanin">
+      <created>1625764176854</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1625764176854</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Set page to &quot;Under Construction&quot;" />
+    <MESSAGE value="Narayanin" />
+    <MESSAGE value="Initial Narayanin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Narayanin" />
+  </component>
+</project>
