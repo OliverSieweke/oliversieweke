@@ -1,7 +1,0 @@
-.profile-image {
-    float: right;
-    margin: 0.8rem;
-    border-radius: 50%;
-    /* noinspection ALL */
-    shape-outside: ellipse();
-}
