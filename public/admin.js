@@ -11,6 +11,7 @@ function cacheHtml(position) {
 <input name="latitude" placeholder="Latitude"  value="${position.coords.latitude}" type="number"/>
 <input name="longitude" placeholder="Longitude" value="${position.coords.longitude}" type="number" />
 <input name="description" placeholder="Description"/>
+<input name="special" type="checkbox"/>
       <button class="remove">-</button>
 
 </div>`;
@@ -39,10 +40,19 @@ updateButton.addEventListener("click", () => {
       const cache = {};
 
       return Array.from(inputs).reduce((cache, input) => {
-        return {
-          ...cache,
-          [input.name]: input.value,
-        };
+        console.log("input.value:\t", input.checked);
+
+        if (input.name === "special") {
+          return {
+            ...cache,
+            [input.name]: input.checked,
+          };
+        } else {
+          return {
+            ...cache,
+            [input.name]: input.value,
+          };
+        }
       }, {});
     }
   );
@@ -62,12 +72,16 @@ async function getCaches() {
 
   console.log("caches:\t", caches);
 
-  for (const { latitude, longitude, title, description } of caches) {
+  for (const { latitude, longitude, title, description, special } of caches) {
+    console.log("special:\t", special);
+
     cachesDiv.innerHTML += `<div class="cache">
       <input name="title" value="${title}">
       <input name="latitude" type="number" value="${latitude}"/>
       <input name="longitude" type="number" value="${longitude}"/>
       <input name="description" value="${description}"/>
+      <input name="special" type="checkbox" ${special ? "checked" : ""}/>
+
       <button class="remove">-</button>
       </div>
         `;
