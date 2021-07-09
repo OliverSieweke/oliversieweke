@@ -4,10 +4,14 @@ const map = L.map("map").setView([52.3676, 4.9041], 13);
 
 map.locate({ watch: true });
 
+let currentLocation;
+
 map.on("locationfound", (event) => {
   var radius = event.accuracy * 2;
 
-  L.circle(event.latlng, radius).addTo(map);
+  currentLocation && map.removeLayer(currentLocation);
+  currentLocation = L.circle(event.latlng, radius);
+  currentLocation.addTo(map);
   console.log("event:\t", event);
 });
 
