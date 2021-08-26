@@ -1,0 +1,10 @@
+{
+    "name": "johanna",
+    "version": "0.1.0",
+    "description": "Master Thesis Optimizer",
+    "author": "Oliver Sieweke <oliver@sieweke.eu> (https://www.oliversieweke.com/)",
+    "license": "UNLICENSED",
+    "scripts": {
+        "build": ""
+    }
+}
