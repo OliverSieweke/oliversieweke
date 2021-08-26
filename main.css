@@ -1,0 +1,37 @@
+body {
+    padding: 2rem;
+    background-color: deeppink;
+}
+
+#optimizer-section, #optimized-section {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+#optimizer-section > * {
+    margin: 1rem;
+}
+
+label {
+    font-size: 2rem;
+}
+
+button {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+#optimized {
+    border: 4px double gray;
+    padding: 1rem;
+    background-color: greenyellow;
+}
+
+#optimize {
+    background-color: turquoise;
+}
+
+#thesis {
+    height: 5rem;
+}
