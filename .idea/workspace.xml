@@ -21,6 +21,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="Add thesis optimizer">
       <created>1629998093842</created>
@@ -36,7 +41,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629998248798</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add empty build script">
+      <created>1629998379422</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1629998379422</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -65,6 +77,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add thesis optimizer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add thesis optimizer" />
+    <MESSAGE value="Add empty build script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add empty build script" />
   </component>
 </project>
