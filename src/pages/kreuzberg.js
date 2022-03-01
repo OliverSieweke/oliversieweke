@@ -95,7 +95,7 @@ export default function Kreuzberg({ location }) {
                 <h3 className={styles.h3}>Other</h3>
                 <p>
                     It&apos;s all in agreement with the landlord, so you&apos;ll get a proper contract and you&apos;ll be able to do your <em>Anmeldung</em> etc.
-                    The only administrative hassle will be to sign the subletting contract, for gas, electricity and wifi, you could keep my ongoing contracts if you wish.
+                    The only administrative hassle will be to sign the subletting contract. For gas, electricity and wifi, you could keep my ongoing contracts if you wish.
                 </p>
                 <br/>
                 <hr/>
