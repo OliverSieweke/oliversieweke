@@ -81,7 +81,7 @@ export default function Kreuzberg({ location }) {
                 </p>
                 <h3 className={styles.h3}>Price</h3>
                 <p>I am asking the same rent that the landlord will charge me. The only reason I am not giving up the flat completely is that there is a slight chance I might not be able to stay more than a year in my new location. Ideally I would stay permanently in my new flat and so would you.</p>
-                <p>The rent is <strong>954 €</strong> (<em>Warmmiete</em>).</p>
+                <p>The full rent is <strong>954 €</strong>.</p>
                 <p>Additional costs will depend on your consumption, based on my current costs you can expect something close to the following:</p>
                 <ul>
                     <li><strong>Gas:</strong> 39 €</li>
