@@ -17,7 +17,7 @@ export default function Kreuzberg({ location }) {
 
     const metadata = {
         title: "Flat in Kreuzberg - 56m² - 954 €",
-        description: "Beautiful flat for 2 in Kreuzberg/Bergmannkiez available from April 2022.",
+        description: "Beautiful flat in Kreuzberg/Bergmannkiez available from May 1st 2022.",
         image: `/kreuzberg/${presentationPicture.relativePath}`,
     };
 
@@ -27,12 +27,12 @@ export default function Kreuzberg({ location }) {
             <PageSEO location={location} metadata={metadata}/>
             <main className={styles.main}>
                 <h1 className={styles.h1}>Flat in Kreuzberg - 56m<sup>2</sup> - 954 €</h1>
-                <h2 className={styles.h2}>Available from April 2022</h2>
+                <h2 className={styles.h2}>Available from May 1st 2022</h2>
                 <hr/>
                 <br/>
                 <h3 className={styles.h3}>Hi there!</h3>
                 <p>
-                    Lucky you, someone forwarded you this link! Oli here, I’m subletting my flat in Kreuzberg/Bergmannkiez for a year and most probably longer (read on for details). It will be available from the <strong>01.04.2022</strong>.
+                    Lucky you, someone forwarded you this link! Oli here, I’m subletting my flat in Kreuzberg/Bergmannkiez for a year and most probably longer (read on for details). It will be available from the <strong>01.05.2022</strong>.
                 </p>
                 <div className={styles.flatPicturesContainer}>
                     {flatPictures.sort((a, b) => a.name - b.name).map(flatPicture => (
@@ -87,6 +87,7 @@ export default function Kreuzberg({ location }) {
                     <li><strong>Gas:</strong> 39 €</li>
                     <li><strong>Electricity:</strong> 34 €</li>
                     <li><strong>Internet:</strong> 33 €</li>
+                    <li><strong>Rundfunkbeitrag</strong></li>
                 </ul>
 
                 I would also ask you for a deposit.
@@ -95,7 +96,7 @@ export default function Kreuzberg({ location }) {
                 <h3 className={styles.h3}>Other</h3>
                 <p>
                     It&apos;s all in agreement with the landlord, so you&apos;ll get a proper contract and you&apos;ll be able to do your <em>Anmeldung</em> etc.
-                    The only administrative hassle will be to sign the subletting contract. For gas, electricity and wifi, you could keep my ongoing contracts if you wish.
+                    The only administrative hassle will be to sign the subletting contract. If you wish you could keep my ongoing contracts for gas, electricity and wifi.
                 </p>
                 <br/>
                 <hr/>
