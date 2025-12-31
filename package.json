@@ -57,6 +57,7 @@
     "typography": "^0.16.24"
   },
   "devDependencies": {
+    "@netlify/plugin-gatsby": "^3.8.4",
     "eslint": "^9.39.2",
     "eslint-plugin-jsdoc": "^61.5.0",
     "eslint-plugin-react": "^7.37.5",
