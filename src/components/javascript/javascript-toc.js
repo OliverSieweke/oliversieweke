@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link }                       from "gatsby";
 // Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import styles                         from "../../styles/javascript.module.css";
+import * as styles from "../../styles/javascript.module.css";
 
 
 // ================================================================================================================== \\

@@ -7,7 +7,7 @@ import {
     TECHNOLOGY_CATEGORY_FIELD_TO_NAME_MAP, TECHNOLOGY_NAME_TO_URL_AND_ICON_MAP,
 }                                         from "../../utils/projects/technology-section-names-and-icons.js";
 // Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import styles                             from "../../styles/project.module.css";
+import * as styles from "../../styles/project.module.css";
 
 
 // ================================================================================================================== \\

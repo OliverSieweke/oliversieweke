@@ -5,6 +5,22 @@ const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
 // I) Add Slugs --------------------------------------------------------------------------------------------------------
+exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions;
+    const typeDefs = `
+    type Fields {
+      slug: String
+    }
+    type Directory implements Node {
+      fields: Fields
+    }
+    type File implements Node {
+      fields: Fields
+    }
+  `;
+    createTypes(typeDefs);
+};
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions;
 

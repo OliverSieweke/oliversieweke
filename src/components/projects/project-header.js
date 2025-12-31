@@ -2,7 +2,7 @@ import React                     from "react";
 // Data ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import { useCommonProjectIcons } from "../../static-queries/use-common-project-icons.js";
 // Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import styles                    from "../../styles/project.module.css";
+import * as styles from "../../styles/project.module.css";
 
 
 // ================================================================================================================== \\

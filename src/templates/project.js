@@ -7,7 +7,7 @@ import { Markdown }            from "../components/common/markdown.js";
 import { PageSEO }             from "../components/seo/page-seo.js";
 import { ProjectSchema }       from "../components/seo/schemas/project.js";
 // Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import styles                  from "../styles/project.module.css";
+import * as styles from "../styles/project.module.css";
 
 
 // ================================================================================================================== \\

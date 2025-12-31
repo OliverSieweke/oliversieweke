@@ -2,7 +2,7 @@ import React         from "react";
 import { GlobalSEO } from "../seo/global-seo.js";
 // Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import "../../styles/global.css";
-import styles        from "../../styles/layout.module.css";
+import * as styles from "../../styles/layout.module.css";
 // Fonts •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 import "typeface-merriweather";
 import "typeface-lato";

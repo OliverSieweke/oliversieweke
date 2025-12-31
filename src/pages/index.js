@@ -20,7 +20,7 @@ export default function Index({ location }) {
                     Thanks for dropping by! I&apos;ve had troubles keeping the content of this website up to date. I have taken things down temporarily and am hoping to come back online in the future.
                 </p>
                 <p>
-                    If you wish, you may take this as an opportunity to reflect on life instead...
+                    If you wish, you may take this as an opportunity to reflect on life instead... Maybe there's a friend you haven't called in a long time
                 </p>
         </React.Fragment>
     );

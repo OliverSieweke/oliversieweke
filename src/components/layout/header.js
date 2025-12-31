@@ -4,7 +4,7 @@ import { Link }            from "gatsby";
 import { useSiteMetaData } from "../../static-queries/use-site-metadata.js";
 import { useBurgerMenu }   from "../../static-queries/use-burger-menu.js";
 // Styles ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-import styles              from "../../styles/layout.module.css";
+import * as styles from "../../styles/layout.module.css";
 
 
 // ================================================================================================================== \\
