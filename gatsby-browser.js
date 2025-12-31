@@ -4,6 +4,6 @@ import React      from "react";
 import { Layout } from "./src/components/layout/layout.js";
 
 
-export const wrapPageElement = ({ element, props }) => props.uri === "/kreuzberg" ?
+export const wrapPageElement = ({ element, props }) => props.uri === "/" ?
                                                        element :
                                                        <Layout {...props}>{element}</Layout>;

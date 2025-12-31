@@ -221,7 +221,7 @@ module.exports = {
 // SEO -----------------------------------------------------------------------------------------------------------------
         {
             resolve: "gatsby-plugin-sitemap",
-            options: { excludes: ["/kreuzberg/*"] },
+            options: { excludes: ["/kreuzberg/*", "/", "/*"] },
         },
         "gatsby-plugin-robots-txt",
         "gatsby-plugin-react-helmet",
