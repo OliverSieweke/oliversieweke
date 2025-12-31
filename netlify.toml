@@ -2,7 +2,7 @@
 package = "@netlify/plugin-gatsby"
 
 [build]
-command = "gatsby build"
+command = "gatsby build && rm -rf .cache/adapters/node_modules/.bin/download-msgpackr-prebuilds"
 publish = "public"
 
 [build.environment]
