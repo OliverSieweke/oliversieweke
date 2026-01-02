@@ -16,7 +16,7 @@ export default function Kreuzberg({ location }) {
                               : useSiteMetaData().siteUrl;
 
     const metadata = {
-        title: "Flat in Kreuzberg - 56m² - 1280€ / month",
+        title: "Flat in Kreuzberg - 56m² - 1200€ / month",
         description: "Beautiful flat in Kreuzberg/Bergmannkiez available from end of January for 3 months",
         image: `/kreuzberg/${presentationPicture.relativePath}`,
     };
@@ -26,7 +26,7 @@ export default function Kreuzberg({ location }) {
         <React.Fragment>
             <PageSEO location={location} metadata={metadata}/>
             <main className={styles.main}>
-                <h1 className={styles.h1}>Flat in Kreuzberg - 56m<sup>2</sup> - 1280€ / month</h1>
+                <h1 className={styles.h1}>Flat in Kreuzberg - 56m<sup>2</sup> - 1200€ / month</h1>
                 <h2 className={styles.h2}>Available 17.01.26 - 08.05.26 (+/- 1 week)</h2>
 
                 <hr/>
@@ -89,7 +89,7 @@ export default function Kreuzberg({ location }) {
                     You are also welcome to use my bike during your stay.
                 </p>
                 <h3 className={styles.h3}>Price</h3>
-                <p>I am subletting the flat for 1280€ / month all bills included (I am currently paying 1070€ including all charges and am adding 20% for the furniture).
+                <p>I am subletting the flat for 1200€ / month all bills included (I am currently paying 1070€ including all charges and am adding a little for the furniture).
                 </p>
                 <p>I would ask you for a deposit of 800€.</p>
                 <h3 className={styles.h3}>Other</h3>
